@@ -1,0 +1,10 @@
+<!ENTITY msh.label "Moonshine">
+<!ENTITY app.label "Application">
+<!ENTITY apps.label "Applications">
+<!ENTITY console.label "Console">
+<!ENTITY prefs.label "Preferences">
+<!ENTITY about.label "About">
+<!ENTITY name.label "Name">
+<!ENTITY type.label "Type">
+<!ENTITY status.label "Status">
+
