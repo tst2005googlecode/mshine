@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+<Description about="urn:mozilla:install-manifest">
+	<em:id>{ae173fab-9e18-4e01-a1c1-12033a5821ca}</em:id>
+	<em:version>0.1</em:version>
+	<em:type>2</em:type>
+
+	<!-- target application this extension can install into,
+	with minimum and maximum supported versions. -->
+	<em:targetApplication>
+		<Description>
+			<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+			<em:minVersion>2.0</em:minVersion>
+			<em:maxVersion>2.0.*</em:maxVersion>
+		</Description>
+	</em:targetApplication>
+
+	<!-- front end metadata -->
+	<em:name>Moonshine</em:name>
+	<em:description>Lua-based services environment for Firefox</em:description>
+	<em:creator>Sam Saint-Pettersen</em:creator>
+	<em:homepage>http://code.google.com/p/mshine</em:homepage>
+</Description>
+</RDF>
+
