@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<msh xmlns="mshine.googlecode.com">
+    <metadata>
+        <type autorun="1">service</type>
+        <name>Hello World!</name>
+        <desc>Print "Hello World!"</desc>
+        <author>Sam Saint-Pettersen</author>
+        <email>samji@bigfoot.com</email>
+        <webs>http://code.google.com/p/mshine</webs>
+    </metadata>
+    <luacode>
+         std.print("Hello World!")
+    </luacode>
+</msh>
+
