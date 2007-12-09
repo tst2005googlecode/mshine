@@ -1,6 +1,0 @@
-content moonshine jar:chrome/moonshine.jar!/content/
-overlay chrome://browser/content/browser.xul chrome://moonshine/content/overlay.xul
-locale moonshine en jar:chrome/moonshine.jar!/locale/en-GB/
-locale moonshine en-GB jar:chrome/moonshine.jar!/locale/en-GB/
-locale moonshine en-US jar:chrome/moonshine.jar!/locale/en-US/
-
