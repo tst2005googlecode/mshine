@@ -7,4 +7,7 @@
 <!ENTITY name.label "Name">
 <!ENTITY type.label "Type">
 <!ENTITY status.label "Status">
+<!ENTITY load.label "Load">
+<!ENTITY start.label "Start">
+<!ENTITY stop.label "Stop">
 
