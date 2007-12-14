@@ -23,4 +23,3 @@ end
 function hello()
     return "Hello from loadmsh.lua"
 end
-

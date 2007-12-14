@@ -1,4 +1,4 @@
-<!ENTITY msh.label "Moonshine">
+﻿<!ENTITY msh.label "Moonshine">
 <!ENTITY app.label "Application">
 <!ENTITY apps.label "Applications">
 <!ENTITY console.label "Console">
@@ -10,4 +10,3 @@
 <!ENTITY load.label "Load">
 <!ENTITY start.label "Start">
 <!ENTITY stop.label "Stop">
-

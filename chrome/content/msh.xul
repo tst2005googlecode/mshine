@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <!--
  Moonshine environment for Lua-based
  services in Mozilla Firefox web browser
@@ -56,4 +56,3 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
         </tabpanels>
     </tabbox>
 </window>
-
