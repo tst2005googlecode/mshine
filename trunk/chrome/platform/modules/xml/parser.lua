@@ -2,8 +2,7 @@
 -- XML parser for use with XML in Lua programs
 -- Version 0.1
 -- Copyright (c) 2007 Sam Saint-Pettersen
--- Released under the GNU General Public License
--- http://creativecommons.org/licenses/GPL/2.0/
+-- Released under the GNU General Public License v3
 ---------------------------------------------------
 
 -- specify as module
@@ -58,4 +57,3 @@ function attrib(xml, tag, attr, occur)
 		return "Usage: xml.attrib(xml as str, tag as str, attr as str [, occur as int])"
 	end
 end
-

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <!--
  Moonshine environment for Lua-based
  services in Mozilla Firefox web browser
@@ -15,4 +15,3 @@
 		<statusbarpanel id="msh-panel"><label onclick="MSHwindow();">MSH</label></statusbarpanel>
 	</statusbar>
 </overlay>
-
