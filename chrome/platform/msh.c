@@ -24,13 +24,14 @@ int main(int argc, char *argv[])
     int chmodu = luaL_dofile(L, "modules.lua");
     if(chmodu != 0)
     {
-	// if there is a problem loading modules; display error
+		// if there is a problem loading modules; display error
         const char *message = lua_tostring(L, -1);
-	fprintf(stderr, "\nError loading modules:\n%s\n", message);
+		fprintf(stderr, "\nError loading modules:\n%s\n", message);
     }
     else
-    {
-	printf("\nLoaded modules.\n\n");
+    {	
+	    // otherwise, confirm modules were loaded
+		printf("\nLoaded modules.\n\n");
     }
 
     // if argument is provided; run msh app
@@ -52,4 +53,3 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-
