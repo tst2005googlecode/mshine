@@ -18,13 +18,23 @@ int main(int argc, char *argv[])
     luaL_openlibs(L);
 
     // print title
-    printf("\nMoonshine core interpreter\n\n");
+    printf("\nMoonshine core interpreter\n");
  
     // invoke module loading
-    luaL_dofile(L, "modules/modules.lua"); 
+    int chmodu = luaL_dofile(L, "modules.lua");
+    if(chmodu != 0)
+    {
+	// if there is a problem loading modules; display error
+        const char * message = lua_tostring(L, -1);
+	fprintf(stderr, "\nError loading modules:\n%s\n", message);
+    }
+    else
+    {
+	printf("\nLoaded modules.\n\n");
+    }
 
     // if argument is provided; run msh app
-    if(argv != NULL)
+    if(argc > 1)
     {   
         luaL_dofile(L, argv[1]);
     }
@@ -42,3 +52,4 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
