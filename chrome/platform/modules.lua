@@ -6,8 +6,10 @@
 -- This program is released "as is" under
 -- the GNU General Public License V3.
 -------------------------------------------
+-- THIS FILE IS REQUIRED BY THE MSH
+-- CORE INTEPRETER. DO NOT REMOVE IT.
+--
 -- Load and reference modules;
 -- base.msh module is mandatory!
---base = require("base.msh")
+base = require("modules/base.msh")
 xml = require("modules/xml.parser")
-
