@@ -9,4 +9,5 @@
 -- Load and reference modules;
 -- base.msh module is mandatory!
 --base = require("base.msh")
-xml = require("xml.parser")
+xml = require("modules/xml.parser")
+
