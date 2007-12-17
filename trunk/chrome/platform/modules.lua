@@ -8,8 +8,8 @@
 -------------------------------------------
 -- THIS FILE IS REQUIRED BY THE MSH
 -- CORE INTEPRETER. DO NOT REMOVE IT.
---
--- Load and reference modules;
--- base.msh module is mandatory!
-base = require("modules/base.msh")
-xml = require("modules/xml.parser")
+-- MODULES UNDER MODULES/CORE ARE ALSO
+-- MANDATORY AND SHOULD NOT BE REMOVED!
+mshb = require("modules/core/msh.base")
+xmlp = require("modules/core/xml.parser")
+
