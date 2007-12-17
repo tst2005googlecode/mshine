@@ -4,6 +4,9 @@
 -- Copyright (c) 2007 Sam Saint-Pettersen
 -- Released under the GNU General Public License v3
 ---------------------------------------------------
+-- IN THE MOONSHINE PROJECT:
+-- THIS MODULE IS A DEPENDENCY FOR BASE.MSH.
+-- DO NOT REMOVE IT OR ITS REFERENCE.
 
 -- specify as module
 module(..., package.seeall)

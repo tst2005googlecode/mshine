@@ -18,7 +18,8 @@ int main(int argc, char *argv[])
     luaL_openlibs(L);
 
     // print title
-    printf("\nMoonshine core interpreter\n");
+    printf("\nMoonshine core interpreter");
+    printf("\nCopyright (c) 2007 Sam Saint-Pettersen\n");
  
     // invoke module loading
     int chmodu = luaL_dofile(L, "modules.lua");
