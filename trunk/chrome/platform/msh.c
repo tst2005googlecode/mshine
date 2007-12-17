@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
     // otherwise; display prompt
     else 
     {
-        printf("\nUsage: msh <mshapp> or msh -l <luafile>\n");
+		printf("\nUsage: msh <mshapp> or msh -l <luafile>\n");
     }
 
     // close current lua state    
