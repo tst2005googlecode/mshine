@@ -10,16 +10,34 @@
 -- REQUIRED BY THE MSH CORE INTERPRETER.
 -- DO NOT DELETE THIS FILE ITSELF OR
 -- REMOVE ITS REFERENCE FROM MODULES.LUA.
+-- THIS MODULE IS DEPENDENT ON XML.PARSER.
 
 -- specify as module
 module(..., package.seeall)
 
--- allowed characters as tag value
--- load an msh application
-function loadMSH(file)
-    local mshapp = io.open(file, "-r")
-    return mshapp:read("*all")
+-- return version information
+function version()
+    return "Base module for Moonshine 0.1\nCopyright (c) 2007 Sam Saint-Pettersen"
 end
-function hello()
-    return "Hello from loadmsh.lua"
+
+-- load an msh application;
+-- invoked from msh core interpreter
+function loadMSH(file)
+	local mshapp = return xml.load(file)
+	--if file == extension of msh
+		-- begin parsing
+		parseMetadata(mshapp)
+		parseLuacode(mshapp)
+	--else 
+		-- return an error message
+		return "Error. This is not an MSH application!"
+end
+
+-- parse msh application metadata
+function parseMetadata(mshapp)
+
+end
+-- parse application code
+function parseLuacode(mshapp)
+
 end
