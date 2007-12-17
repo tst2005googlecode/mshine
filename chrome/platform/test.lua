@@ -1,2 +1,2 @@
 file = "<file type='image'>giraffe.png</file>"
-print(xml.tag(file, "file") .. " (" .. xml.attrib(file, "file", "type") .. ")")
+print(xmlp.tag(file, "file") .. " (" .. xmlp.attrib(file, "file", "type") .. ")")
