@@ -8,6 +8,7 @@
 */ 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "lua/lua.h"
 #include "lua/lauxlib.h"
 #include "lua/lualib.h"
@@ -31,19 +32,22 @@ int main(int argc, char *argv[])
     }
     else
     {	
-	    // otherwise, confirm modules were loaded
+		// otherwise, confirm modules were loaded
 		printf("\nLoaded modules.\n\n");
     }
 
-    // if argument is provided; run msh app
+    // if argument is provided; run msh or lua app
     if(argc > 1)
-    {   
-        luaL_dofile(L, argv[1]);
+    {
+		if(strcmp(argv[1], "-l") == 0)
+		{
+		    luaL_dofile(L, argv[2]);
+		}
     }
     // otherwise; display prompt
     else 
     {
-        printf("\nUsage: msh <mshapp>\n");
+        printf("\nUsage: msh <mshapp> or msh -l <luafile>\n");
     }
 
     // close current lua state    
@@ -54,3 +58,4 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+

@@ -23,7 +23,7 @@ end
 -- load an msh application;
 -- invoked from msh core interpreter
 function loadMSH(file)
-	local mshapp = return xml.load(file)
+	local mshapp = xml.load(file)
 	--if file == extension of msh
 		-- begin parsing
 		parseMetadata(mshapp)
