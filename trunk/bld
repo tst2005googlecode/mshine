@@ -1,5 +1,0 @@
-﻿#!/bin/sh
-# Build extension
-rm moonshine.xpi
-7z a -tzip -r moonshine.xpi install.rdf chrome.manifest chrome
-reset
