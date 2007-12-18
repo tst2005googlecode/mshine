@@ -12,7 +12,8 @@ module(..., package.seeall)
 
 -- return version information
 function version()
-    return "Base module for Moonshine 0.1\nCopyright (c) 2007 Sam Saint-Pettersen"
+    return [[Base module for Moonshine 0.1
+Copyright (c) 2007 Sam Saint-Pettersen]]
 end
 
 -- load an msh application;
@@ -27,7 +28,6 @@ function loadMSH(file)
 		-- return an error message
 		return "Error. This is not an MSH application!"
 end
-
 -- parse msh application metadata
 function parseMetadata(mshapp)
 
