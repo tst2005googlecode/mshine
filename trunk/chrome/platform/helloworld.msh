@@ -2,13 +2,15 @@
 <msh xmlns="mshine.googlecode.com">
     <metadata>
         <type autorun="1">service</type>
+		<uid>{a3719a6d-b52c-4d13-b607-0060f1b0b615}</uid>
         <name>Hello World!</name>
         <desc>Print "Hello World!"</desc>
         <author>Sam Saint-Pettersen</author>
         <email>samji@bigfoot.com</email>
-        <webs>http://code.google.com/p/mshine</webs>
+        <webs>http://mshine.googlecode.com</webs>
     </metadata>
     <luacode>
          std.print("Hello World!")
     </luacode>
 </msh>
+
