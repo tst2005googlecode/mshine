@@ -10,7 +10,7 @@
         <webs>http://mshine.googlecode.com</webs>
     </metadata>
     <luacode>
-         std.print("Hello World!")
+         std.notify("Hello World!")
     </luacode>
 </msh>
 
