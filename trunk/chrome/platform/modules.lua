@@ -10,5 +10,5 @@
 -- CORE INTEPRETER. DO NOT REMOVE IT.
 -- MODULES UNDER MODULES/CORE ARE ALSO
 -- MANDATORY AND SHOULD NOT BE REMOVED!
-mshb = require("modules/core/msh.base")
+base = require("modules/core/msh.base")
 xmlp = require("modules/core/xml.parser")
