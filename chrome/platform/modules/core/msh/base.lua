@@ -32,12 +32,16 @@ function load(file)
 end
 -- parse msh application metadata
 function parseMetadata(app)
-    tags = {"type","uid","name","desc","author","email","webs","rest","autorun"}
+    tags = {"type","uid","name","desc","author","email","webs","rest"}
     mdata = {}
-
+    for index = 1, #tags do
+		mdata[index] = xmlp.tag(app, tags[index])
+		return "\n" .. mdata[index] .. "\n"
+    end
+    local autorun = xmlp.attrib(app, tags[1], "autorun")    
 end
--- parse application code
-function parseLuacode(mshapp)
-
+-- parse and execute application code
+function parseLuacode(app)
+    local lcode = xmlp.tag(app, "luacode")
 end
 
