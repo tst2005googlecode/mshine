@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     if(chmodu != 0)
     {
 		// if there is a problem loading modules; display error
-        const char *message = lua_tostring(L, -1);
+		const char *message = lua_tostring(L, -1);
 		fprintf(stderr, "\nError loading modules:\n%s\n", message);
     }
     else
