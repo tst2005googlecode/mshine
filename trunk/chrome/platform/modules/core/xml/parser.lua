@@ -16,7 +16,8 @@ attval = "[%.%,%;%:%-%&%@%w%x%s]+"
 
 -- return version information
 function version()
-	return "XML Parser 0.1"
+	return [[XML Parser 0.1
+Copyright (c) 2007 Sam St-Pettersen]]
 end
 -- load file
 function load(file)
