@@ -18,15 +18,18 @@ end
 
 -- load an msh application;
 -- invoked from msh core interpreter
-function loadMSH(file)
-	local mshapp = xmlp.load(file)
-	--if file == extension of msh
-		-- begin parsing
-		parseMetadata(mshapp)
-		parseLuacode(mshapp)
-	--else 
-		-- return an error message
+function load(file)
+    local mshapp = xmlp.load(file)
+    local match = string.match(file, "%w+\.?%bmsh")
+    if match ~= nil then
+		-- if filename is as expected; begin parsing
+		return mshapp
+		--parseMetadata(mshapp)
+		--parseLuacode(mshapp)
+	else 
+		-- otherwise; return an error message
 		return "Error. This is not an MSH application!"
+    end
 end
 -- parse msh application metadata
 function parseMetadata(mshapp)
@@ -36,3 +39,4 @@ end
 function parseLuacode(mshapp)
 
 end
+
