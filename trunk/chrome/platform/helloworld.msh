@@ -8,7 +8,7 @@
         <author>Sam Saint-Pettersen</author>
         <email>samji@bigfoot.com</email>
         <webs>http://mshine.googlecode.com</webs>
-		<rest>none</rest>
+        <rest>none</rest>
     </metadata>
     <luacode>
          std.notify("Hello World!")
