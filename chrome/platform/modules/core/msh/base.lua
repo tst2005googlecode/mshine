@@ -23,9 +23,7 @@ function load(file)
     local match = string.match(file, "%w+\.?%bmsh")
     if match ~= nil then
 		-- if filename is as expected; begin parsing
-		return app
-		--parseMetadata(app)
-		--parseLuacode(app)
+		parseMetadata(app)
 	else
 		-- otherwise; return an error message
 		return "Error. This is not an MSH application!"
@@ -33,12 +31,17 @@ function load(file)
 end
 -- parse application metadata
 function parseMetadata(app)
+    -- tags to parse
     tags = {"type","uid","name","desc","author","email","webs","rest"}
     mdata = {}
+    -- parse each tag
     for index = 1, #tags do
 		mdata[index] = xmlp.tag(app, tags[index])
+		print("\n" .. mdata[index])
     end
-    local autorun = xmlp.attrib(app, tags[1], "autorun")    
+    -- parse type tag's autorun attribute
+    local autorun = xmlp.attrib(app, tags[1], "autorun")
+    parseLuacode(app)    
 end
 -- parse and execute application code
 function parseLuacode(app)
