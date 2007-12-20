@@ -27,7 +27,7 @@ function load(file)
 	else
 		-- otherwise; return an error message
 		return "Error. This is not an MSH application!"
-    end
+	end
 end
 -- parse application metadata
 function parseMetadata(app)
