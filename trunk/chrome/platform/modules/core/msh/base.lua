@@ -47,4 +47,3 @@ end
 function parseLuacode(app)
     local lcode = xmlp.tag(app, "luacode")
 end
-
