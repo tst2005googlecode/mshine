@@ -9,10 +9,10 @@
 module(..., package.seeall)
 
 -- allowed characters as tag value
-tagval = "[%.%,%;%:%-%&%%\\%\/%#%~%\"%@%\'%w%x%s]+"
+tagval = "[%\!%\?%.%,%;%:%-%&%%\\%\/%#%~%\"%@%{%}%\'%w%x%s]+"
 
 -- allowed characters as attribute value
-attval = "[%.%,%;%:%-%&%@%w%x%s]+"
+attval = "[%\!%\?%.%,%;%:%-%&%@%w%x%s]+"
 
 -- return version information
 function version()
@@ -30,18 +30,18 @@ function load(file)
 end
 -- parse tag
 function tag(xml, tag, occur)
-         if xml or tag ~= nil then
-                local tagp = tagval .. "</" .. tag .. ">"
-                local tagm = string.match(xml, tagp)
-                local start = string.len(tag) - 1000
-                if tagm ~= nil then
-                        return string.match(tagm, tagval, start)
-                else
-                        return "Tag: " .. tag .. " does not exist."
-                end
-         else
-                return "Usage: xml.stag(xml as str, tag as str [, occur as int])"
-         end
+	if xml or tag ~= nil then
+		local tagp = tagval .. "</" .. tag .. ">"
+		local tagm = string.match(xml, tagp)
+		local start = string.len(tag) - 1000
+        if tagm ~= nil then
+        	return string.match(tagm, tagval, start)
+        else
+        	return "Tag: " .. tag .. " does not exist."
+        end
+    else
+    	return "Usage: xml.stag(xml as str, tag as str [, occur as int])"
+    end
 end
 -- parse attribute
 function attrib(xml, tag, attr, occur)

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" standalone="yes"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msh xmlns="mshine.googlecode.com">
     <metadata>
         <type autorun="1">service</type>
@@ -14,4 +14,3 @@
          std.notify("Hello World!")
     </luacode>
 </msh>
-
