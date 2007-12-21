@@ -11,4 +11,6 @@
 -- MODULES UNDER MODULES/CORE ARE ALSO
 -- MANDATORY AND SHOULD NOT BE REMOVED!
 base = require("modules/core/msh.base")
+std = require("modules/core/msh.standard")
 xmlp = require("modules/core/xml.parser")
+
