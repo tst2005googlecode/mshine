@@ -8,13 +8,13 @@
         <author>Sam Saint-Pettersen</author>
         <email>samji@bigfoot.com</email>
         <webs>http://mshine.googlecode.com</webs>
-		<img>none</img>
+        <img>none</img>
         <rest>none</rest>
     </metadata>
     <luacode>
-		 -- the below is equivalent to JavaScript: alert("Hello World!")
-		 std.msg("Hello World!")
-         --std.notify("Hello World!")
+        -- the below is equivalent to JavaScript: alert("Hello World!")
+        std.msg("Hello World!")
+        --std.notify("Hello World!")
     </luacode>
 </msh>
 
