@@ -36,8 +36,8 @@ function parseApplication(app)
     data = {}
     -- parse each tag
     for index = 1, #tags do
-		data[index] = xmlp.tag(app, tags[index])
-		print("\n" .. data[index]) -- !
+        data[index] = xmlp.tag(app, tags[index])
+        print("\n" .. data[index]) -- !
     end
     -- parse type tag's autorun attribute
     local autorun = xmlp.attrib(app, tags[1], "autorun")
