@@ -32,7 +32,7 @@ end
 -- parse application metadata and code
 function parseApplication(app)
     -- tags to parse
-    tags = {"type","uid","name","desc","author","email","webs","rest","luacode"}
+    tags = {"type","uid","name","desc","author","email","webs","img","rest","luacode"}
     data = {}
     -- parse each tag
     for index = 1, #tags do
@@ -42,5 +42,9 @@ function parseApplication(app)
     -- parse type tag's autorun attribute
     local autorun = xmlp.attrib(app, tags[1], "autorun")
     print("\n" .. autorun) -- !
+end
+-- retrieve and cache accompanying image for application
+function getImage(url)
+    -- TODO: Most likely won't be implemented in first release
 end
 
