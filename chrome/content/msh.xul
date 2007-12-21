@@ -25,7 +25,7 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
             <!-- applications panel -->
             <tabpanel>
                 <hbox>
-                    <groupbox id="capp" width="200">
+                    <groupbox id="capp" width="200"><!-- !width 200 -->
                         <caption id="captapp" label="&app.label;"/>
                         <label id="mshname"></label>
                         <label id="mshdesc"></label>
@@ -62,3 +62,4 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
         </tabpanels>
     </tabbox>
 </window>
+
