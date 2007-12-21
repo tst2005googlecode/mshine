@@ -58,3 +58,4 @@ function attrib(xml, tag, attr, occur)
 		return "Usage: xml.attrib(xml as str, tag as str, attr as str [, occur as int])"
 	end
 end
+
