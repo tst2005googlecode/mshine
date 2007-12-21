@@ -22,11 +22,11 @@ function load(file)
     local app = xmlp.load(file)
     local match = string.match(file, "%w+\.?%bmsh")
     if match ~= nil then
-		-- if filename is as expected; begin parsing
-		parseApplication(app)
+        -- if filename is as expected; begin parsing
+        parseApplication(app)
     else
-		-- otherwise; return an error message
-		return "Error. This is not an MSH application!"
+        -- otherwise; return an error message
+        return "Error. This is not an MSH application!"
     end
 end
 -- parse application metadata and code
