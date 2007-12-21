@@ -13,6 +13,7 @@
 xmlns:html="http://www.w3.org/1999/xhtml"
 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
 <script type="application/x-javascript" src="msh.js"/>
+	<image src="spacer.png"/><!-- !spacer -->
     <tabbox id="tabs" selectedIndex="0">
         <tabs>
             <tab label="&apps.label;"/>
@@ -25,8 +26,7 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
             <tabpanel>
                 <hbox>
                     <groupbox id="capp" width="200">
-                        <caption label="&app.label;"/>
-                        <image id="mshimg" src="lua.png"/>
+                        <caption id="captapp" label="&app.label;"/>
                         <label id="mshname"></label>
                         <label id="mshdesc"></label>
                         <label id="mshauthor"></label>
@@ -35,7 +35,8 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                     </groupbox>
                 </hbox> 
                 <hbox>
-                    <listbox id="lapps" width="350">
+                	<groupbox id="apps">
+                    <listbox id="lapps" width="350"><!-- !width 350 -->
                         <listhead>
                             <listheader id="hname" label="&name.label;"/>
                             <listheader id="htype" label="&type.label;"/>
@@ -44,6 +45,12 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                         <listitem>
                         </listitem>
                     </listbox>
+                    <hbox><!-- !button width 100 -->
+                    	<button id="ldapp" label="&load.label;" width="100"/>
+                    	<button id="strapp" label="&start.label;" width="100"/>
+                    	<button id="stpapp" disabled="true" label="&stop.label;" width="100"/>
+                    </hbox>
+                    </groupbox>
                 </hbox>
             </tabpanel>
             <!-- console panel -->

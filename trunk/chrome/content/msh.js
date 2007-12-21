@@ -1,4 +1,4 @@
-﻿/*
+/*
  Moonshine environment for Lua-based
  services in Mozilla Firefox web browser
  Copyright (c) 2007 Sam Saint-Pettersen
@@ -9,5 +9,5 @@
 // display main window
 function MSHwindow()
 {
-    var mshw = window.openDialog("chrome://moonshine/content/msh.xul","mshw","chrome,centerscreen,width=590,height=350");
+    var mshw = window.openDialog("chrome://moonshine/content/msh.xul","mshw","chrome,centerscreen,width=610,height=350");
 }
