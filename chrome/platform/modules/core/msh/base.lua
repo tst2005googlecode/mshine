@@ -24,10 +24,10 @@ function load(file)
     if match ~= nil then
 		-- if filename is as expected; begin parsing
 		parseApplication(app)
-	else
+    else
 		-- otherwise; return an error message
 		return "Error. This is not an MSH application!"
-	end
+    end
 end
 -- parse application metadata and code
 function parseApplication(app)
@@ -45,6 +45,6 @@ function parseApplication(app)
 end
 -- retrieve and cache accompanying image for application
 function getImage(url)
-    -- TODO: Most likely won't be implemented in first release
+    -- TODO: most likely won't be implemented in first release
 end
 
