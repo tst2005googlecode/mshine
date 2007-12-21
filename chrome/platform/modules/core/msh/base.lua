@@ -37,7 +37,7 @@ function parseMetadata(app)
     -- parse each tag
     for index = 1, #tags do
 		mdata[index] = xmlp.tag(app, tags[index])
-		print("\n" .. mdata[index])
+		--print("\n" .. mdata[index])
     end
     -- parse type tag's autorun attribute
     local autorun = xmlp.attrib(app, tags[1], "autorun")
@@ -47,3 +47,4 @@ end
 function parseLuacode(app)
     local lcode = xmlp.tag(app, "luacode")
 end
+
