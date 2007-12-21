@@ -45,6 +45,6 @@ function parseApplication(app)
 end
 -- retrieve and cache accompanying image for application
 function getImage(url)
-    -- TODO: most likely won't be implemented in first release
+    -- TODO: most likely won't be implemented in first release!
 end
 
