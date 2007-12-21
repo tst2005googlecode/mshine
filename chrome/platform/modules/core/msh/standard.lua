@@ -22,7 +22,7 @@ function msg(message, title)
     local dtitle = "Moonshine"
     -- otherwise use specified title
     if title ~= nil then
-		dtitle = title
+        dtitle = title
     end 
     print("Msg:" .. dtitle .. " -> " .. message .. "\n") -- !
 end
