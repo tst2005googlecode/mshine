@@ -16,7 +16,7 @@ function version()
 Copyright (c) 2007 Sam Saint-Pettersen]]
 end
 -- display message in msgbox;
--- a Lua interface to JavaScript's alert()
+-- a lua interface to javascript's alert()
 function msg(message, title)
     -- use default title if not specified
     local dtitle = "Moonshine"
