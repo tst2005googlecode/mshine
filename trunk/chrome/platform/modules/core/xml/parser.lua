@@ -9,7 +9,7 @@
 module(..., package.seeall)
 
 -- allowed characters as tag value
-tagval = "[%\!%\?%.%,%;%:%-%&%%\\%\/%#%~%\"%@%{%}%\'%w%x%s]+"
+tagval = "[%\!%\?%.%,%;%:%-%&%%\\%\/%#%~%\"%@%{%}%(%)%\'%w%x%s]+"
 
 -- allowed characters as attribute value
 attval = "[%\!%\?%.%,%;%:%-%&%@%w%x%s]+"
