@@ -1,4 +1,4 @@
-﻿content moonshine chrome/content/
+content moonshine chrome/content/
 overlay chrome://browser/content/browser.xul chrome://moonshine/content/overlay.xul
 locale moonshine en chrome/locale/en-GB/
 locale moonshine en-GB chrome/locale/en-GB/
