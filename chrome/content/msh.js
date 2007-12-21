@@ -11,4 +11,3 @@ function MSHwindow()
 {
     var mshw = window.openDialog("chrome://moonshine/content/msh.xul","mshw","chrome,centerscreen,width=590,height=350");
 }
-
