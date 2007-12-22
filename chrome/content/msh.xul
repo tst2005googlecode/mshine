@@ -13,7 +13,7 @@
 xmlns:html="http://www.w3.org/1999/xhtml"
 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
 <script type="application/x-javascript" src="msh.js"/>
-	<image src="spacer.png"/><!-- !spacer -->
+    <image src="spacer.png"/><!-- !spacer -->
     <tabbox id="tabs" selectedIndex="0">
         <tabs>
             <tab label="&apps.label;"/>
@@ -35,7 +35,7 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                     </groupbox>
                 </hbox> 
                 <hbox>
-                	<groupbox id="apps">
+                    <groupbox id="apps">
                     <listbox id="lapps" width="350"><!-- !width 350 -->
                         <listhead>
                             <listheader id="hname" label="&name.label;"/>
@@ -46,9 +46,9 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                         </listitem>
                     </listbox>
                     <hbox><!-- !button width 100 -->
-                    	<button id="ldapp" label="&load.label;" width="100"/>
-                    	<button id="strapp" label="&start.label;" width="100"/>
-                    	<button id="stpapp" disabled="true" label="&stop.label;" width="100"/>
+                        <button id="ldapp" label="&load.label;" width="100"/>
+                        <button id="strapp" label="&start.label;" width="100"/>
+                        <button id="stpapp" disabled="true" label="&stop.label;" width="100"/>
                     </hbox>
                     </groupbox>
                 </hbox>
