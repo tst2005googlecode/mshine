@@ -7,9 +7,9 @@
  the GNU General Public License V3.
 */
 // display main window
-function MSHwindow()
+function MSHdialog()
 {
-    var mshw = window.openDialog("chrome://moonshine/content/msh.xul",
-"mshw","chrome,centerscreen,width=610,height=350");
+    var mshd = window.openDialog("chrome://moonshine/content/msh.xul",
+	"mshd","chrome,centerscreen,width=610,height=350");
 }
 
