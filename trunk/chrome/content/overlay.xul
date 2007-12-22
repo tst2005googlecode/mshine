@@ -13,7 +13,7 @@
 <script type="application/x-javascript" src="msh.js"/>
     <statusbar id="status-bar">
         <statusbarpanel id="msh-panel">
-            <label onclick="MSHwindow();">MSH</label>
+            <label onclick="MSHdialog();">MSH</label>
         </statusbarpanel>
     </statusbar>
 </overlay>
