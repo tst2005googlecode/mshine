@@ -26,7 +26,8 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
             <!-- applications panel -->
             <tabpanel>
                 <hbox>
-                    <groupbox id="capp"><!-- !width 180 -->
+                    <groupbox id="capp">
+                    	<!-- current application -->
                         <caption id="captapp" label="&app.label;"/>
                         <label id="mshname"></label>
                         <label id="mshdesc"></label>
@@ -37,7 +38,8 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                 </hbox> 
                 <hbox>
                     <groupbox id="apps">
-                    <listbox id="lapps"><!-- !width 350 -->
+                    <!-- list of of applications -->
+                    <listbox id="lapps">
                         <listhead>
                             <listheader id="hname" label="&name.label;"/>
                             <listheader id="htype" label="&type.label;"/>
@@ -46,7 +48,7 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                         <listitem>
                         </listitem>
                     </listbox>
-                    <hbox><!-- !button width 100 -->
+                    <hbox>
                         <button id="ldapp" label="&load.label;"/>
                         <button id="strapp" label="&start.label;"/>
                         <button id="stpapp" disabled="true" label="&stop.label;"/>
