@@ -11,7 +11,10 @@
 <!DOCTYPE overlay SYSTEM "chrome://moonshine/locale/locale.dtd">
 <overlay id="msh-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 <script type="application/x-javascript" src="msh.js"/>
-	<statusbar id="status-bar">
-		<statusbarpanel id="msh-panel"><label onclick="MSHwindow();">MSH</label></statusbarpanel>
-	</statusbar>
+    <statusbar id="status-bar">
+        <statusbarpanel id="msh-panel">
+            <label onclick="MSHwindow();">MSH</label>
+        </statusbarpanel>
+    </statusbar>
 </overlay>
+
