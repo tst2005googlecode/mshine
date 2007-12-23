@@ -18,8 +18,9 @@ function version()
     return [[API module for Moonshine 0.1
 Copyright (c) 2007 Sam Saint-Pettersen]]
 end
--- make a call via data: uri scheme
-function call(mimetype, data)
-    
+-- make a javascript call using telnet client
+-- with mozlab to firefox
+function tcall(jscode)
+
 end
 
