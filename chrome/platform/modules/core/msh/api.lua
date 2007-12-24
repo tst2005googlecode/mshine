@@ -18,9 +18,12 @@ function version()
     return [[API module for Moonshine 0.1
 Copyright (c) 2007 Sam Saint-Pettersen]]
 end
--- make a javascript call using telnet client
--- with mozlab to firefox
-function tcall(jscode)
-
+-- make a javascript call using tcp functionality
+-- to localhost:4242 where MozRPL is listening
+-- within the browser
+function call(jscode)
+    local c = net.tcp()
+    c:connect('localhost',4242)
+    c:send(jscode)
 end
 
