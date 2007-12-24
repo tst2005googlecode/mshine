@@ -1,17 +1,29 @@
--------------------------------------------
--- Moonshine environment for Lua-based
--- services in Mozilla Firefox web browser
--- Copyright (c) 2007 Sam Saint-Pettersen.
+                 .88888888:. 
+                88888888.88888. 
+              .8888888888888888. 
+              888888888888888888 
+              88' _`88'_  `88888 
+              88 88 88 88  88888 
+              88_88_::_88_:88888 
+              88:::,::,:::::8888 
+              88`:::::::::'`8888 
+             .88  `::::'    8:88. 
+            8888            `8:888. 
+          .8888'             `888888. 
+         .8888:..  .::.  ...:'8888888:. 
+        .8888.'     :'     `'::`88:88888 
+       .8888        '         `.888:8888. 
+      888:8         .           888:88888 
+    .888:88        .:           888:88888: 
+    8888888.       ::           88:888888 
+    `.::.888.      ::          .88888888 
+   .::::::.888.    ::         :::`8888'.:. 
+  ::::::::::.888   '         .:::::::::::: 
+  ::::::::::::.8    '      .:8::::::::::::. 
+ .::::::::::::::.        .:888::::::::::::: 
+ :::::::::::::::88:.__..:88888:::::::::::' 
+  `'.:::::::::::88888888888.88:::::::::' 
+        `':::_:' -- '' -'-' `':_::::'` 
 
--- This program is released "as is" under
--- the GNU General Public License V3.
--------------------------------------------
--- THIS FILE IS REQUIRED BY THE MSH
--- CORE INTEPRETER. DO NOT REMOVE IT.
--- MODULES UNDER MODULES/CORE ARE ALSO
--- MANDATORY AND SHOULD NOT BE REMOVED!
-base = require("modules/core/msh.base")
-std = require("modules/core/msh.std")
-api = require("modules/core/msh.api")
-xmlp = require("modules/core/xml.parser")
+            ~ IN TUX WE TRUST ~
 
