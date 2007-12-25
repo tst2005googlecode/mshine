@@ -1,6 +1,5 @@
 --------------------------
--- module to test paths
+-- module to test cpath
 -------------------------
-print("package.path: " .. package.path)
 print("package.cpath: " .. package.cpath)
 
