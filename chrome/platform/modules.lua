@@ -17,6 +17,9 @@
 -- ONLY MODULES/OPTIONAL CAN
 -- BE CHANGED OR REMOVED.
 
+-- override default lib path
+--package.cpath="modules/lib/"
+
 -- load and reference modules
 base = require("modules/core/msh.base")
 xmlp = require("modules/core/xml.parser")
