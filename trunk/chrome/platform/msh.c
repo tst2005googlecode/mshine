@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     {
         // if there is a problem loading modules; display error
         const char *message = lua_tostring(L, -1);
-        fprintf(stderr, "\nError loading modules:\n%s\n", message);
+        fprintf(stderr, "\nError loading one or more modules:\n%s\n", message);
     }
     else
     {   
