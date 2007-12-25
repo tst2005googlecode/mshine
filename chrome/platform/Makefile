@@ -2,8 +2,11 @@
 
 # No arguments to Make builds for Unix-like systems
 # Use "win" to build for Windows systems
-msh: 
-	gcc msh.c -o msh liblua.a -lm -ldl 
+msh:
+	gcc -c -o msh.o msh.c
+	gcc -o msh msh.o -Wl,--export-dynamic -L. -llua -lm -ldl
 win:
 	gcc msh.c -o msh.exe lua5.1.dll
+clean:
+	rm -f msh.o
 
