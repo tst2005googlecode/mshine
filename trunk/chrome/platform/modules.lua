@@ -17,8 +17,9 @@
 -- ONLY MODULES/OPTIONAL CAN
 -- BE CHANGED OR REMOVED.
 
+-- load and reference modules
 base = require("modules/core/msh.base")
 xmlp = require("modules/core/xml.parser")
 api = require("modules/core/msh.api")
-net = require("modules/core/net.socket")
+--net = require("modules/core/net.socket")
 
