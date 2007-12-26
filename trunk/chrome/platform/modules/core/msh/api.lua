@@ -22,7 +22,7 @@ end
 -- to localhost:4242 where MozRPL is listening
 -- within the browser
 function call(jscode)
-    local c = net.tcp()
+    local c = socket.tcp()
     c:connect('localhost',4242)
     c:send(jscode)
 end

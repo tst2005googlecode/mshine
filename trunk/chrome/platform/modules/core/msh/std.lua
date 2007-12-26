@@ -17,14 +17,17 @@ Copyright (c) 2007 Sam Saint-Pettersen]]
 end
 -- display message in msgbox;
 -- a lua interface to javascript's alert()
-function msg(message, title)
-    -- use default title if not specified
-    local dtitle = "Moonshine"
-    -- otherwise use specified title
-    if title ~= nil then
-        dtitle = title
-    end 
-    print("Msg:" .. dtitle .. " -> " .. message .. "\n") -- !
-    -- TODO: use api module here for msg
+function msg(message)
+    local a = 'alert("' .. message .. '")'
+    api.call(a)
+end
+-- display prompt to user;
+-- a lua interface to javascript's prompt()
+function prompt(message, value)
+    if value == nil then
+        value = ""
+    end
+    local p = 'var p = prompt("' .. message .. '", ' .. value .. ')'
+    api.call(p)
 end
 
