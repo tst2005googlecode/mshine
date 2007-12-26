@@ -6,7 +6,7 @@ msh:
 	gcc -c -o msh.o msh.c
 	gcc -o msh msh.o -Wl,--export-dynamic -L. -llua -lm -ldl
 win:
-	gcc msh.c -o msh.exe lua5.1.dll
+	#gcc msh.c -o msh.exe lua5.1.dll
 clean:
 	rm -f msh.o
 
