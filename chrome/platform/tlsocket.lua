@@ -1,5 +1,5 @@
 -------------------------------
--- test xml module
+-- test luasocket module
 -------------------------------
 print("\n" .. socket._VERSION .. "\n") -- print version
 c = socket.tcp() -- init tcp protocol
