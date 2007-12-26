@@ -24,10 +24,12 @@ end
 -- display prompt to user;
 -- a lua interface to javascript's prompt()
 function prompt(message, value)
-    if value == nil then
-        value = ""
-    end
-    local p = 'var p = prompt("' .. message .. '", ' .. value .. ')'
+    local p = 'var p = prompt("' .. message .. '")'
     api.call(p)
+end
+-- open a new window;
+-- a lua interface to javascript's window.open()
+function window(url, id, width, height)
+
 end
 
