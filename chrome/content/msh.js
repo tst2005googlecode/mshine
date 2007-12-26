@@ -10,6 +10,6 @@
 function MSHdialog()
 {
     var mshd = window.openDialog("chrome://moonshine/content/msh.xul",
-	"mshd","chrome,centerscreen,width=600,height=350");
+	"mshd","chrome,centerscreen,width=570,height=350");
 }
 
