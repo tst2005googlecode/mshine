@@ -26,9 +26,9 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
             <!-- applications panel -->
             <tabpanel>
                 <hbox>
-                    <groupbox id="capp">
+                    <groupbox id="capppanel">
                     	<!-- current application -->
-                        <caption id="captapp" label="&app.label;"/>
+                        <caption label="&app.label;"/>
                         <image id="mshimg" src="spacer.png"/>
                         <label id="mshname">!name</label>
                         <label id="mshdesc">!desc</label>
@@ -38,7 +38,7 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                     </groupbox>
                 </hbox> 
                 <hbox>
-                    <groupbox id="apps">
+                    <groupbox id="appspanel">
                     <!-- list of of applications -->
                     <listbox id="lapps">
                         <listhead>
@@ -58,11 +58,27 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                 </hbox>
             </tabpanel>
             <!-- console panel -->
-            <tabpanel></tabpanel>
+            <tabpanel>
+            	<hbox>
+            		<groupbox id="conpanel">
+            			<caption label="&console.label;"/>      			
+            		</groupbox>
+            	</hbox>
+            </tabpanel>
             <!-- preferences panel -->
-            <tabpanel></tabpanel>
+            <tabpanel>
+            	<hbox>
+            		<groupbox id="prefpanel">
+            			<caption label="&prefs.label;"/>
+            		</groupbox>
+            	</hbox>
+            </tabpanel>
             <!-- about panel -->
-            <tabpanel></tabpanel>
+            <tabpanel>
+            	<hbox>
+            		<!-- about information -->
+            	</hbox>
+            </tabpanel>
         </tabpanels>
     </tabbox>
 </window>
