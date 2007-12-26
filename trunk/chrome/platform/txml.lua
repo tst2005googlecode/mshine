@@ -1,5 +1,5 @@
 -------------------------------
--- test xml module
+-- test xml parser module
 -------------------------------
 print("\n" .. xmlp.version() .. "\n") -- print version
 file = "<file type='image'>giraffe.png</file>" -- xml fragment as file
