@@ -18,7 +18,12 @@
 -- BE CHANGED OR REMOVED.
 
 -- override default lib path
-package.cpath="modules/lib/?.[so]?[dll]?"
+win = os.getenv("WinDir")
+if win ~= nil then
+	package.cpath = "modules\\lib\\?.dll"
+else
+	package.cpath = "modules/lib/?.so"
+end
 
 -- load and reference modules
 base = require("modules/core/msh.base")
@@ -26,4 +31,3 @@ std = require("modules/core/msh.std")
 xmlp = require("modules/core/xml.parser")
 api = require("modules/core/msh.api")
 lsocket = require("modules/core/net/socket") -- referenced by socket
-
