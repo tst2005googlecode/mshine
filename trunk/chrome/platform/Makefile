@@ -9,4 +9,6 @@ win:
 	#gcc msh.c -o msh.exe lua5.1.dll
 clean:
 	rm -f msh.o
+cleanwin:
+	del /F msh.o
 
