@@ -14,14 +14,23 @@ import System.Net.Sockets
 import System.Text
 
 def main():
-    port = 4242 // listen on port 4242                        
+    port = 4245 // listen on port 4245 (4242)                        
     host = IPAddress.Parse("127.0.0.1") // host == "localhost"
     server = TcpListener(host, port)  // create server instance
-    //server.Start() // start listening
+    server.Start() // start listening for client requests
 
-    // print feedback   
+    // buffer for reading data
+    bytes = 1024
+    data = null
+    
+    // print feedback
     print "TCP Listener"
     print "Listening on ${host}:${port}"
+    print "Waiting for a connection..."
+    
+    // enter the listening loop
+    //while true:
+    
 
 main() // invoke main()
 
