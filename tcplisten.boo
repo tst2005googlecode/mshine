@@ -1,7 +1,7 @@
 /*
     TCP Listener
     Console application to listen on a TCP port
-    and display the sent message.
+    and display the received message.
 
     Copyright (c) 2007 Sam Saint-Pettersen
 
