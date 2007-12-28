@@ -7,18 +7,22 @@
  the GNU General Public License V3.
 */
 // display main window
+var mshd;
 function MSHdialog()
 {
-    var mshd = window.openDialog("chrome://moonshine/content/msh.xul",
+    mshd = window.openDialog("chrome://moonshine/content/msh.xul",
     "mshd","chrome,centerscreen,width=570,height=350");
 }
 // load moonshine application
 function loadMSH()
 {
-
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    fp.init(mshd, "Select MSH application", nsIFilePicker.modeOpen); 
+    fp.show();   
 }
 // push metadata for application
-function pushMetaData()
+function pushMetadata()
 {
 
 }
