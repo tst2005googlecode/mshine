@@ -50,9 +50,12 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                         </listitem>
                     </listbox>
                     <hbox>
-                        <button id="ldapp"  onclick="loadMSH();" label="&load.label;"/>
-                        <button id="strapp" label="&start.label;"/>
-                        <button id="stpapp" disabled="true" label="&stop.label;"/>
+                        <button id="ldapp"  onclick='load();' 
+                         label="&load.label;"/>
+                        <button id="strapp" onclick='execute("-e")'
+                         label="&start.label;"/>
+                        <button id="stpapp" disabled="true" onclick='execute("-s");'
+                         label="&stop.label;"/>
                     </hbox>
                     </groupbox>
                 </hbox>

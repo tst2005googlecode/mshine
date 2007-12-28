@@ -7,13 +7,13 @@
  the GNU General Public License V3.
 */
 // display main window
-function MSHdialog()
+function dialog()
 {
     var mshd = window.openDialog("chrome://moonshine/content/msh.xul",
     "mshd","chrome,centerscreen,width=570,height=350");
 }
 // load moonshine application
-function loadMSH()
+function load()
 {
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"]
@@ -24,17 +24,37 @@ function loadMSH()
     if(res == nsIFilePicker.returnOK)
     {
         var file = fp.file;
-        //alert(file.leafName + "\n" + file.path + "\n" + file.fileSize);
+        execute(file); //!
     }    
 }
-// push metadata for application
-function pushMetadata()
+// install application in mshapps directory
+function install(file)
 {
-
+    // if it doesn't exist, create a new mshapps dir
+    // and/or copy the application into that directory
+    // to begin installation.
+    
+    // parse metadata for application on installation
+    // execute("-m", file)
 }
-// start or stop moonshine application
-function execMSH(file)
+// execute operation to moonshine core interpreter
+//function execute(operation, file)
+function execute(file)
 {
+    // create an nsILocalFile for the executable
+    var mshc = Components.classes["@mozilla.org/file/local;1"]
+    .createInstance(Components.interfaces.nsILocalFile);
 
+    mshc.initWithPath("/usr/bin/gedit");
+
+    // create an nsIProcess 
+    var process = Components.classes["@mozilla.org/process/util;1"]
+    .createInstance(Components.interfaces.nsIProcess);
+
+    process.init(mshc);
+
+    // run the process with specified arguments
+    var args = [file.path];
+    process.run(false, args, args.length)
 }
 
