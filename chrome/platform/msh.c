@@ -38,8 +38,19 @@ int main(int argc, char *argv[])
 
     // if argument is provided; run msh or lua app
     if(argc > 1)
-    {
-        if(strcmp(argv[1], "-l") == 0)
+    {   
+        // parse metadata
+        if(strcmp(argv[1], "-m") == 0)
+        {
+            // TODO
+        }
+        // execute msh app 
+        else if(strcmp(argv[1], "-e") == 0)
+        {
+            // TODO
+        }
+        // execute lua file
+        else if(strcmp(argv[1], "-l") == 0)
         {
             luaL_dofile(L, argv[2]);
         }
@@ -47,7 +58,10 @@ int main(int argc, char *argv[])
     // otherwise; display prompt
     else 
     {
-        printf("\nUsage: msh <mshapp> or msh -l <luafile>\n");
+        printf("Usage:\n");
+        printf("msh -m <mshapp>\tparse metadata\n");
+        printf("msh -e <mshapp>\texecute msh app\n");
+        printf("msh -l <luafile> execute lua file\n");
     }
 
     // close current lua state    
