@@ -18,7 +18,7 @@ function loadMSH()
 {
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-    fp.init(mshd, "Select MSH application", nsIFilePicker.modeOpen); 
+    fp.init(window, "Load a Moonshine application", nsIFilePicker.modeOpen); 
     fp.show();   
 }
 // push metadata for application
