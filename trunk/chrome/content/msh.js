@@ -7,10 +7,9 @@
  the GNU General Public License V3.
 */
 // display main window
-var mshd;
 function MSHdialog()
 {
-    mshd = window.openDialog("chrome://moonshine/content/msh.xul",
+    var mshd = window.openDialog("chrome://moonshine/content/msh.xul",
     "mshd","chrome,centerscreen,width=570,height=350");
 }
 // load moonshine application
@@ -21,12 +20,11 @@ function loadMSH()
     .createInstance(nsIFilePicker);
     fp.init(window, "Load a Moonshine application", nsIFilePicker.modeOpen);
     fp.appendFilter("MSH applications (*.msh)","*.msh");
-    fp.appendFilter("Lua files (*.lua)","*.lua");
     var res = fp.show();  
     if(res == nsIFilePicker.returnOK)
     {
         var file = fp.file;
-        alert(file);
+        //alert(file.leafName + "\n" + file.path + "\n" + file.fileSize);
     }    
 }
 // push metadata for application
@@ -35,7 +33,7 @@ function pushMetadata()
 
 }
 // start or stop moonshine application
-function execMSH()
+function execMSH(file)
 {
 
 }
