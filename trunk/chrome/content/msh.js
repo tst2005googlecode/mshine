@@ -61,16 +61,16 @@ function execute(file)
     // specify executable, depending on platform
     if(navigator.appVersion.indexOf("X11") != -1) 
     {
-	    // for unix/linux platforms
-	    mshc.initWithPath("/usr/bin/gedit"); 
+        // for unix/linux platforms
+        mshc.initWithPath("/usr/bin/gedit"); 
     }
     else
     {   
-	    // error message for unsupported platforms
-		alert("Could not execute the application.\n" +
-		"Because a version of the MSH core intepreter\n" +
-		"does not exist for your platform.");   
-	}
+        // error message for unsupported platforms
+        alert("Could not execute the application.\n" +
+        "Because a version of the MSH core intepreter\n" +
+        "does not exist for your platform.");   
+    }
     // create an nsIProcess 
     var process = Components.classes["@mozilla.org/process/util;1"]
     .createInstance(Components.interfaces.nsIProcess);
