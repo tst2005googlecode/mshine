@@ -39,7 +39,7 @@ function install(file)
     {
         file.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
     } 
-    // if it doesn't exist, create a new apps.xml,
+    // if it doesn't exist, create a new apps.xml
     file.append("apps.xml");
     if(!file.exists())
     {
@@ -64,6 +64,11 @@ function execute(file)
         // for unix/linux platforms
         mshc.initWithPath("/usr/bin/gedit"); 
     }
+    else if(navigator.appVersion.indexOf("Win") != -1)
+    {
+	    // for windows platforms
+	    mshc.initWithPath("c:\\windows\\notepad.exe");
+	}
     else
     {   
         // error message for unsupported platforms
