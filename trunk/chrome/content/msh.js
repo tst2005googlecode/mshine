@@ -24,8 +24,8 @@ function load()
     if(res == nsIFilePicker.returnOK)
     {
         var file = fp.file;
-        install(file);
-        //execute(file); //!
+        //install(file);
+        execute(file); //!
     }    
 }
 // install application in mshapps directory
@@ -43,7 +43,7 @@ function install(file)
     // if it doesn't exist, create a new apps.xml,
     var appsxml = Components.classes["@mozilla.org/file/directory_service;1"]
     .getService(Components.interfaces.nsIProperties)
-    .get(folder, Components.interfaces.nsIFile);
+    .get(//!!!, Components.interfaces.nsIFile);
     appsxml.append("apps.xml");
     if(!appsmxl.exists())
     {
@@ -54,8 +54,7 @@ function install(file)
     // copy metadata for application to apps.xml
     
 }
-// execute operation to moonshine core interpreter
-//function execute(operation, file)
+// execute application using moonshine core interpreter
 function execute(file)
 {
     // create an nsILocalFile for the executable
@@ -63,15 +62,23 @@ function execute(file)
     .createInstance(Components.interfaces.nsILocalFile);
     
     // specify executable, depending on platform
-    // platform = 
-    if(platform == "win") 
+    if(navigator.appVersion.indexOf("Win") != -1) 
     {
-        mshc.initWithPath("c://windows//notepad.exe") 
+	    // for windows
+        mshc.initWithPath("c://windows//notepad.exe"); 
     }
-    else if(platform == "unix")
-    {
+    else if(navigator.appVersion.indexOf("Linux") != -1)
+    {	
+	    // for linux
         mshc.initWithPath("/usr/bin/gedit");
     }
+    else
+    {
+	    // error message for unsupported platforms
+		alert("Could not execute application.\n" +
+		"Because a version of the MSH core intepreter\n" +
+		"does not exist for your platform.");   
+	}
     // create an nsIProcess 
     var process = Components.classes["@mozilla.org/process/util;1"]
     .createInstance(Components.interfaces.nsIProcess);
