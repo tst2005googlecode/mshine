@@ -28,7 +28,6 @@ function load()
         execute(file); //!
     }    
 }
-/*
 // install application in mshapps directory
 function install(file)
 {
@@ -55,7 +54,6 @@ function install(file)
     // copy metadata for application to apps.xml
     
 }
-*/
 // execute application using moonshine core interpreter
 function execute(file)
 {
@@ -64,20 +62,15 @@ function execute(file)
     .createInstance(Components.interfaces.nsILocalFile);
     
     // specify executable, depending on platform
-    if(navigator.appVersion.indexOf("Win") != -1) 
+    if(navigator.appVersion.indexOf("X11") != -1) 
     {
-	    // for windows
-        mshc.initWithPath("c://windows//notepad.exe"); 
-    }
-    else if(navigator.appVersion.indexOf("Linux") != -1)
-    {	
-	    // for linux
-        mshc.initWithPath("/usr/bin/gedit");
+	    // for unix/linux platforms
+	    mshc.initWithPath("/usr/bin/gedit"); 
     }
     else
-    {
+    {   
 	    // error message for unsupported platforms
-		alert("Could not execute application.\n" +
+		alert("Could not execute the application.\n" +
 		"Because a version of the MSH core intepreter\n" +
 		"does not exist for your platform.");   
 	}
