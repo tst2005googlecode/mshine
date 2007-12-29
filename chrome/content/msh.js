@@ -68,7 +68,7 @@ function execute(file)
     {
 	    // for windows platforms
 	    mshc.initWithPath("c:\\windows\\notepad.exe");
-	}
+	\
     else
     {   
         // error message for unsupported platforms
