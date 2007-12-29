@@ -35,33 +35,15 @@ int main(int argc, char *argv[])
         // otherwise, confirm modules were loaded
         printf("\nLoaded modules.\n\n");
     }
-
-    // if argument is provided; run msh or lua app
+    // if argument is provided; run code
     if(argc > 1)
     {   
-        // parse metadata
-        if(strcmp(argv[1], "-m") == 0)
-        {
-            // TODO
-        }
-        // execute msh app 
-        else if(strcmp(argv[1], "-e") == 0)
-        {
-            // TODO
-        }
-        // execute lua file
-        else if(strcmp(argv[1], "-l") == 0)
-        {
-            luaL_dofile(L, argv[2]);
-        }
+        luaL_dofile(L, argv[1]);
     }
     // otherwise; display prompt
     else 
     {
-        printf("Usage:\n");
-        printf("msh -m <mshapp>\tparse metadata\n");
-        printf("msh -e <mshapp>\texecute msh app\n");
-        printf("msh -l <luafile> execute lua file\n");
+        printf("\nUsage: msh <mshluacode>\n");
     }
 
     // close current lua state    
