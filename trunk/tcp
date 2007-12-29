@@ -1,5 +1,4 @@
 #!/bin/sh
 # Run tcp listener app
-rm *.mdb
 mono tcplisten.exe
 
