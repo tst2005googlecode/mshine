@@ -33,6 +33,15 @@ function install(file)
     // if it doesn't exist, create a new mshapps dir
     // and/or copy the application into that directory
     // to begin installation.
+    var folder = Components.classes["@mozilla.org/file/directory_service;1"]
+    .getService(Components.interfaces.nsIProperties)
+    .get("ProfD", Components.interfaces.nsIFile);
+
+    folder.append("mshapps");
+    if(!file.exists() || !file.isDirectory())
+    {
+        file.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+    }
     
     // parse metadata for application on installation
     // execute("-m", file)
@@ -44,13 +53,15 @@ function execute(file)
     // create an nsILocalFile for the executable
     var mshc = Components.classes["@mozilla.org/file/local;1"]
     .createInstance(Components.interfaces.nsILocalFile);
-
+    
+    // specify executable
     mshc.initWithPath("/usr/bin/gedit");
 
     // create an nsIProcess 
     var process = Components.classes["@mozilla.org/process/util;1"]
     .createInstance(Components.interfaces.nsIProcess);
-
+    
+    // initialize the process
     process.init(mshc);
 
     // run the process with specified arguments
