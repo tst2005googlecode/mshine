@@ -23,7 +23,7 @@ end
 -- within the browser
 function call(jscode)
     local c = socket.tcp()
-    c:connect('localhost',4242)
+    c:connect('localhost',4250)
     c:send(jscode)
 end
 

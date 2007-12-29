@@ -6,6 +6,8 @@
 -- This program is released "as is" under
 -- the GNU General Public License V3.
 -------------------------------------------
+-- THIS MODULE PROVIDES STANDARD
+-- FUNCTIONALITY.
 
 -- specify as module
 module(..., package.seeall)
