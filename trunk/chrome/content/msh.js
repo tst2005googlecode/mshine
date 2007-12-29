@@ -24,6 +24,7 @@ function load()
     if(res == nsIFilePicker.returnOK)
     {
         var file = fp.file;
+        install(file);
         execute(file); //!
     }    
 }
