@@ -32,19 +32,26 @@ function load()
 function install(file)
 {
     // if it doesn't exist, create a new mshapps dir
-    // and/or copy the application into that directory
-    // to begin installation.
     var folder = Components.classes["@mozilla.org/file/directory_service;1"]
     .getService(Components.interfaces.nsIProperties)
     .get("ProfD", Components.interfaces.nsIFile);
-
-    folder.append("mshapps");
+    folder.append("msh_apps");
     if(!folder.exists() || !folder.isDirectory())
     {
         folder.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
-    }
-    
-    // parse metadata for application on installation
+    } 
+    // if it doesn't exist, create a new apps.xml,
+    var appsxml = Components.classes["@mozilla.org/file/directory_service;1"]
+    .getService(Components.interfaces.nsIProperties)
+    .get(folder, Components.interfaces.nsIFile);
+    appsxml.append("apps.xml");
+    if(!appsmxl.exists())
+    {
+        appsxml.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 0666);
+        
+        // open and write base structure for newly created apps.xml
+    }        
+    // copy metadata for application to apps.xml
     
 }
 // execute operation to moonshine core interpreter
@@ -55,9 +62,16 @@ function execute(file)
     var mshc = Components.classes["@mozilla.org/file/local;1"]
     .createInstance(Components.interfaces.nsILocalFile);
     
-    // specify executable
-    mshc.initWithPath("/usr/bin/gedit");
-
+    // specify executable, depending on platform
+    // platform = 
+    if(platform == "win") 
+    {
+        mshc.initWithPath("c://windows//notepad.exe") 
+    }
+    else if(platform == "unix")
+    {
+        mshc.initWithPath("/usr/bin/gedit");
+    }
     // create an nsIProcess 
     var process = Components.classes["@mozilla.org/process/util;1"]
     .createInstance(Components.interfaces.nsIProcess);
