@@ -1,5 +1,4 @@
 #!/bin/sh
 # Build tcp listener app
-rm *.mdb
 booc tcplisten.boo
 
