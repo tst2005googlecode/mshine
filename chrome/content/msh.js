@@ -25,7 +25,7 @@ function load()
     {
         var file = fp.file;
         install(file);
-        execute(file); //!
+        //execute(file); //!
     }    
 }
 // install application in mshapps directory
@@ -39,13 +39,13 @@ function install(file)
     .get("ProfD", Components.interfaces.nsIFile);
 
     folder.append("mshapps");
-    if(!file.exists() || !file.isDirectory())
+    if(!folder.exists() || !folder.isDirectory())
     {
-        file.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+        folder.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
     }
     
     // parse metadata for application on installation
-    // execute("-m", file)
+    
 }
 // execute operation to moonshine core interpreter
 //function execute(operation, file)
