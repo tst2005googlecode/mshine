@@ -13,7 +13,7 @@ import System.Net
 import System.Net.Sockets
 import System.Text
 
-def main():
+def Main():
     port = 4246 // listen on port 4246 (4242)                        
     host = IPAddress.Parse("127.0.0.1") // host == "localhost"
     server = TcpListener(host, port)  // create server instance
@@ -33,6 +33,4 @@ def main():
         // perform a blocking call to accept requests
         client = server.AcceptTcpClient()
         print "Connected!"
- 
-main() // invoke main()
-
+        return 0
