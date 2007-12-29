@@ -32,5 +32,5 @@ def Main():
     while true:
         // perform a blocking call to accept requests
         client = server.AcceptTcpClient()
-        print "Connected!"
+        print "Connection established."
         return 0
