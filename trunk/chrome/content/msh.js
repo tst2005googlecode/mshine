@@ -28,6 +28,7 @@ function load()
         execute(file); //!
     }    
 }
+/*
 // install application in mshapps directory
 function install(file)
 {
@@ -54,6 +55,7 @@ function install(file)
     // copy metadata for application to apps.xml
     
 }
+*/
 // execute application using moonshine core interpreter
 function execute(file)
 {
