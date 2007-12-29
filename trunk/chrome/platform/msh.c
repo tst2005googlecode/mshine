@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
         printf("\nLoaded modules.\n\n");
     }
     // if argument is provided; run code
-    if(argc > 1)
+    if(argc > 0)
     {   
         luaL_dofile(L, argv[1]);
     }
