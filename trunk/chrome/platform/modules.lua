@@ -26,8 +26,8 @@ else
 end
 
 -- load and reference modules
-base = require("modules/core/msh.base")
 std = require("modules/core/msh.std")
 xmlp = require("modules/core/xml.parser")
 api = require("modules/core/msh.api")
 lsocket = require("modules/core/net/socket") -- referenced by socket
+
