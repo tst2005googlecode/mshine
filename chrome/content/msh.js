@@ -24,35 +24,32 @@ function load()
     if(res == nsIFilePicker.returnOK)
     {
         var file = fp.file;
-        //install(file);
-        execute(file); //!
+        install(file);
     }    
 }
-// install application in mshapps directory
+// install application in msh_apps directory
 function install(file)
 {
     // if it doesn't exist, create a new mshapps dir
-    var folder = Components.classes["@mozilla.org/file/directory_service;1"]
+    var file = Components.classes["@mozilla.org/file/directory_service;1"]
     .getService(Components.interfaces.nsIProperties)
     .get("ProfD", Components.interfaces.nsIFile);
-    folder.append("msh_apps");
-    if(!folder.exists() || !folder.isDirectory())
+    file.append("msh_apps");
+    if(!file.exists() || !file.isDirectory())
     {
-        folder.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
+        file.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0777);
     } 
     // if it doesn't exist, create a new apps.xml,
-    var appsxml = Components.classes["@mozilla.org/file/directory_service;1"]
-    .getService(Components.interfaces.nsIProperties)
-    .get(//!!!, Components.interfaces.nsIFile);
-    appsxml.append("apps.xml");
-    if(!appsmxl.exists())
+    file.append("apps.xml");
+    if(!file.exists())
     {
-        appsxml.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 0666);
-        
-        // open and write base structure for newly created apps.xml
-    }        
-    // copy metadata for application to apps.xml
+        file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 0664);
+        alert("Created new\n" + file.path); //!
     
+        // open and write base structure for newly created apps.xml
+        
+    }
+    // copy metadata for application to apps.xml
 }
 // execute application using moonshine core interpreter
 function execute(file)
