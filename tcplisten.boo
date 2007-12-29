@@ -14,7 +14,7 @@ import System.Net.Sockets
 import System.Text
 
 def Main():
-    port = 4246 // listen on port 4246 (4242)                        
+    port = 4250 // listen on port 4250                       
     host = IPAddress.Parse("127.0.0.1") // host == "localhost"
     server = TcpListener(host, port)  // create server instance
     server.Start() // start listening for client requests
