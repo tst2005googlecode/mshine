@@ -14,6 +14,9 @@
 xmlns:html="http://www.w3.org/1999/xhtml"
 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
 <script type="application/x-javascript" src="msh.js"/>
+<stringbundleset id="strbundles">
+	<stringbundle id="strings" src="chrome://moonshine/locale/locale.properties"/>
+</stringbundleset>
     <image src="spacer.png"/><!-- !spacer -->
     <tabbox id="tabs" selectedIndex="0">
         <tabs>

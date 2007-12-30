@@ -6,7 +6,10 @@
  This program is released "as is" under
  the GNU General Public License V3.
 */
+// global vars and string bundle
 var xmlDoc, file, app, lua;
+//var strbundle = document.getElementById("strings");
+
 // display main window
 function dialog()
 {
@@ -16,11 +19,13 @@ function dialog()
 // load moonshine application
 function load()
 {
+	//var loadMSHapp=strbundle.getString("loadMSHapp");
+	//var MSHfilter=strbundle.getString("MSHfilter");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"]
     .createInstance(nsIFilePicker);
     fp.init(window, "Load a Moonshine application", nsIFilePicker.modeOpen);
-    fp.appendFilter("MSH applications (*.msh)","*.msh");
+    fp.appendFilter("MSH applications", "*.msh");
     var res = fp.show();  
     if(res == nsIFilePicker.returnOK)
     {
@@ -88,7 +93,11 @@ function execute()
         // error message for unsupported platforms
         alert("Could not execute the application.\n" +
         "Because a version of the MSH core intepreter\n" +
-        "does not exist for your platform.");   
+        "does not exist for your platform.");
+        //var unsupported1=strbundle.getString("unsupported1");
+        //var unsupported2=strbundle.getString("unsupported2");
+        //var unsupported3=strbundle.getString("unsupported3");
+        //alert(unsupported1 + "\n" + unsupported2 + "\n" + unsupported3);   
     }
     // create an nsIProcess 
     var process = Components.classes["@mozilla.org/process/util;1"]
@@ -98,7 +107,7 @@ function execute()
     process.init(mshc);
 
     // run the process with specified arguments
-    var args = [lua.path];
+    var args = [""];
     process.run(false, args, args.length);
 }
 
