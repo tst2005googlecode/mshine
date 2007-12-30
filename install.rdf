@@ -18,8 +18,17 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
 	<!-- front end metadata -->
 	<em:name>Moonshine</em:name>
-	<em:description>Lua-based services environment for Firefox</em:description>
+	<em:description>Lua-based applications and services environment for Firefox</em:description>
 	<em:creator>Sam Saint-Pettersen</em:creator>
+	<em:contributor>Lua.org team (Lua)</em:contributor>
+	<em:contributor>Massimiliano Mirra (MozLab) *</em:contributor>
+	<em:contributor>Diego Nehab (LuaSocket)</em:contributor>
+	<em:contributor>Giorgio Maone *</em:contributor>
+	<em:contributor>People on IRC channels *:</em:contributor>
+	<em:contributor>irc.freenode.org #lua</em:contributor>
+	<em:contributor>irc.mozilla.org #extdev</em:contributor>
+	<em:contributor>irc.codehaus.org #boo</em:contributor>
+	<em:contributor>(* offered their technical asistance)</em:contributor>
 	<em:homepage>http://code.google.com/p/mshine</em:homepage>
 </Description>
 </RDF>
