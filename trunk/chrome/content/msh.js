@@ -47,7 +47,9 @@ function install(app)
         alert("Created new\n" + file.path); //!
     
         // create and write base structure for apps.xml
-        var data = "I am a string\n";
+        var data = '<?xml version="1.0" encoding="utf-8" standalone="yes"?>\n'
+        + '<!-- apps.xml file referencing msh applications -->\n'
+        + '<mshapps xmlns="mshine.googlecode.com">\n';
         var foStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
         .createInstance(Components.interfaces.nsIFileOutputStream);
         foStream.init(file, 0x02 | 0x08 | 0x20, 0666, 0); // write, create, truncate
