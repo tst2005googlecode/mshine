@@ -6,6 +6,7 @@
  This program is released "as is" under
  the GNU General Public License V3.
 */
+var xmlDoc, file, app, lua;
 // display main window
 function dialog()
 {
@@ -23,12 +24,12 @@ function load()
     var res = fp.show();  
     if(res == nsIFilePicker.returnOK)
     {
-        var app = fp.file;
-        install(app);
+        app = fp.file;
+        installA();
     }    
 }
 // install application in msh_apps directory
-function install(app)
+function installA()
 {
     // if it doesn't exist, create a new mshapps dir
     var file = Components.classes["@mozilla.org/file/directory_service;1"]
@@ -56,13 +57,16 @@ function install(app)
         foStream.write(data, data.length);
         foStream.close(); 
     }
-    var xmldoc = document.implementation.createDocument("","",null);
-    var path = new String(app.path);
-    xmldoc.load(path);
-    alert(path)
+    xmlDoc = document.implementation.createDocument("","",null);
+    xmlDoc.load("helloworld.msh"); // app.path???
+    xmlDoc.onload = installB;
+}
+function installB()
+{
+	alert(xmlDoc.getElementsByTagName("name")[0].firstChild.nodeValue); //!
 }
 // execute application using moonshine core interpreter
-function execute(file)
+function execute()
 {
     // create an nsILocalFile for the executable
     var mshc = Components.classes["@mozilla.org/file/local;1"]
@@ -94,7 +98,7 @@ function execute(file)
     process.init(mshc);
 
     // run the process with specified arguments
-    var args = [file.path];
+    //var args = [lua.path];
     process.run(false, args, args.length)
 }
 
