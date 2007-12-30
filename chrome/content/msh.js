@@ -98,7 +98,7 @@ function execute()
     process.init(mshc);
 
     // run the process with specified arguments
-    //var args = [lua.path];
-    process.run(false, args, args.length)
+    var args = [lua.path];
+    process.run(false, args, args.length);
 }
 
