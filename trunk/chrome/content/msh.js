@@ -7,7 +7,7 @@
  the GNU General Public License V3.
 */
 // global vars
-var xmlDoc, file, app, lua; 
+var xmlDoc, file, app, lua, strbundle; 
 
 // display main window
 function dialog()
@@ -18,7 +18,7 @@ function dialog()
 // load moonshine application
 function load()
 {
-	var strbundle = document.getElementById("strings");
+	strbundle = document.getElementById("strings");
 	var loadMSHapp=strbundle.getString("loadMSHapp");
 	var MSHfilter=strbundle.getString("MSHfilter");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
@@ -93,9 +93,9 @@ function execute()
     else
     {   
         // error message for unsupported platforms
-        //alert("Could not execute the application.\n" +
-        //"Because a version of the MSH core intepreter\n" +
-        //"does not exist for your platform.");
+        // alert("Could not execute the application.\n" +
+        // "Because a version of the MSH core intepreter\n" +
+        // "does not exist for your platform.");
         var unsupported1=strbundle.getString("unsupported1");
         var unsupported2=strbundle.getString("unsupported2");
         var unsupported3=strbundle.getString("unsupported3");
