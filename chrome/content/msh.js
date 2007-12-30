@@ -57,7 +57,7 @@ function install(app)
         foStream.close(); 
     }
     // copy metadata for application to apps.xml
-    alert(app.pathName); //!
+    alert(app.path); //!
 }
 // execute application using moonshine core interpreter
 function execute(file)
