@@ -7,7 +7,7 @@
  the GNU General Public License V3.
 */
 // global vars
-var xmlDoc, file, app, lua, strbundle; 
+var xmlhttp, file, app, lua, strbundle; 
 
 // display main window
 function dialog()
@@ -61,14 +61,19 @@ function installA()
         foStream.write(data, data.length);
         foStream.close(); 
     }
-    xmlDoc = document.implementation.createDocument("","",null);
-    xmlDoc.load("helloworld.msh"); // app.path???
-    xmlDoc.onload = installB;
+    xmlhttp = new XMLHttpRequest();
+    alert(xmlhttp); //!
+    xmlhttp.onreadystatechange = installB;
+    xmlhttp.open("GET", "helloworld.msh", true);
+    xmlhttp.send(null);
+    //xmlDoc = document.implementation.createDocument("","",null);
+    //xmlDoc.load("helloworld.msh"); // app.path???
+    //xmlDoc.onload = installB;
 }
-// continue installation
 function installB()
 {
-	alert(xmlDoc.getElementsByTagName("uid")[0].firstChild.nodeValue); //!
+    alert(xmlhttp.readyState);
+    alert(xmlhttp.responseText);
 }
 // execute application using moonshine core interpreter
 function execute()
@@ -83,19 +88,17 @@ function execute()
         // for unix/linux platforms
         mshc.initWithPath("/usr/bin/gedit"); 
     }
-    /*
     else if(navigator.appVersion.indexOf("Win") != -1)
     {
 	    // for windows platforms
 	    mshc.initWithPath("c:\\windows\\notepad.exe");
     }
-    */
     else
     {   
         // error message for unsupported platforms
-        // alert("Could not execute the application.\n" +
-        // "Because a version of the MSH core intepreter\n" +
-        // "does not exist for your platform.");
+        // "Could not execute the application.
+        // "Because a version of the MSH core intepreter
+        // "does not exist for your platform."
         var unsupported1=strbundle.getString("unsupported1");
         var unsupported2=strbundle.getString("unsupported2");
         var unsupported3=strbundle.getString("unsupported3");
