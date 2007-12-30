@@ -23,12 +23,12 @@ function load()
     var res = fp.show();  
     if(res == nsIFilePicker.returnOK)
     {
-        var file = fp.file;
-        install(file);
+        var app = fp.file;
+        install(app);
     }    
 }
 // install application in msh_apps directory
-function install(file)
+function install(app)
 {
     // if it doesn't exist, create a new mshapps dir
     var file = Components.classes["@mozilla.org/file/directory_service;1"]
@@ -46,8 +46,13 @@ function install(file)
         file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 0664);
         alert("Created new\n" + file.path); //!
     
-        // open and write base structure for newly created apps.xml
-        
+        // create and write base structure for apps.xml
+        var data = "I am a string\n";
+        var foStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
+        .createInstance(Components.interfaces.nsIFileOutputStream);
+        foStream.init(file, 0x02 | 0x08 | 0x20, 0666, 0); // write, create, truncate
+        foStream.write(data, data.length);
+        foStream.close(); 
     }
     // copy metadata for application to apps.xml
 }
