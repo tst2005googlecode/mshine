@@ -44,7 +44,7 @@ function install(app)
     if(!file.exists())
     {
         file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 0664);
-        alert("Created new\n" + file.path); //!
+        alert("Created new: " + file.leafName); //!
     
         // create and write base structure for apps.xml
         var data = '<?xml version="1.0" encoding="utf-8" standalone="yes"?>\n'
@@ -57,6 +57,7 @@ function install(app)
         foStream.close(); 
     }
     // copy metadata for application to apps.xml
+    alert(app.leafName); //!
 }
 // execute application using moonshine core interpreter
 function execute(file)
