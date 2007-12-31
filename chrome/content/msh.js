@@ -118,7 +118,7 @@ function execute(luafile)
     else if(navigator.appVersion.indexOf("Win") != -1)
     {
         // for windows platforms
-        mshc.initWithPath("c:\\windows\\notepad.exe");
+        mshc.initWithPath("msh.exe");
     }
     else
     {   
