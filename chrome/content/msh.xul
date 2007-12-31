@@ -53,9 +53,9 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                     <hbox>
                         <button id="ldapp"  onclick='load();' 
                          label="&load.label;"/>
-                        <button id="strapp" onclick='execute("-e")'
+                        <button id="strapp" disabled="true" onclick='execute();'
                          label="&start.label;"/>
-                        <button id="stpapp" disabled="true" onclick='execute("-s");'
+                        <button id="stpapp" disabled="true" onclick='execute();'
                          label="&stop.label;"/>
                     </hbox>
                     </groupbox>
