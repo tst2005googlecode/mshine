@@ -7,7 +7,7 @@
  the GNU General Public License V3.
 */
 // global vars
-var xmlhttp, file, app, lua, strbundle; 
+var xmlhttp, app, lua, strbundle; 
 
 // display main window
 function dialog()
@@ -63,9 +63,10 @@ function installA()
     }
     // read moonshine application
     // using an XMLHttpRequest();
+    alert(app.path); //!
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = installB;
-    xmlhttp.open("GET", mshapp, true);
+    xmlhttp.open("GET", , true);
     xmlhttp.send(null);
 }
 function installB()
