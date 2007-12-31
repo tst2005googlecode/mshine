@@ -75,7 +75,6 @@ function installB()
     {
         alert(xmlhttp.responseText); //!
         var mshdata = xmlhttp.responseXML;
-        alert(mshdata); //!
     }
 }
 // execute application using moonshine core interpreter
