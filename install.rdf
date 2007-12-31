@@ -23,7 +23,6 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<em:contributor>Lua.org team (Lua)</em:contributor>
 	<em:contributor>Massimiliano Mirra (MozLab) *</em:contributor>
 	<em:contributor>Diego Nehab (LuaSocket)</em:contributor>
-    <em:contributor>Sam Stephenson (Prototype)</em:contributor>
 	<em:contributor>Giorgio Maone *</em:contributor>
 	<em:contributor>People on IRC channels: *</em:contributor>
 	<em:contributor>irc.freenode.org #lua</em:contributor>
