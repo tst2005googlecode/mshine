@@ -62,7 +62,6 @@ function installA()
         foStream.close(); 
     }
     xmlhttp = new XMLHttpRequest();
-    alert(xmlhttp); //!
     xmlhttp.onreadystatechange = installB;
     xmlhttp.open("GET", "helloworld.msh", true);
     xmlhttp.send(null);
