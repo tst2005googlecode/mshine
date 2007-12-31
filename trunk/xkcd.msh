@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<msh xmlns="mshine.googlecode.com">
+    <metadata>
+        <type autorun="0">application</type>
+        <uid>58d9b52e-6812-494a-8672-1247514f84be</uid>
+        <name>XKCD web comic</name>
+        <desc>Retrieve latest XKCD web comic</desc>
+        <author>Sam Saint-Pettersen</author>
+        <email>samji@bigfoot.com</email>
+        <webs>http://mshine.googlecode.com</webs>
+        <thumb>none</thumb>
+        <rest>none</rest>
+    </metadata>
+    <luacode>
+        -- make a request for xkcd comic feed
+        feed = net.httpreq("http://xkcd.com/atom.xml")
+        -- match comic panel
+        img = string.match(feed, "http\:\/\/imgs.xkcd.com\/comics\/[%w%_]+.png")
+        -- display comic panel in a new window
+        std.window(img)
+    </luacode>
+</msh>
+
