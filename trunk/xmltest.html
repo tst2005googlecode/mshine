@@ -7,16 +7,14 @@
          {
             xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = display;
-            xmlhttp.open("GET","xkcd.msh", true);
+            xmlhttp.open("GET","helloworld.xml", true);
             xmlhttp.send(null);
          }
          function display()
          {
             if(xmlhttp.readyState == "4")
             {
-                document.open();
-                document.write(xmlhttp.responseText);
-                document.close();
+                alert(xmlhttp.responseXML.getElementsByTagName("webs")[0].firstChild.nodeValue);
             }
          }
         </script>
