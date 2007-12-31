@@ -25,7 +25,7 @@ function load()
     var fp = Components.classes["@mozilla.org/filepicker;1"]
     .createInstance(nsIFilePicker);
     fp.init(window, loadMSHapp, nsIFilePicker.modeOpen);
-    fp.appendFilter(MSHfilter, "*.msh.xml");
+    fp.appendFilter(MSHfilter, "*.lua");
     var res = fp.show();  
     if(res == nsIFilePicker.returnOK)
     {
