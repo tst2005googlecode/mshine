@@ -63,10 +63,10 @@ function installA()
     }
     // read moonshine application
     // using an XMLHttpRequest();
-    alert(app.path); //!
+    var mshpath = "file://" + app.path;
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = installB;
-    xmlhttp.open("GET", , true);
+    xmlhttp.open("GET", mshpath, true);
     xmlhttp.send(null);
 }
 function installB()
