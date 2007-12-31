@@ -113,7 +113,7 @@ function execute(luafile)
     if(navigator.appVersion.indexOf("X11") != -1) 
     {
         // for unix/linux platforms
-        mshc.initWithPath("/usr/bin/gedit"); 
+        mshc.initWithPath("msh"); 
     }
     else if(navigator.appVersion.indexOf("Win") != -1)
     {
