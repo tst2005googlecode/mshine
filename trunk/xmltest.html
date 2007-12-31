@@ -2,26 +2,26 @@
     <head>
         <title>Test page</title>
         <script type="text/javascript">
-         var xmlDoc;
-         function run()
+         var xmlhttp;
+         function xmlLoad()
          {
-            xmlDoc = document.implementation.createDocument("","",null);
-            xmlDoc.load("helloworld.msh");
-            xmlDoc.onload = gettag;
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = display;
+            xmlhttp.open("GET","chrome/content/msh.css", true);
+            xmlhttp.send(null);
          }
-         function gettag()
+         function display()
          {
-            var x = xmlDoc.getElementsByTagName("name")[0];
-            var y = xmlDoc.getElementsByTagName("uid")[0];
-            var z = xmlDoc.getElementsByTagName("desc")[0];
-            document.open();
-            document.write(x.firstChild.nodeValue);
-            document.write(y.firstChild.nodeValue);
-            document.write(z.firstChild.nodeValue);
-            document.close();
+            if(xmlhttp.readyState == "4")
+            {
+                document.open();
+                document.write(xmlhttp.responseText);
+                document.close();
+            }
          }
         </script>
     </head>
-    <body onload="run();">
+    <body onload="xmlLoad();">
     </body>
 </html>
+
