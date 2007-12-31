@@ -25,13 +25,21 @@ function msg(message)
 end
 -- display prompt to user;
 -- a lua interface to javascript's prompt()
+-- NOT YET PROPERLY IMPLEMENTED
 function prompt(message, value)
-    local p = 'var p = prompt("' .. message .. '")'
+    local p = 'var p = prompt("' .. message .. '");'
     api.call(p)
 end
 -- open a new window;
 -- a lua interface to javascript's window.open()
+-- ONLY URL IS SO FAR IMPLEMENTED
 function window(url, id, width, height)
-
+    local w = 'window.open("' .. url .. '");'
+    api.call(w)
+end
+-- issue an http request; return the response
+function httpreq(url)
+    local h = require("socket.http")
+    return h.request(url)
 end
 
