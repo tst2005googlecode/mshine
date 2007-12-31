@@ -7,7 +7,7 @@
  the GNU General Public License V3.
 */
 // global vars
-var xmlhttp, app, lua, strbundle; 
+var xmlhttp, app, strbundle; 
 
 // display main window
 function dialog()
@@ -73,8 +73,9 @@ function installB()
 {
     if(xmlhttp.readyState == "4")
     {
-        alert(xmlhttp.responseText);
+        var mshdata = xmlhttp.responseXML;
     }
+    
 }
 // execute application using moonshine core interpreter
 function execute()
