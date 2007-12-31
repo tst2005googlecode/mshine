@@ -14,7 +14,8 @@
          {
             if(xmlhttp.readyState == "4")
             {
-                alert(xmlhttp.responseXML.getElementsByTagName("webs")[0].firstChild.nodeValue);
+	            var mshdata = xmlhttp.responseXML;
+                alert(mshdata.getElementsByTagName("webs")[0].firstChild.nodeValue);
             }
          }
         </script>

@@ -73,8 +73,9 @@ function installB()
 {
     if(xmlhttp.readyState == "4")
     {
-        alert(xmlhttp.responseText); //!
         var mshdata = xmlhttp.responseXML;
+        var mdtype = mshdata.getElementsByTagName("type")[0].firstChild.nodeValue;
+        var md
     }
 }
 // execute application using moonshine core interpreter
