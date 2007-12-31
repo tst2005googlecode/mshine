@@ -7,3 +7,4 @@ if win ~= nil then
 else
 	print("Unix-like")
 end
+

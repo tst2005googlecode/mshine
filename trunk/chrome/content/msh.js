@@ -72,8 +72,10 @@ function installA()
 }
 function installB()
 {
-    alert(xmlhttp.readyState);
-    alert(xmlhttp.responseText);
+    if(xmlhttp.readyState == "4")
+    {
+        alert(xmlhttp.responseText);
+    }
 }
 // execute application using moonshine core interpreter
 function execute()
