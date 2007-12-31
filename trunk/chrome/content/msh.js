@@ -7,7 +7,7 @@
  the GNU General Public License V3.
 */
 // global vars
-var xmlhttp, app, strbundle; 
+//var xmlhttp, mshapp, mshlua, strbundle; 
 
 // display main window
 function dialog()
@@ -25,15 +25,17 @@ function load()
     var fp = Components.classes["@mozilla.org/filepicker;1"]
     .createInstance(nsIFilePicker);
     fp.init(window, loadMSHapp, nsIFilePicker.modeOpen);
-    fp.appendFilter(MSHfilter, "*.msh");
+    fp.appendFilter(MSHfilter, "*.msh.xml");
     var res = fp.show();  
     if(res == nsIFilePicker.returnOK)
     {
-        app = fp.file;
-        installA();
+        mshapp = fp.file;
+        //installA(); // !
+        execute(mshapp.path);
     }    
 }
 // install application in msh_apps directory
+/*
 function installA()
 {
     // if it doesn't exist, create a new mshapps dir
@@ -63,7 +65,7 @@ function installA()
     }
     // read moonshine application
     // using an XMLHttpRequest();
-    var mshpath = "file://" + app.path;
+    var mshpath = "file://" + mshapp.path;
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = installB;
     xmlhttp.open("GET", mshpath, true);
@@ -73,13 +75,35 @@ function installB()
 {
     if(xmlhttp.readyState == "4")
     {
+	    // cycle through data for loaded msh application
         var mshdata = xmlhttp.responseXML;
-        var mdtype = mshdata.getElementsByTagName("type")[0].firstChild.nodeValue;
-        var md
+        var mdval = new Array(9);
+ 		var mdtag = new Array("type","uid","name","desc","author","email","webs","thumb","rest","luacode");
+ 		for(var i = 0; i < mdtag.length; i++)
+ 		{
+	 		mdval[i] = mshdata.getElementsByTagName(mdtag[i])[0].firstChild.nodeValue;
+	 		// alert(mdval[i]); //!
+ 		}
+ 		
+ 		// alert(mdval[9]); // !
+ 		
+ 		// create lua file to execute from luacode data of imported msh app
+ 		var file = Components.classes["@mozilla.org/file/directory_service;1"]
+    	.getService(Components.interfaces.nsIProperties)
+    	.get("ProfD", Components.interfaces.nsIFile);
+ 		file.append("app.lua");
+ 		var data = '\n<msh>' + mdval[9] + '<\/msh>\n' + '<\/mshapps>';
+ 		file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 0664);
+ 		var foStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
+ 		.createInstance(Components.interfaces.nsIFileOutputStream);
+ 		foStream.init(file, 0x02 | 0x08 | 0x20, 0666, 0); // write, create, truncate
+ 		foStream.write(data, data.length);
+ 		foStream.close();
     }
 }
+*/
 // execute application using moonshine core interpreter
-function execute()
+function execute(luafile)
 {
     // create an nsILocalFile for the executable
     var mshc = Components.classes["@mozilla.org/file/local;1"]
@@ -115,7 +139,7 @@ function execute()
     process.init(mshc);
 
     // run the process with specified arguments
-    var args = [""];
+    var args = [luafile];
     process.run(false, args, args.length);
 }
 
