@@ -27,6 +27,7 @@ end
 
 -- load and reference modules
 std = require("modules/core/msh.std")
+net = require("modules/core/msh.net")
 xmlp = require("modules/core/xml.parser")
 api = require("modules/core/msh.api")
 lsocket = require("modules/core/net/socket") -- referenced by socket

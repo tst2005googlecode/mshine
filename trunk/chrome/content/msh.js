@@ -74,8 +74,8 @@ function installB()
     if(xmlhttp.readyState == "4")
     {
         var mshdata = xmlhttp.responseXML;
+        alert(mshdata); //!
     }
-    
 }
 // execute application using moonshine core interpreter
 function execute()
