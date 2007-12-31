@@ -2,7 +2,7 @@
 <msh xmlns="mshine.googlecode.com">
     <metadata>
         <type autorun="0">application</type>
-        <uid>a3719a6d-b52c-4d13-b607-0060f1b0b615</uid>
+        <uid>a3719a6d-b52c-4d13-b607-0060f1b0b615}</uid>
         <name>Hello World!</name>
         <desc>Print "Hello World!"</desc>
         <author>Sam Saint-Pettersen</author>
@@ -12,8 +12,8 @@
         <rest>none</rest>
     </metadata>
     <luacode>
-        -- greet the world with a standard msh notification
-        std.notify("Hello World!")
+        -- greet the world
+        std.msg("Hello World!")
     </luacode>
 </msh>
 
