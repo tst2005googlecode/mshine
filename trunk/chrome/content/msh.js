@@ -61,13 +61,12 @@ function installA()
         foStream.write(data, data.length);
         foStream.close(); 
     }
+    // read moonshine application
+    // using an XMLHttpRequest();
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = installB;
-    xmlhttp.open("GET", "helloworld.msh", true);
+    xmlhttp.open("GET", mshapp, true);
     xmlhttp.send(null);
-    //xmlDoc = document.implementation.createDocument("","",null);
-    //xmlDoc.load("helloworld.msh"); // app.path???
-    //xmlDoc.onload = installB;
 }
 function installB()
 {
