@@ -18,9 +18,9 @@ function dialog()
 // load moonshine application
 function load()
 {
-	strbundle = document.getElementById("strings");
-	var loadMSHapp=strbundle.getString("loadMSHapp");
-	var MSHfilter=strbundle.getString("MSHfilter");
+    strbundle = document.getElementById("strings");
+    var loadMSHapp=strbundle.getString("loadMSHapp");
+    var MSHfilter=strbundle.getString("MSHfilter");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"]
     .createInstance(nsIFilePicker);
@@ -92,8 +92,8 @@ function execute()
     }
     else if(navigator.appVersion.indexOf("Win") != -1)
     {
-	    // for windows platforms
-	    mshc.initWithPath("c:\\windows\\notepad.exe");
+        // for windows platforms
+        mshc.initWithPath("c:\\windows\\notepad.exe");
     }
     else
     {   
