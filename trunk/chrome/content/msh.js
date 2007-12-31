@@ -73,6 +73,7 @@ function installB()
 {
     if(xmlhttp.readyState == "4")
     {
+        alert(xmlhttp.responseText); //!
         var mshdata = xmlhttp.responseXML;
         alert(mshdata); //!
     }
