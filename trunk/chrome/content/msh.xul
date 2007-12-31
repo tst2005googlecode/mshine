@@ -12,7 +12,7 @@
 <!DOCTYPE window SYSTEM "chrome://moonshine/locale/locale.dtd">
 <window id="mshdialog" title="&msh.label;" 
 xmlns:html="http://www.w3.org/1999/xhtml"
-xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"> 
+xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 <script type="application/x-javascript" src="msh.js"/>
 <stringbundle id="strings" src="chrome://moonshine/locale/locale.properties"/>
     <image src="spacer.png"/><!-- !spacer -->
@@ -31,11 +31,11 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                     	<!-- current application -->
                         <caption label="&app.label;"/>
                         <image id="mshimg" src="spacer.png"/>
-                        <label id="mshname">!name</label>
-                        <label id="mshdesc">!desc</label>
-                        <label id="mshauthor">!author</label>
-                        <label id="mshemail" class="text-link">!email</label>
-                        <label id="mshwebs" class="text-link">!webs</label>
+                        <label id="mshname">None installed.</label>
+                        <label id="mshdesc"></label>
+                        <label id="mshauthor"></label>
+                        <label id="mshemail" class="text-link"></label>
+                        <label id="mshwebs" class="text-link"></label>
                     </groupbox>
                 </hbox> 
                 <hbox>
