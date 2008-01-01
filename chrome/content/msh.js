@@ -113,12 +113,12 @@ function execute(luafile)
     if(navigator.appVersion.indexOf("X11") != -1) 
     {
         // for unix/linux platforms
-        mshc.initWithPath("chrome://moonshine/content/msh"); 
+        mshc.initWithPath("/msh/msh"); 
     }
     else if(navigator.appVersion.indexOf("Win") != -1)
     {
         // for windows platforms
-        mshc.initWithPath("chrome://moonshine/content/msh.exe");
+        mshc.initWithPath("c:\\msh\\msh.exe");
     }
     else
     {   
