@@ -31,7 +31,7 @@ function load()
     {
         mshapp = fp.file;
         //installA(); // !
-        execute(mshapp.path);
+        execute(mshapp.leafName); // in final, use "path"
     }    
 }
 // install application in msh_apps directory
@@ -131,6 +131,9 @@ function execute(luafile)
         var unsupported3=strbundle.getString("unsupported3");
         alert(unsupported1 + "\n" + unsupported2 + "\n" + unsupported3);   
     }
+
+    alert(luafile); //!
+
     // create an nsIProcess 
     var process = Components.classes["@mozilla.org/process/util;1"]
     .createInstance(Components.interfaces.nsIProcess);
