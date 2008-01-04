@@ -35,7 +35,6 @@ function load()
     }    
 }
 // install application in msh_apps directory
-/*
 function installA()
 {
     // if it doesn't exist, create a new mshapps dir
@@ -82,17 +81,17 @@ function installB()
  		for(var i = 0; i < mdtag.length; i++)
  		{
 	 		mdval[i] = mshdata.getElementsByTagName(mdtag[i])[0].firstChild.nodeValue;
-	 		// alert(mdval[i]); //!
+	 		alert(mdval[i]); //!
  		}
  		
- 		// alert(mdval[9]); // !
+ 	     alert(mdval[9]); // !
  		
  		// create lua file to execute from luacode data of imported msh app
  		var file = Components.classes["@mozilla.org/file/directory_service;1"]
     	.getService(Components.interfaces.nsIProperties)
     	.get("ProfD", Components.interfaces.nsIFile);
  		file.append("app.lua");
- 		var data = '\n<msh>' + mdval[9] + '<\/msh>\n' + '<\/mshapps>';
+ 		var data = 'add data here'; // TODO
  		file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 0664);
  		var foStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
  		.createInstance(Components.interfaces.nsIFileOutputStream);
@@ -101,7 +100,6 @@ function installB()
  		foStream.close();
     }
 }
-*/
 // execute application using moonshine core interpreter
 function execute(luafile)
 {
@@ -113,7 +111,7 @@ function execute(luafile)
     if(navigator.appVersion.indexOf("X11") != -1) 
     {
         // for unix/linux platforms
-        mshc.initWithPath("/msh/msh");
+        mshc.initWithPath("msh.sh");
     }
     else if(navigator.appVersion.indexOf("Win") != -1)
     {
@@ -140,7 +138,7 @@ function execute(luafile)
     process.init(mshc);
 
     // run the process with specified arguments
-    var args = [luafile];
+    var args = [""];
     process.run(false, args, args.length);
 }
 

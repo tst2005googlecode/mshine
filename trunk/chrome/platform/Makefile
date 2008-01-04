@@ -8,4 +8,8 @@ msh:
 	rm -f msh.o
 mingw:
 	gcc msh.c -o msh.exe lua5.1.dll
+cpp:
+	g++ -c -o msh.o msh.cpp
+	g++ -o mshcpp msh.o -Wl,--export-dynamic -L. -llua -lm -ldl
+	rm -f msh.o
 

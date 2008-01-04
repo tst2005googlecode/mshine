@@ -19,7 +19,7 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
     <tabbox id="tabs" selectedIndex="0">
         <tabs>
             <tab label="&apps.label;"/>
-            <tab label="&console.label;"/>
+            <!--<tab label="&console.label;"/>-->
             <tab label="&prefs.label;"/>
             <tab label="&about.label;"/>
         </tabs>
@@ -62,13 +62,13 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
                 </hbox>
             </tabpanel>
             <!-- console panel -->
-            <tabpanel>
+            <!--<tabpanel>
             	<hbox>
             		<groupbox id="conpanel">
             			<caption label="&console.label;"/>      			
             		</groupbox>
             	</hbox>
-            </tabpanel>
+            </tabpanel>-->
             <!-- preferences panel -->
             <tabpanel>
             	<hbox>
