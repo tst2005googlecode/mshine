@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     {
         // if there is a problem loading modules; display error
         const char *message = lua_tostring(L, -1);
-        cout << "Error loading one or more modules:\n" <<  message;
+        cout << "\nError loading one or more modules:\n" <<  message;
         cout << '\n';
     }
     else
