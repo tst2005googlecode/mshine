@@ -5,7 +5,8 @@
 
  This program is released "as is" under
  the GNU General Public License V3.
-*/ 
+*/
+ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
