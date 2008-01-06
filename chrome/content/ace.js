@@ -7,7 +7,7 @@
  the GNU General Public License V3.
 */
 // global vars
-var xmlhttp, file, app, lua, strbundle; 
+//var xmlhttp, mshapp, mshlua, strbundle; 
 
 // display main window
 function dialog()
@@ -18,19 +18,20 @@ function dialog()
 // load moonshine application
 function load()
 {
-	strbundle = document.getElementById("strings");
-	var loadMSHapp=strbundle.getString("loadMSHapp");
-	var MSHfilter=strbundle.getString("MSHfilter");
+    strbundle = document.getElementById("strings");
+    var loadMSHapp=strbundle.getString("loadMSHapp");
+    var MSHfilter=strbundle.getString("MSHfilter");
     var nsIFilePicker = Components.interfaces.nsIFilePicker;
     var fp = Components.classes["@mozilla.org/filepicker;1"]
     .createInstance(nsIFilePicker);
     fp.init(window, loadMSHapp, nsIFilePicker.modeOpen);
-    fp.appendFilter(MSHfilter, "*.msh");
+    fp.appendFilter(MSHfilter, "*.lua");
     var res = fp.show();  
     if(res == nsIFilePicker.returnOK)
     {
-        app = fp.file;
-        installA();
+        mshapp = fp.file;
+        //installA(); // !
+        execute(mshapp.path); 
     }    
 }
 // install application in msh_apps directory
@@ -61,22 +62,46 @@ function installA()
         foStream.write(data, data.length);
         foStream.close(); 
     }
+    // read moonshine application
+    // using an XMLHttpRequest();
+    var mshpath = "file://" + mshapp.path;
     xmlhttp = new XMLHttpRequest();
-    alert(xmlhttp); //!
     xmlhttp.onreadystatechange = installB;
-    xmlhttp.open("GET", "helloworld.msh", true);
+    xmlhttp.open("GET", mshpath, true);
     xmlhttp.send(null);
-    //xmlDoc = document.implementation.createDocument("","",null);
-    //xmlDoc.load("helloworld.msh"); // app.path???
-    //xmlDoc.onload = installB;
 }
 function installB()
 {
-    alert(xmlhttp.readyState);
-    alert(xmlhttp.responseText);
+    if(xmlhttp.readyState == "4")
+    {
+	    // cycle through data for loaded msh application
+        var mshdata = xmlhttp.responseXML;
+        var mdval = new Array(9);
+ 		var mdtag = new Array("type","uid","name","desc","author","email","webs","thumb","rest","luacode");
+ 		for(var i = 0; i < mdtag.length; i++)
+ 		{
+	 		mdval[i] = mshdata.getElementsByTagName(mdtag[i])[0].firstChild.nodeValue;
+	 		alert(mdval[i]); //!
+ 		}
+ 		
+ 	     alert(mdval[9]); // !
+ 		
+ 		// create lua file to execute from luacode data of imported msh app
+ 		var file = Components.classes["@mozilla.org/file/directory_service;1"]
+    	.getService(Components.interfaces.nsIProperties)
+    	.get("ProfD", Components.interfaces.nsIFile);
+ 		file.append("app.lua");
+ 		var data = 'add data here'; // TODO
+ 		file.create(Components.interfaces.nsIFile.NORMAL_FILE_TYPE, 0664);
+ 		var foStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
+ 		.createInstance(Components.interfaces.nsIFileOutputStream);
+ 		foStream.init(file, 0x02 | 0x08 | 0x20, 0666, 0); // write, create, truncate
+ 		foStream.write(data, data.length);
+ 		foStream.close();
+    }
 }
 // execute application using moonshine core interpreter
-function execute()
+function execute(luafile)
 {
     // create an nsILocalFile for the executable
     var mshc = Components.classes["@mozilla.org/file/local;1"]
@@ -86,12 +111,12 @@ function execute()
     if(navigator.appVersion.indexOf("X11") != -1) 
     {
         // for unix/linux platforms
-        mshc.initWithPath("/usr/bin/gedit"); 
+        mshc.initWithPath("msh.sh");
     }
     else if(navigator.appVersion.indexOf("Win") != -1)
     {
-	    // for windows platforms
-	    mshc.initWithPath("c:\\windows\\notepad.exe");
+        // for windows platforms
+        mshc.initWithPath("c:\\msh\\msh.exe");
     }
     else
     {   
@@ -104,6 +129,7 @@ function execute()
         var unsupported3=strbundle.getString("unsupported3");
         alert(unsupported1 + "\n" + unsupported2 + "\n" + unsupported3);   
     }
+
     // create an nsIProcess 
     var process = Components.classes["@mozilla.org/process/util;1"]
     .createInstance(Components.interfaces.nsIProcess);
