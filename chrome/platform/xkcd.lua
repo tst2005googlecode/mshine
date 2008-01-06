@@ -1,3 +1,8 @@
+----------------------------------
+-- display latest xkcd web
+-- comic from the xkcd atom feed
+-- in a new browser window
+----------------------------------
 -- make a request for xkcd comic feed
 feed = net.httpreq("http://xkcd.com/atom.xml")
 -- match comic panel
