@@ -2,12 +2,26 @@
 
 # No arguments to Make builds for Unix-like systems
 # Use "mingw" to build for Windows systems
+
+# compilers
+CC1 = gcc 
+CC2 = g++ 
+
+# libraries
+LIB1 = lua
+LIB2 = lua5.1.dll
+
+# executables
+EXE1 = msh
+EXE2 = mshcpp
+
 msh:
-	gcc -c -o msh.o msh.c
-	gcc -o msh msh.o -Wl,--export-dynamic -L. -llua -lm -ldl
-	g++ -c -o msh.o msh.cpp
-	g++ -o mshcpp msh.o -Wl,--export-dynamic -L. -llua -lm -ldl
+	${CC1} -c -o msh.o msh.c
+	${CC1} -o ${EXE1} msh.o -Wl,--export-dynamic -L. -l${LIB1} -lm -ldl
+	${CC2} -c -o msh.o msh.cpp
+	${CC2} -o ${EXE2} msh.o -Wl,--export-dynamic -L. -l${LIB1} -lm -ldl
 	rm -f msh.o
 mingw:
-	gcc msh.c -o msh.exe lua5.1.dll
-	g++ msh.cpp -o mshcpp.exe lua5.1.dll
+	${CC1} msh.c -o ${EXE1}.exe ${LIB2}
+	${CC2} msh.cpp -o ${EXE2}.exe ${LIB2}
+
