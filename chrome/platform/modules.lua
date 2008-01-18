@@ -18,8 +18,8 @@
 -- BE CHANGED OR REMOVED.
 
 -- override default lib path
-win = os.getenv("WinDir")
-if win ~= nil then
+os = os.getenv("WinDir")
+if os ~= nil then
 	package.cpath = "modules\\lib\\?.dll"
 else
 	package.cpath = "modules/lib/?.so"
