@@ -7,13 +7,14 @@ Copyright (c) 2007 Sam Saint-Pettersen
 
 Released under the GNU General Public License v3
 */
-import System
-import System.IO
-import System.Net
-import System.Net.Sockets
-import System.Text
 
-def Main():
+import System
+import System.Net
+import System.Net.Sockets
+def Main(string args):
+	
+	print args
+	
     port = 4242 // listen on port 4242                       
     host = IPAddress.Parse("127.0.0.1") // host == "localhost"
     server = TcpListener(host, port)  // create server instance
