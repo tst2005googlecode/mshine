@@ -1,11 +1,11 @@
--------------------------------------------
+----------------------------------------------
 -- Moonshine environment for Lua-based
 -- services in Mozilla Firefox web browser
--- Copyright (c) 2007 Sam Saint-Pettersen.
+-- Copyright (c) 2007 Samuel Saint-Pettersen.
 
 -- This program is released "as is" under
 -- the GNU General Public License V3.
--------------------------------------------
+----------------------------------------------
 -- IMPORTANT: ALL MODULES INCLUDED
 -- UNDER MODULES/CORE ARE NEEDED BY
 -- THE MOONSHINE CORE INTEPRETER
