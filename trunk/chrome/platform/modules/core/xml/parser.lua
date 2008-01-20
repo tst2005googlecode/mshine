@@ -1,7 +1,7 @@
 ----------------------------------------------------
 -- XML parser for use with XML in Lua programs
 -- Version 0.1
--- Copyright (c) 2007 Sam Saint-Pettersen
+-- Copyright (c) 2007 Samuel Saint-Pettersen
 -- Released under the GNU General Public License V3
 ----------------------------------------------------
 
@@ -17,7 +17,7 @@ attval = "[%\!%\?%.%,%;%:%-%&%@%w%x%s]+"
 -- return version information
 function version()
 	return [[XML Parser 0.1
-Copyright (c) 2007 Sam St-Pettersen]]
+Copyright (c) 2007 Samuel Saint-Pettersen]]
 end
 -- load file
 function load(file)
