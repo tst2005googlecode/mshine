@@ -1,10 +1,10 @@
 -------------------------------
 -- print detected os
 -------------------------------
-win = os.getenv("WinDir")
-if win ~= nil then
-	print("Windows")
+os = os.getenv("WinDir")
+if os ~= nil then
+    print("Windows")
 else
-	print("Unix-like")
+    print("Unix-like")
 end
 

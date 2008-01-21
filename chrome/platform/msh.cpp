@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
     // if argument is provided; run code
     if(argc > 1) {   
         luaL_dofile(L, argv[1]);
-    
+    }
     // otherwise; display prompt
     else {
         cout << "\nUsage: msh <mshluacode>\n";
