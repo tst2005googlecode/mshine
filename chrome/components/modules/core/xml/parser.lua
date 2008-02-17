@@ -17,19 +17,6 @@ function version()
     return [[XML parser 0.1.1
 Copyright (c) 2007-2008 Samuel Saint-Pettersen]]
 end
--- load an XML file
-function load(file)
-    if file ~= nil then
-        local xmlf = io.open(file, "r")
-        if xmlf ~= nil then
-            return xmlf:read("*all")
-        else
-            return "File: " .. file .. " not found"
-        end
-    else
-        return "Usage: r = xmlp.load(file as str)" 
-    end
-end
 -- parse tag
 function vtag(data, tag, occur)
     if data and tag and occur ~= nil then
