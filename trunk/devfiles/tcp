@@ -1,4 +1,0 @@
-#!/bin/sh
-# Run tcp listener app
-mono tcplisten.exe
-
