@@ -1,4 +1,0 @@
-#!/bin/sh
-# Build tcp listener app
-booc tcplisten.boo
-
