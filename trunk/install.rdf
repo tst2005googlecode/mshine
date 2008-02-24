@@ -2,7 +2,7 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
 xmlns:em="http:/www.mozilla.org/2004/em-rdf#">
     <Description about="urn:mozilla:install-manifest">
-        <em:id>{555e4cc4-a10d-4d8c-acad-e41ad239eec0}</em:id>
+        <em:id>{de2f4851-8799-40c2-a999-4b4f7a5e3d95}</em:id>
         <em:version>0.1.1</em:version>
         <em:type>2</em:type>
         <em:targetApplication>
@@ -18,6 +18,6 @@ xmlns:em="http:/www.mozilla.org/2004/em-rdf#">
         <em:name>Moonshine</em:name>
         <em:description>Embedded Lua for Firefox</em:description>
         <em:creator>Samuel Saint-Pettersen</em:creator>
-        <!--<em:homepage></em:homepage>-->
+        <em:homepageURL>http://wip.tld</em:homepageURL>
     </Description>
 </RDF>
