@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 
+<!--
+Moonshine
+Copyright (c) 2007-2008 Samuel Saint-Pettersen
+Released under the MIT License
+-->
+
 <overlay id="moonshineOverlay"
 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 

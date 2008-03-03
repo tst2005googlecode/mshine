@@ -24,4 +24,5 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
         <em:creator>Samuel Saint-Pettersen</em:creator>
         <em:homepageURL>http://mshine.googlecode.com</em:homepageURL>
     </Description>
+
 </RDF>
