@@ -14,7 +14,7 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
     <!-- add moonshine to the tools menu -->
     <menupopup id="menu_ToolsPopup">
         <menuitem insertafter="devToolsSeparator" label="Moonshine"
-        accesskey="M" oncommand="displayDialog();"/>
+        accesskey="M" oncommand="loadApplication();"/><!-- displayDialog(); -->
     </menupopup>
 
 </overlay>
