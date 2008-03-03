@@ -8,5 +8,5 @@ Released under the MIT License
 function displayDialog() {
 }
 // load application 
-function loadApplication() {
+function loadApp() {
 }
