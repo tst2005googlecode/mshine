@@ -6,5 +6,6 @@ Released under the MIT License
 
 // display main dialog
 function displayDialog() {
-    window.openDialog("chrome://moonshine/content/moonshine.xul", "", "chrome,centerscreen,height=300,width=550");
+    window.openDialog(
+"chrome://moonshine/content/moonshine.xul", "", "chrome,centerscreen,height=300,width=550");
 }
