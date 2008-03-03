@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<overlay id="moonshineOverlay"
+xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script type="application/x-javascript" src="moonshine.js"/>
+
+    <!-- add moonshine to the tools menu -->
+    <menupopup id="menu_ToolsPopup">
+        <menuitem insertafter="devToolsSeparator" label="Moonshine"
+        accesskey="M" oncommand="displayDialog();"/>
+    </menupopup>
+
+</overlay>
