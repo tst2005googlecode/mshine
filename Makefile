@@ -9,6 +9,5 @@ BROWSER=/alt/firefox/firefox
 
 make:
 	${ARCHIVER} ${ARGUMENTS} ${XPIPACKAGE} ${CONTENTS}
-	reset
 install:
 	${BROWSER} ${XPIPACKAGE}
