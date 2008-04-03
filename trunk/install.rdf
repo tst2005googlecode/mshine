@@ -4,6 +4,7 @@
 	Moonshine
 	Copyright (c) 2007-2008 Samuel Saint-Pettersen
 	Released under the MIT license
+	Installation information
 -->
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -14,7 +15,7 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
         <em:version>0.1.1</em:version>
         <em:type>2</em:type>
 
-        <!-- target application this extension can install 
+        <!-- Target application this extension can install 
         into, with minumum and maximum supported versions -->
         <em:targetApplication>
             <Description>
@@ -24,7 +25,7 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
             </Description>
         </em:targetApplication>
 
-        <!-- front end metadata -->
+        <!-- Front-end metadata -->
         <em:name>Moonshine</em:name>
         <em:description>Embedded Lua environment for Firefox</em:description>
         <em:creator>Samuel Saint-Pettersen</em:creator>
