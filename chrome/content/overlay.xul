@@ -4,6 +4,7 @@
 	Moonshine
 	Copyright (c) 2007-2008 Samuel Saint-Pettersen
 	Released under the MIT license
+	Inteface overlay
 -->
 
 <overlay id="moonshineOverlay"
@@ -11,5 +12,10 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
     <script type="application/x-javascript" src="moonshine.js"/>
 
+	<!-- Add toggling disable/re-enable option to Tools menu -->
+	<menupopup id="menu_ToolsPopup">
+		<menuitem id="moonshine" label="Moonshine" accesskey="M"
+		insertbefore="context-stop" oncommand="disable();"/>
+	</menupopup>
 
 </overlay>
