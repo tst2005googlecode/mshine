@@ -1,0 +1,11 @@
+<!--
+	Moonshine
+	Copyright (c) 2007-2008 Samuel Saint-Pettersen
+	Released under the MIT License
+	British English locale (en-GB)
+-->
+
+<!ENTITY moonshine.label "Moonshine">
+<!ENTITY moonshine.akey "M">
+<!ENTITY enable.label "Enable">
+<!ENTITY enable.akey "E">
