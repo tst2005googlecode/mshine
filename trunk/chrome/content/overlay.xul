@@ -3,19 +3,29 @@
 <!--
 	Moonshine
 	Copyright (c) 2007-2008 Samuel Saint-Pettersen
-	Released under the MIT license
-	Inteface overlay
+	Released under the MIT License
+	Interface overlay
 -->
 
-<overlay id="moonshineOverlay"
-xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-
+<!DOCTYPE overlay SYSTEM "chrome://moonshine/locale/locale.dtd">
+<overlay id="moonshineOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+	<!-- Include locale strings -->
+	<stringbundleset id="localebundle">
+		<stringbundle id="locales" src="chrome://moonshine/locale/locale.properties"/>
+	</stringbundleset>
+	
+	<!-- Include JavaScript functions -->
     <script type="application/x-javascript" src="moonshine.js"/>
 
-	<!-- Add toggling disable/re-enable option to Tools menu -->
-	<menupopup id="menu_ToolsPopup">
-		<menuitem id="moonshine" label="Moonshine" accesskey="M"
-		insertbefore="context-stop" oncommand="disable();"/>
-	</menupopup>
 
+	<!-- Add Moonshine options to Tools menu -->
+	<menupopup id="menu_ToolsPopup">
+		<menu id="moonshine_menu" label="&moonshine.label;" accesskey="&moonshine.akey;" position="10">
+			<menupopup>
+				<menuitem id="moonshine_enable" label="&enable.label;" accesskey="&enable.akey;"  
+				type="checkbox" checked="true" oncommand="ToggleEnable();"/>
+			</menupopup>
+		</menu>
+	</menupopup>
 </overlay>
