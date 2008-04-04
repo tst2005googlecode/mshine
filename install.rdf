@@ -3,7 +3,7 @@
 <!--
 	Moonshine
 	Copyright (c) 2007-2008 Samuel Saint-Pettersen
-	Released under the MIT license
+	Released under the MIT License
 	Installation information
 -->
 
@@ -20,8 +20,8 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
         <em:targetApplication>
             <Description>
                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-                <em:minVersion>3.0b4</em:minVersion>
-                <em:maxVersion>3.0b4</em:maxVersion>
+                <em:minVersion>3.0b1</em:minVersion>
+                <em:maxVersion>3.0b5</em:maxVersion>
             </Description>
         </em:targetApplication>
 
