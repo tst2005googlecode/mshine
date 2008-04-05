@@ -11,7 +11,7 @@
 <!DOCTYPE overlay SYSTEM "chrome://moonshine/locale/locale.dtd">
 <overlay id="moonshineOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-	<!-- Include JavaScript functions -->
+	<!-- Include JavaScript  -->
     <script type="application/x-javascript" src="moonshine.js"/>
 	
 	<!-- Add Moonshine options to Tools menu -->
@@ -23,5 +23,10 @@
 			</menupopup>
 		</menu>
 	</menupopup>
+	
+	<statusbar id="status-bar">
+		<!-- Include locales -->
+		<stringbundle id="locales" src="chrome://moonshine/locale/locale.properties"/>
+	</statusbar>
+		
 </overlay>
-<!-- COMMIT -->
