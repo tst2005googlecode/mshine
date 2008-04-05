@@ -8,25 +8,28 @@
 // Initially enable Moonshine
 var enabled = true;
 
+// Initiate locale variable
+var locale = null;
+
 // Disable or re-enable Moonshine
 function toggleEnable() {
 	var ans, msgPrompt, msgConfirm = null; 
+	locales = document.getElementById("locales");
 	if(enabled) {
-		msgPrompt = "Really disable Moonshine?"; //promptDisable
+		msgPrompt = locales.getString("promptDisable");
 		ans = confirm(msgPrompt);
 		if(ans) {
 			enabled = false;
-			msgConfirm = "Moonshine was disabled."; //confirmDisabled
+			msgConfirm = locales.getString("confirmDisabled");
 		}
 	}
 	else {
-		msgPrompt = "Enable Moonshine?"; //promptEnable
+		msgPrompt = locales.getString("promptEnable");
 		ans = confirm(msgPrompt);
 		if(ans) {
 			enabled = true;
-			msgConfirm = "Moonshine was enabled."; //confirmEnabled
+			msgConfirm = locales.getString("confirmEnabled");
 		}
 	}
 	alert(msgConfirm);
 }
-//COMMIT DARN IT
