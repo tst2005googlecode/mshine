@@ -5,29 +5,26 @@
 	Extension logic
 */
 
-// Load locale strings
-var locales = document.getElementById("locales");
-
 // Initially enable Moonshine
 var enabled = true;
 
 // Disable or re-enable Moonshine
-function ToggleEnable() {
+function toggleEnable() {
 	var ans, msgPrompt, msgConfirm = null; 
 	if(enabled) {
-		msgPrompt = locales.getString('promptDisable');
+		msgPrompt = "Really disable Moonshine?"; //promptDisable
 		ans = confirm(msgPrompt);
 		if(ans) {
 			enabled = false;
-			msgConfirm = locales.getString('confirmDisabled');
+			msgConfirm = "Moonshine was disabled."; //confirmDisabled
 		}
 	}
 	else {
-		msgPrompt = locales.getString('promptEnable');
+		msgPrompt = "Enable Moonshine?"; //promptEnable
 		ans = confirm(msgPrompt);
 		if(ans) {
 			enabled = true;
-			msgConfirm = locales.getString('confirmEnabled');
+			msgConfirm = "Moonshine was enabled."; //confirmEnabled
 		}
 	}
 	alert(msgConfirm);
