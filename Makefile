@@ -8,5 +8,5 @@ CONTENTS=chrome chrome.manifest install.rdf
 
 make:
 	${ARCHIVER} ${ARGUMENTS} ${XPIPACKAGE} ${CONTENTS}
-install:
+i:
 	firefox ${XPIPACKAGE}
