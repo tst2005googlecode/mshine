@@ -8,8 +8,8 @@
 // Initially enable Moonshine
 var enabled = true;
 
-// Initiate locale variable
-var locale = null;
+// Initiate locales variable
+var locales = null;
 
 // Disable or re-enable Moonshine
 function toggleEnable() {
