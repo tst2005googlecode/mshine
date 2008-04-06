@@ -28,7 +28,7 @@
 		<!-- Include locales -->
 		<stringbundle id="locales" src="chrome://moonshine/locale/locale.properties"/>
 		<statusbarpanel id="moonshine_status" insertafter="livemark_button">
-			<image id="moonshine_img_status" src="status_on.gif"/>
+			<label onclick="toggleEnable();" value="MSH"/><!-- !!! -->
 		</statusbarpanel>
 	</statusbar>
 		

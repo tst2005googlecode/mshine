@@ -9,11 +9,6 @@ CHORMEDIR=chrome
 BUILDDIR=build
 
 make:
-	echo Please choose a platform: unix (u) or win (w)
-	
-u:
-	${ARCHIVER} ${ARGUMENTS} ${XPIPACKAGE} ${CONTENTS}
-w:
 	${ARCHIVER} ${ARGUMENTS} ${XPIPACKAGE} ${CONTENTS}
 i:
 	firefox ${XPIPACKAGE}
