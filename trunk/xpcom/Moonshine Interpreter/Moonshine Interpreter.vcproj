@@ -41,6 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="C:\gecko-sdk\include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;LUAINTERPRETER_EXPORTS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -174,6 +175,22 @@
 			<File
 				RelativePath=".\IMoonshineLua.idl"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCMIDLTool"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\MoonshineLua.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\MoonshineLuaModule.cpp"
+				>
 			</File>
 		</Filter>
 		<Filter
@@ -182,7 +199,15 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\IMoonshineLua.h"
+				>
+			</File>
+			<File
 				RelativePath=".\luaincl.h"
+				>
+			</File>
+			<File
+				RelativePath=".\MoonshineLua.h"
 				>
 			</File>
 		</Filter>
@@ -191,6 +216,10 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+			<File
+				RelativePath=".\Makefile"
+				>
+			</File>
 		</Filter>
 	</Files>
 	<Globals>
