@@ -1,11 +1,8 @@
-License for Moonshine
+Moonshine
 Copyright (c) 2007-2008 Samuel Saint-Pettersen
 
-License for Lua 5.0 and later versions
+Lua 5.0 and later versions
 Copyright (c) 1994-2008 Lua.org, PUC-Rio.
-
-License for LuaSocket
-Copyright (c) 2005-2007 Diego Nehab
 
 Permission is hereby granted, free of charge, 
 to any person obtaining a copy of this software
