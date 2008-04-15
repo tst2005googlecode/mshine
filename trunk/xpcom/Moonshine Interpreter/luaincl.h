@@ -1,8 +1,7 @@
 /*
-	Moonshine
-	Copyright (c) 2007-2008 Samuel Saint-Pettersen
-	Released under the MIT License
 	Lua header for C++ code
+	Please use this code as you will for your own C++ project
+	which embeds Lua. It's pretty standard :)
 */
 
 #ifndef _LUA_INC_H_
