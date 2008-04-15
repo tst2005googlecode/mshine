@@ -4,7 +4,7 @@
 
 COMPONENT = MoonshineLua
 GECKOSDK = C:\gecko-sdk
-FIREFOX = C:\Program Files\Mozilla Firefox Beta 5
+FIREFOX = C:\Program Files\Mozilla Firefox 3 Beta 5
 
 # generate header and typelibs for XPCOM component
 generate:
@@ -14,4 +14,4 @@ generate:
 # register component for firefox
 register:
 	regxpcom -x "$(FIREFOX)\components"
-	notepad "$(FIREFOX)\.autoreg
+	notepad "$(FIREFOX)\.autoreg"
