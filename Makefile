@@ -8,5 +8,5 @@ BUILD = build
 
 make:
 	7z a -tzip $(XPI) $(CONTENTS)
-i:
+install:
 	firefox $(XPI)
