@@ -8,8 +8,7 @@
 #ifndef _LUA_INC_H_
 #define _LUA_INC_H_
 
-extern "C"
-{
+extern "C" {
 	#include "lua.h"
 	#include "lauxlib.h"
 	#include "lualib.h"
