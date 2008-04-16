@@ -13,5 +13,6 @@ generate:
 	
 # register component for firefox
 register:
+	copy /Y Debug\$(COMPONENT).dll "$(FIREFOX)\components
 	regxpcom -x "$(FIREFOX)\components"
 	notepad "$(FIREFOX)\.autoreg"
