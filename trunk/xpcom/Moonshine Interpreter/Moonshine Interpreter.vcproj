@@ -62,6 +62,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="nspr4.lib xpcom.lib xpcomglue_s.lib"
+				OutputFile="$(OutDir)\MoonshineLua.dll"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="C:\gecko-sdk\lib"
 				GenerateDebugInformation="true"
