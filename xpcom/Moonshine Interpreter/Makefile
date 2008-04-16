@@ -13,6 +13,6 @@ generate:
 	
 # register component for firefox
 register:
-	copy /Y Debug\$(COMPONENT).dll "$(FIREFOX)\components
-	copy /Y I$(COMPONENT).xpt "$(FIREFOX)\components
+	copy /Y Debug\$(COMPONENT).dll "$(FIREFOX)\components"
+	copy /Y I$(COMPONENT).xpt "$(FIREFOX)\components"
 	regxpcom -x "$(FIREFOX)\components"
