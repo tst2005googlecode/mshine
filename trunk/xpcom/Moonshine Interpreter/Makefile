@@ -5,10 +5,6 @@
 COMPONENT = MoonshineLua
 GECKOSDK = C:\gecko-sdk
 FIREFOX = C:\Program Files\Mozilla Firefox 3 Beta 5
-
-# create .autoreg file in order to register a component
-prepare:
-	notepad "$(FIREFOX)\.autoreg"
 	
 # generate header and typelibs for XPCOM component
 generate:
@@ -18,5 +14,5 @@ generate:
 # register component for firefox
 register:
 	copy /Y Debug\$(COMPONENT).dll "$(FIREFOX)\components
+	copy /Y I$(COMPONENT).xpt "$(FIREFOX)\components
 	regxpcom -x "$(FIREFOX)\components"
-	autohotkey updateautoreg.ahk
