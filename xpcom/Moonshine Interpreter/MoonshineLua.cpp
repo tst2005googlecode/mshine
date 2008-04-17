@@ -17,6 +17,6 @@ MoonshineLua::~MoonshineLua() {
 
 // return moonshine lua / embedded lua interpreter version
 NS_IMETHODIMP MoonshineLua::Version(double *_retval) {
-	*_retval = 1.0;
+	*_retval = 0.1;
     return NS_OK;
 }

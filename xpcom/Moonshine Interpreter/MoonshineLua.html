@@ -1,4 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -6,15 +7,13 @@
 		<script type="application/javascript">
 			
 			function MoonshineLua() {
-				
 				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
 				const cid = "@mshine.googlecode.com/MoonshineLua;1";
 				var obj = Components.classes[cid].createInstance();
 				obj = obj.QueryInterface(Components.interfaces.IMoonshineLua);
 				
 				var ver = obj.Version();
-				alert("Moonshine Lua Interpreter v" + ver); // displays 1, rather than 1.0 - maybe try float?
-				
+				alert("Moonshine Lua Interpreter v" + ver);
 			}
 			
 		</script>
