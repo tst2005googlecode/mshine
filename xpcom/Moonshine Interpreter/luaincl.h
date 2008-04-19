@@ -1,4 +1,7 @@
 /*
+	Lua
+	Copyright (C) 1994-2008 Lua.org, PUC-Rio
+
 	Lua header for C++ code
 	Please use this code as you will for your own C++ project
 	which embeds Lua. It's pretty standard :)
@@ -8,9 +11,10 @@
 #define _LUA_INC_H_
 
 extern "C" {
-	#include "lua.h"
-	#include "lauxlib.h"
-	#include "lualib.h"
+	// change path as necessary
+	#include "luasrc\lua.h"
+	#include "luasrc\lauxlib.h"
+	#include "luasrc\lualib.h"
 }
 
 #endif
