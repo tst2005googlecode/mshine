@@ -15,16 +15,16 @@
 NS_IMPL_ISUPPORTS1(MoonshineLua, IMoonshineLua)
 
 // create a new lua state
-lua_State *L = luaL_newstate();
+//lua_State *L = luaL_newstate();
 
 MoonshineLua::MoonshineLua() {
-	 //load libraries
-	luaL_openlibs(L);
+	//load libraries
+	//luaL_openlibs(L);
 }
 
 MoonshineLua::~MoonshineLua() {
 	// destory created lua state
-	lua_close(L);
+	//lua_close(L);
 }
 
 // return embedded Lua (release) version
@@ -34,6 +34,6 @@ NS_IMETHODIMP MoonshineLua::Version(double *_retval) {
 }
 // run passed lua script
 NS_IMETHODIMP MoonshineLua::RunScript() {
-	int script = luaL_dofile(L, "moonshine.lua");
+	//int script = luaL_dofile(L, "moonshine.lua");
     return NS_OK;
 }
