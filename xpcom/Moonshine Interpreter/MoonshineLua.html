@@ -11,8 +11,8 @@
 				var obj = Components.classes[cid].createInstance();
 				obj = obj.QueryInterface(Components.interfaces.IMoonshineLua);
 				
-				var ver = obj.Version();
-				alert("Moonshine Lua Interpreter v" + ver);
+				var ver = obj.GetVersion();
+				alert(ver);
 			}
 			
 		</script>

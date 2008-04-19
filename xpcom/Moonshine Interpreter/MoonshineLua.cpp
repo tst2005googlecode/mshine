@@ -9,31 +9,31 @@
 	Implementation code for Moonshine Lua interpreter
 */
 
-#include "MoonshineLua.h"
-#include "luaincl.h"
+#include "MoonshineLua.h" 
+#include "nsStringAPI.h"
+#include "luaincl.h"	  
 
 NS_IMPL_ISUPPORTS1(MoonshineLua, IMoonshineLua)
 
-// create a new lua state
-//lua_State *L = luaL_newstate();
+// define lua state
+lua_State *L;
 
 MoonshineLua::MoonshineLua() {
-	//load libraries
-	//luaL_openlibs(L);
+	// create a new lua state and load libraries
+	L = luaL_newstate();
+	luaL_openlibs(L);
 }
 
 MoonshineLua::~MoonshineLua() {
 	// destory created lua state
-	//lua_close(L);
+	lua_close(L);
 }
 
-// return embedded Lua (release) version
-NS_IMETHODIMP MoonshineLua::Version(double *_retval) {
-	*_retval = 3.142; //! TODO :p mmmm... pi.
-    return NS_OK;
-}
-// run passed lua script
-NS_IMETHODIMP MoonshineLua::RunScript() {
-	//int script = luaL_dofile(L, "moonshine.lua");
-    return NS_OK;
+// return embedded Lua version
+NS_IMETHODIMP MoonshineLua::GetVersion(nsACString &_retval) {
+	// push lua version onto the stack
+	lua_getglobal(L, "_VERSION");
+	// return lua version string
+	_retval.Assign(lua_tostring(L, -1));
+	return NS_OK;
 }
