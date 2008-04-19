@@ -35,5 +35,7 @@ NS_IMETHODIMP MoonshineLua::GetVersion(nsACString &_retval) {
 	lua_getglobal(L, "_VERSION");
 	// return lua version string
 	_retval.Assign(lua_tostring(L, -1));
+	// completely clear the stack
+	lua_settop(L, 0);
 	return NS_OK;
 }
