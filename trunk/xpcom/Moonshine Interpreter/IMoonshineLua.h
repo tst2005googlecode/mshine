@@ -30,19 +30,25 @@ class NS_NO_VTABLE IMoonshineLua : public nsISupports {
   /* double Version (); */
   NS_IMETHOD Version(double *_retval) = 0;
 
+  /* void RunScript (); */
+  NS_IMETHOD RunScript(void) = 0;
+
 };
 
 /* Use this macro when declaring classes that implement this interface. */
 #define NS_DECL_IMOONSHINELUA \
-  NS_IMETHOD Version(double *_retval); 
+  NS_IMETHOD Version(double *_retval); \
+  NS_IMETHOD RunScript(void); 
 
 /* Use this macro to declare functions that forward the behavior of this interface to another object. */
 #define NS_FORWARD_IMOONSHINELUA(_to) \
-  NS_IMETHOD Version(double *_retval) { return _to Version(_retval); } 
+  NS_IMETHOD Version(double *_retval) { return _to Version(_retval); } \
+  NS_IMETHOD RunScript(void) { return _to RunScript(); } 
 
 /* Use this macro to declare functions that forward the behavior of this interface to another object in a safe way. */
 #define NS_FORWARD_SAFE_IMOONSHINELUA(_to) \
-  NS_IMETHOD Version(double *_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->Version(_retval); } 
+  NS_IMETHOD Version(double *_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->Version(_retval); } \
+  NS_IMETHOD RunScript(void) { return !_to ? NS_ERROR_NULL_POINTER : _to->RunScript(); } 
 
 #if 0
 /* Use the code below as a template for the implementation class for this interface. */
@@ -78,6 +84,12 @@ _MYCLASS_::~_MYCLASS_()
 
 /* double Version (); */
 NS_IMETHODIMP _MYCLASS_::Version(double *_retval)
+{
+    return NS_ERROR_NOT_IMPLEMENTED;
+}
+
+/* void RunScript (); */
+NS_IMETHODIMP _MYCLASS_::RunScript()
 {
     return NS_ERROR_NOT_IMPLEMENTED;
 }
