@@ -10,4 +10,5 @@
 [scriptable, uuid(A1091011-3C4E-47b8-B35A-B8EE21D33C81)]
 interface IMoonshineLua : nsISupports {
 	ACString GetVersion();
-};
+	ACString ExecuteStatement(in ACString statement);
+};	

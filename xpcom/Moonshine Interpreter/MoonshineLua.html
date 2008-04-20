@@ -5,21 +5,30 @@
 		<title>Test XPCOM Component</title>
 		<script type="application/javascript">
 			
-			function MoonshineLua() {
+			function luaVersion() {
 				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
 				const cid = "@mshine.googlecode.com/MoonshineLua;1";
-				var obj = Components.classes[cid].createInstance();
-				obj = obj.QueryInterface(Components.interfaces.IMoonshineLua);
-				
-				var ver = obj.GetVersion();
+				var lua = Components.classes[cid].createInstance();
+				lua = lua.QueryInterface(Components.interfaces.IMoonshineLua);
+				var ver = lua.GetVersion();
 				alert(ver);
+			}
+			function executeStatement() {
+				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+				const cid = "@mshine.googlecode.com/MoonshineLua;1";
+				var lua = Components.classes[cid].createInstance();
+				lua = lua.QueryInterface(Components.interfaces.IMoonshineLua);
+				var statement = prompt("Enter a lua statement:");
+				var returned = lua.ExecuteStatement(statement);
+				alert(returned);
 			}
 			
 		</script>
 	</head>
 	<body>
 		<fieldset>
-			<input type="button" value="Moonshine Lua" onclick="MoonshineLua();"/>
+			<input type="button" value="Lua version" onclick="luaVersion();"/>
+			<input type="button" value="Execute statement" onclick="executeStatement();"/>
 		</fieldset>
 	</body>
 </html>

@@ -39,3 +39,9 @@ NS_IMETHODIMP MoonshineLua::GetVersion(nsACString &_retval) {
 	lua_settop(L, 0);
 	return NS_OK;
 }
+// execute a Lua statement
+NS_IMETHODIMP MoonshineLua::ExecuteStatement(const nsACString & statement, nsACString & _retval)
+{
+	_retval.Assign(statement);
+    return NS_OK;
+}
