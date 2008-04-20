@@ -51,5 +51,5 @@ NS_IMETHODIMP MoonshineLua::ExecuteStatement(const nsACString & statement, nsACS
 	// ! TODO
 
 	lua_close(L); // destroy created lua state
-    return NS_OK;
+	return NS_OK;
 }
