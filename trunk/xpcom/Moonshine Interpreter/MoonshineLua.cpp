@@ -14,37 +14,42 @@
 #include "luaincl.h"	  
 
 NS_IMPL_ISUPPORTS1(MoonshineLua, IMoonshineLua)
+lua_State *L; // define lua state
 
-// define lua state
-lua_State *L;
-
+//
+// constructor
+//
 MoonshineLua::MoonshineLua() {
-
+	
 }
-
+// 
+// deconstructor
+//
 MoonshineLua::~MoonshineLua() {
 
 }
 
+//
 // return embedded Lua version
+//
 NS_IMETHODIMP MoonshineLua::GetVersion(nsACString &_retval) {
-	// create a new lua state
-	L = luaL_newstate();
-	// load libraries
-	luaL_openlibs(L);
-	// push lua version onto the stack
-	lua_getglobal(L, "_VERSION");
-	// return lua version string
-	_retval.Assign(lua_tostring(L, -1));
-	// completely clear the stack
-	lua_settop(L, 0);
-	// destory created lua state
-	lua_close(L);
+	L = luaL_newstate(); // create a new lua state
+	luaL_openlibs(L); // load libraries
+	lua_getglobal(L, "_VERSION"); // push lua version onto the stack
+	_retval.Assign(lua_tostring(L, -1)); // return lua version string
+	lua_settop(L, 0); // completely clear the stack
+	lua_close(L); // destroy created lua state
 	return NS_OK;
 }
+//
 // execute a Lua statement
-NS_IMETHODIMP MoonshineLua::ExecuteStatement(const nsACString & statement, nsACString & _retval)
-{
-	_retval.Assign(statement);
+//
+NS_IMETHODIMP MoonshineLua::ExecuteStatement(const nsACString & statement, nsACString & _retval) {
+	L = luaL_newstate(); // create a new lua state
+	luaL_openlibs(L); // load libraries
+
+	// ! TODO
+
+	lua_close(L); // destroy created lua state
     return NS_OK;
 }
