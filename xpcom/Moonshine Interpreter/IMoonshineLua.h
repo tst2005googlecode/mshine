@@ -30,25 +30,25 @@ class NS_NO_VTABLE IMoonshineLua : public nsISupports {
   /* ACString GetVersion (); */
   NS_IMETHOD GetVersion(nsACString & _retval) = 0;
 
-  /* ACString ExecuteStatement (in ACString statement); */
-  NS_IMETHOD ExecuteStatement(const nsACString & statement, nsACString & _retval) = 0;
+  /* ACString ExecuteStatement (in string statement); */
+  NS_IMETHOD ExecuteStatement(const char *statement, nsACString & _retval) = 0;
 
 };
 
 /* Use this macro when declaring classes that implement this interface. */
 #define NS_DECL_IMOONSHINELUA \
   NS_IMETHOD GetVersion(nsACString & _retval); \
-  NS_IMETHOD ExecuteStatement(const nsACString & statement, nsACString & _retval); 
+  NS_IMETHOD ExecuteStatement(const char *statement, nsACString & _retval); 
 
 /* Use this macro to declare functions that forward the behavior of this interface to another object. */
 #define NS_FORWARD_IMOONSHINELUA(_to) \
   NS_IMETHOD GetVersion(nsACString & _retval) { return _to GetVersion(_retval); } \
-  NS_IMETHOD ExecuteStatement(const nsACString & statement, nsACString & _retval) { return _to ExecuteStatement(statement, _retval); } 
+  NS_IMETHOD ExecuteStatement(const char *statement, nsACString & _retval) { return _to ExecuteStatement(statement, _retval); } 
 
 /* Use this macro to declare functions that forward the behavior of this interface to another object in a safe way. */
 #define NS_FORWARD_SAFE_IMOONSHINELUA(_to) \
   NS_IMETHOD GetVersion(nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->GetVersion(_retval); } \
-  NS_IMETHOD ExecuteStatement(const nsACString & statement, nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ExecuteStatement(statement, _retval); } 
+  NS_IMETHOD ExecuteStatement(const char *statement, nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ExecuteStatement(statement, _retval); } 
 
 #if 0
 /* Use the code below as a template for the implementation class for this interface. */
@@ -88,8 +88,8 @@ NS_IMETHODIMP _MYCLASS_::GetVersion(nsACString & _retval)
     return NS_ERROR_NOT_IMPLEMENTED;
 }
 
-/* ACString ExecuteStatement (in ACString statement); */
-NS_IMETHODIMP _MYCLASS_::ExecuteStatement(const nsACString & statement, nsACString & _retval)
+/* ACString ExecuteStatement (in string statement); */
+NS_IMETHODIMP _MYCLASS_::ExecuteStatement(const char *statement, nsACString & _retval)
 {
     return NS_ERROR_NOT_IMPLEMENTED;
 }

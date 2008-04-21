@@ -18,7 +18,7 @@
 				const cid = "@mshine.googlecode.com/MoonshineLua;1";
 				var lua = Components.classes[cid].createInstance();
 				lua = lua.QueryInterface(Components.interfaces.IMoonshineLua);
-				var statement = prompt("Enter a lua statement:");
+				var statement = prompt("Enter a Lua statement:");
 				var returned = lua.ExecuteStatement(statement);
 				alert(returned);
 			}
