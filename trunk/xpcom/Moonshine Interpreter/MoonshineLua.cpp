@@ -58,9 +58,23 @@ NS_IMETHODIMP MoonshineLua::ExecuteStatement(const char *statement, nsACString &
 		lua_pop(L, 1); // pop error message from the stack
 	}
 	else {
-		// TODO
-		// complelety clear the stack
-		_retval.Assign("This statement is valid.");
+		int type = lua_type(L, -1);;
+		switch(type) {
+			case LUA_TSTRING: {
+				_retval.Assign("I am string");
+				break;
+			}
+			case LUA_TNUMBER: {
+				_retval.Assign("I am number");
+				break;
+			}
+			default: {
+				_retval.Assign("I am other");
+				break;
+			}
+		}
+
+		//
 		lua_settop(L, 0);
 	}
 
