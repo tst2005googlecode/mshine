@@ -49,35 +49,23 @@ NS_IMETHODIMP MoonshineLua::ExecuteStatement(const char *statement, nsACString &
 	L = luaL_newstate(); // create a new lua state
 	luaL_openlibs(L); // load standard libraries
 
+	const char *returned; // define returned value
+
 	// compile the entered code (and execute it if error == 0)
 	int error = luaL_loadbuffer(L, statement, strlen(statement), "error") || lua_pcall(L, 0, 0, 0);
 
 	// in the event of an error (error != 0)...
+		returned = lua_tostring(L, -1); // assign error message to returned value
 	if(error) {
-		_retval.Assign(lua_tostring(L, -1)); // return error message
 		lua_pop(L, 1); // pop error message from the stack
 	}
 	else {
-		int type = lua_type(L, -1);;
-		switch(type) {
-			case LUA_TSTRING: {
-				_retval.Assign("I am string");
-				break;
-			}
-			case LUA_TNUMBER: {
-				_retval.Assign("I am number");
-				break;
-			}
-			default: {
-				_retval.Assign("I am other");
-				break;
-			}
-		}
-
-		//
-		lua_settop(L, 0);
+		returned = "no error"; // assign result to returned value
+		lua_settop(L, 0); // completely clear the stack
 	}
 
+	_retval.Assign(returned); // return the value
+ 
 	lua_close(L); // destroy created lua state
 
 	return NS_OK;
