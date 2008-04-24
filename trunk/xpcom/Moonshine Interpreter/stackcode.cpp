@@ -24,3 +24,22 @@
 			}
 		}
 		// </experimental code>
+
+	const char *returned; // define returned value
+
+	// compile the entered code (and execute it if error == 0)
+	int error = luaL_loadbuffer(L, statement, strlen(statement), "error") || lua_pcall(L, 0, 0, 0);
+
+	// in the event of an error (error != 0)...
+		returned = lua_tostring(L, -1); // assign error message to returned value
+	if(error) {
+		lua_pop(L, 1); // pop error message from the stack
+	}
+	else {
+		returned = "no error"; // assign result to returned value
+		lua_settop(L, 0); // completely clear the stack
+	}
+
+	_retval.Assign(returned); // return the value
+ 
+	lua_close(L); // destroy created lua state
