@@ -50,8 +50,6 @@ NS_IMETHODIMP MoonshineLua::ExecuteCommand(const char *command, nsACString & _re
 	luaL_openlibs(L); // load standard libraries
 
 	const char *returned; // define returned value
-
-
  
 	lua_close(L); // destroy created lua state
 
