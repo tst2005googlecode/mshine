@@ -19,7 +19,7 @@
 				var lua = Components.classes[cid].createInstance();
 				lua = lua.QueryInterface(Components.interfaces.IMoonshineLua);
 				var command = prompt("Enter a Lua command:");
-				var returned = lua.ExecuteStatement(command);
+				var returned = lua.ExecuteCommand(command);
 				alert(returned);
 			}
 			
