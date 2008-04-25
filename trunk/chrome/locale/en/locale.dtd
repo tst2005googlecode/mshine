@@ -7,5 +7,5 @@
 
 <!ENTITY moonshine.label "Moonshine">
 <!ENTITY moonshine.akey "M">
-<!ENTITY enable.label "Enable">
-<!ENTITY enable.akey "E">
+<!ENTITY enabled.label "Enabled">
+<!ENTITY enabled.akey "E">

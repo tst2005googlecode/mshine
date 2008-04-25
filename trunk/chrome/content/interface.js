@@ -20,7 +20,7 @@ function toggleEnable() {
 	var ans, msgPrompt, msgConfirm = null; 
 	
 	// Get menu "Enabled" option
-	const option = document.getElementById("moonshine_enable");
+	const option = document.getElementById("moonshine_enabled");
 	
 	// Load locales
 	locales = document.getElementById("locales");
