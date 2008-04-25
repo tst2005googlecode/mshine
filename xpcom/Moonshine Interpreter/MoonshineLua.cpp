@@ -20,10 +20,12 @@ lua_State *L; // define lua state
 // constructor
 //
 MoonshineLua::MoonshineLua() { }
+
 // 
-// deconstructor
+// destructor
 //
 MoonshineLua::~MoonshineLua() { }
+
 //
 // return embedded Lua version
 //
@@ -40,6 +42,7 @@ NS_IMETHODIMP MoonshineLua::GetVersion(nsACString &_retval) {
 
 	return NS_OK;
 }
+
 //
 // execute a Lua/Moonshine API command
 //
