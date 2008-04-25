@@ -194,18 +194,6 @@
 				RelativePath=".\MoonshineLuaModule.cpp"
 				>
 			</File>
-			<File
-				RelativePath=".\stackcode.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -233,18 +221,6 @@
 			<File
 				RelativePath=".\Makefile"
 				>
-			</File>
-			<File
-				RelativePath="..\..\..\..\platform\msh.c"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 		</Filter>
 	</Files>
