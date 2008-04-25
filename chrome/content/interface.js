@@ -11,9 +11,9 @@ var enabled = true;
 // Initiate locales variable as "null"
 var locales = null;
 
-/*
-	Disable or re-enable Moonshine
-*/
+//
+// Disable or re-enable Moonshine
+//
 function toggleEnable() {
 	
 	// Initiate feedback variables as "null"
