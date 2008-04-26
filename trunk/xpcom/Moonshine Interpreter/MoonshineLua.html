@@ -13,7 +13,7 @@
 				var ver = lua.GetVersion();
 				alert(ver);
 			}
-			function executeReturn() {
+			function executeCommand() {
 				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
 				const cid = "@mshine.googlecode.com/MoonshineLua;1";
 				var lua = Components.classes[cid].createInstance();
@@ -29,7 +29,7 @@
 	<body>
 		<fieldset>
 			<input type="button" value="Lua version" onclick="luaVersion();"/>
-			<input type="button" value="Execute command" onclick="executeReturn();"/>
+			<input type="button" value="Execute command" onclick="executeCommand();"/>
 		</fieldset>
 	</body>
 </html>

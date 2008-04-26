@@ -16,3 +16,8 @@ register:
 	copy /Y Debug\$(COMPONENT).dll "$(FIREFOX)\components"
 	copy /Y I$(COMPONENT).xpt "$(FIREFOX)\components"
 	regxpcom -x "$(FIREFOX)\components"
+	
+# remove registered component for firefox
+remove:
+	del "$(FIREFOX)\components\$(COMPONENT).dll"
+	del "$(FIREFOX)\components\I$(COMPONENT).xpt"
