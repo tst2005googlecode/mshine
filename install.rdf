@@ -29,7 +29,7 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
         <em:name>Moonshine</em:name>
         <em:description>Embedded Lua environment for Firefox</em:description>
         <em:creator>Samuel Saint-Pettersen</em:creator>
-        <em:homepageURL>http://mshine.googlecode.com</em:homepageURL>
+        <em:homepageURL>http://mshine.luaforge.net</em:homepageURL>
     </Description>
 
 </RDF>
