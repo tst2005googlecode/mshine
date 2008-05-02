@@ -11,4 +11,5 @@
 interface IMoonshineLua : nsISupports {
 	ACString GetVersion();
 	ACString ExecuteCommand(in string command);
+	ACString ExecuteScript(in string script);
 };	

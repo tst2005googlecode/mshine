@@ -33,22 +33,28 @@ class NS_NO_VTABLE IMoonshineLua : public nsISupports {
   /* ACString ExecuteCommand (in string command); */
   NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval) = 0;
 
+  /* ACString ExecuteScript (in string script); */
+  NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval) = 0;
+
 };
 
 /* Use this macro when declaring classes that implement this interface. */
 #define NS_DECL_IMOONSHINELUA \
   NS_IMETHOD GetVersion(nsACString & _retval); \
-  NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval); 
+  NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval); \
+  NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval); 
 
 /* Use this macro to declare functions that forward the behavior of this interface to another object. */
 #define NS_FORWARD_IMOONSHINELUA(_to) \
   NS_IMETHOD GetVersion(nsACString & _retval) { return _to GetVersion(_retval); } \
-  NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval) { return _to ExecuteCommand(command, _retval); } 
+  NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval) { return _to ExecuteCommand(command, _retval); } \
+  NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval) { return _to ExecuteScript(script, _retval); } 
 
 /* Use this macro to declare functions that forward the behavior of this interface to another object in a safe way. */
 #define NS_FORWARD_SAFE_IMOONSHINELUA(_to) \
   NS_IMETHOD GetVersion(nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->GetVersion(_retval); } \
-  NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ExecuteCommand(command, _retval); } 
+  NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ExecuteCommand(command, _retval); } \
+  NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ExecuteScript(script, _retval); } 
 
 #if 0
 /* Use the code below as a template for the implementation class for this interface. */
@@ -90,6 +96,12 @@ NS_IMETHODIMP _MYCLASS_::GetVersion(nsACString & _retval)
 
 /* ACString ExecuteCommand (in string command); */
 NS_IMETHODIMP _MYCLASS_::ExecuteCommand(const char *command, nsACString & _retval)
+{
+    return NS_ERROR_NOT_IMPLEMENTED;
+}
+
+/* ACString ExecuteScript (in string script); */
+NS_IMETHODIMP _MYCLASS_::ExecuteScript(const char *script, nsACString & _retval)
 {
     return NS_ERROR_NOT_IMPLEMENTED;
 }

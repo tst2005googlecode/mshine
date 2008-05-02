@@ -51,14 +51,29 @@ NS_IMETHODIMP MoonshineLua::ExecuteCommand(const char *command, nsACString & _re
 	L = luaL_newstate(); // create a new lua state
 	luaL_openlibs(L); // load standard libraries
 
-	int error = luaL_dostring(L, command); // execute argument
+	int error = luaL_dostring(L, command); // execute (argument) command
 	// in the event of an error, return an error message
-	if(error != 0) _retval.Assign(lua_tostring(L, 1));
-	// otherwise, return result
-	else _retval.Assign(lua_tostring(L, 1));
+	_retval.Assign(lua_tostring(L, 1)); // return result or an error message
 
 	lua_pop(L, 1); // pop result from the stack
 	lua_close(L); // destroy created lua state
+
+	return NS_OK;
+}
+
+// 
+// execute a Lua/Moonshine script
+//
+NS_IMETHODIMP MoonshineLua::ExecuteScript(const char *script, nsACString & _retval) {
+    
+	L = luaL_newstate(); // create a new lua state
+	luaL_openlibs(L); // load standard libraries
+
+	int error = luaL_dofile(L, script); // execute (argument) script
+	 _retval.Assign(lua_tostring(L, 1)); // return result or an error message
+
+	lua_pop(L, 1); // pop result from the stack
+	lua_close(L); // destory created lua state
 
 	return NS_OK;
 }
