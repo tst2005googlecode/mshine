@@ -64,7 +64,7 @@
 				AdditionalDependencies="nspr4.lib xpcom.lib xpcomglue_s.lib lua.lib"
 				OutputFile="$(OutDir)\MoonshineLua.dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="&quot;C:\gecko-sdk\lib&quot;"
+				AdditionalLibraryDirectories="C:\gecko-sdk\lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				TargetMachine="1"
