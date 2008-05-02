@@ -52,7 +52,6 @@ NS_IMETHODIMP MoonshineLua::ExecuteCommand(const char *command, nsACString & _re
 	luaL_openlibs(L); // load standard libraries
 
 	int error = luaL_dostring(L, command); // execute (argument) command
-	// in the event of an error, return an error message
 	_retval.Assign(lua_tostring(L, 1)); // return result or an error message
 
 	lua_pop(L, 1); // pop result from the stack
