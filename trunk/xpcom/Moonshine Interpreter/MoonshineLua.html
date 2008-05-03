@@ -27,11 +27,17 @@
 			}
 			
 			function executeScript() {
-				var script = "test.lua";
 				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+				
+				var nsIFilePicker = Components.interfaces.nsIFilePicker;
+				var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+				fp.init(window, "Execute script", nsIFilePicker.modeOpen);
+				fp.appendFilter("Lua/Moonshine scripts (*.lua)", "*.lua");
+				fp.show();
+	
 				lua = Components.classes[cid].createInstance();
 				lua = lua.QueryInterface(Components.interfaces.IMoonshineLua);
-				var returned = lua.ExecuteScript(script);
+				var returned = lua.ExecuteScript(fp.file.path);
 				alert(returned);
 			}
 			
