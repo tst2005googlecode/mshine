@@ -28,7 +28,6 @@
 			
 			function executeScript() {
 				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-				
 				var nsIFilePicker = Components.interfaces.nsIFilePicker;
 				var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
 				fp.init(window, "Execute script", nsIFilePicker.modeOpen);
