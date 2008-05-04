@@ -6,5 +6,3 @@
 --
 --	Released under the MIT License
 --	Script to load API modules for Moonshine interpreter
-
-require("std");
