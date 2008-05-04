@@ -16,6 +16,9 @@
 NS_IMPL_ISUPPORTS1(MoonshineLua, IMoonshineLua)
 lua_State *L; // define lua state
 
+// define script to load API modules
+const char *modules = "modules.lua"; 
+
 //
 // constructor
 //
@@ -42,7 +45,6 @@ NS_IMETHODIMP MoonshineLua::GetVersion(nsACString &_retval) {
 
 	return NS_OK;
 }
-
 //
 // execute a Lua/Moonshine API command
 //
@@ -51,7 +53,9 @@ NS_IMETHODIMP MoonshineLua::ExecuteCommand(const char *command, nsACString & _re
 	L = luaL_newstate(); // create a new lua state
 	luaL_openlibs(L); // load standard libraries
 
-	int error = luaL_dostring(L, command); // execute (argument) command
+	int file = luaL_dofile(L, modules); // execute script to load API modules
+
+	int string = luaL_dostring(L, command); // execute (argument) command
 	_retval.Assign(lua_tostring(L, 1)); // return result or an error message
 
 	lua_pop(L, 1); // pop result from the stack
@@ -68,7 +72,7 @@ NS_IMETHODIMP MoonshineLua::ExecuteScript(const char *script, nsACString & _retv
 	L = luaL_newstate(); // create a new lua state
 	luaL_openlibs(L); // load standard libraries
 
-	int error = luaL_dofile(L, script); // execute (argument) script
+	int file = luaL_dofile(L, script); // execute (argument) script
 	 _retval.Assign(lua_tostring(L, 1)); // return result or an error message
 
 	lua_pop(L, 1); // pop result from the stack
