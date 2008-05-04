@@ -9,7 +9,4 @@
 -- Script to load and reference
 -- API modules for Moonshine interpreter
 
-package.path = ""
-package.cpath = ""
-
-ui = require("ui")
+require("ui")
