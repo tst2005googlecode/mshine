@@ -1,4 +1,4 @@
--- test script for MoonshineLua interpreter
+-- calculate and return the sum of a + b
 a = 4
 b = 6
 sum = a + b
