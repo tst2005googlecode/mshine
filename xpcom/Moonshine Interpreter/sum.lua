@@ -1,3 +1,5 @@
 -- test script for MoonshineLua interpreter
-sum = 1 + 4
-return "sum is " .. sum
+a = 4
+b = 6
+sum = a + b
+return a .. " + " .. b .. " = " .. sum
