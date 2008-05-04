@@ -11,5 +11,5 @@
 -- specify as module
 module(..., package.seeall)
 
--- version information
-_VERSION = "Moonshine UI module v0.1"
+-- module version
+_VERSION = "UI Module v0.1"
