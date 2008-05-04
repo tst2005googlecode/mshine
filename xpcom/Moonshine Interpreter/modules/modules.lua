@@ -7,7 +7,7 @@
 --	Released under the MIT License
 --
 --	Script to load and reference
---  API modules for Moonshine interpreter
+-- API modules for Moonshine interpreter
 
 package.path = ""
 package.cpath = ""
