@@ -1,12 +1,15 @@
 --	Moonshine
 --	Copyright (c) 2007-2008 Samuel Saint-Pettersen
---	
+--
 --	Lua
 --	Copyright (C) 1994-2008 Lua.org, PUC-Rio
 --
 --	Released under the MIT License
 --
---	Script to load and reference
---  API modules for Moonshine interpreter
+--  User interface (UI) module
 
-ui = require("ui")
+-- specify as module
+module(..., package.seeall)
+
+-- version information
+_VERSION = "Moonshine UI module v0.1"
