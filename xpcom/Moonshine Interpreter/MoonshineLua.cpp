@@ -17,7 +17,7 @@ NS_IMPL_ISUPPORTS1(MoonshineLua, IMoonshineLua)
 lua_State *L; // define lua state
 
 // define script to load API modules
-// ! I should be able to use a relative path !
+// !!! I should be able to use a relative path !!!
 const char *modules = "C:\\Program Files\\Mozilla Firefox 3 Beta 5\\lua\\modules.lua"; 
 
 //
