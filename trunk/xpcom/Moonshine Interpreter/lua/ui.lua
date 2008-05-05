@@ -15,7 +15,7 @@ module(..., package.seeall)
 _VERSION = "UI Module v0.1"
 
 -- required module?
-_REQUIRED = true
+_REQUIRED = "true"
 
 -- open a new browser window
 function window(url, width, height)
