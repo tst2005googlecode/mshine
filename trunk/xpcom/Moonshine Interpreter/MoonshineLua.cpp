@@ -57,7 +57,7 @@ NS_IMETHODIMP MoonshineLua::ExecuteCommand(const char *command, nsACString & _re
 
 	int file = luaL_dofile(L, modules); // execute script to load API modules
 
-	int string = luaL_dostring(L, command); // execute (argument) command
+	int command = luaL_dostring(L, command); // execute (argument) command
 	_retval.Assign(lua_tostring(L, 1)); // return result or an error message
 
 	lua_pop(L, 1); // pop result from the stack
