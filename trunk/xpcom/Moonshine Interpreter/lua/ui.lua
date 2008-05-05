@@ -6,10 +6,18 @@
 --
 -- Released under the MIT License
 --
--- User interface (UI) module
+-- User interface (UI) API module
 
 -- specify as module
 module(..., package.seeall)
 
 -- module version
 _VERSION = "UI Module v0.1"
+
+-- required module?
+_REQUIRED = true
+
+-- open a new browser window
+function window(url, width, height)
+	return url .. "\n" .. width .. "\n" .. height -- !
+end
