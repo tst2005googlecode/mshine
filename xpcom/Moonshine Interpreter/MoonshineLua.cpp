@@ -46,6 +46,7 @@ NS_IMETHODIMP MoonshineLua::GetVersion(nsACString &_retval) {
 
 	return NS_OK;
 }
+
 //
 // execute a Lua/Moonshine API command
 //
