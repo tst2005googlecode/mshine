@@ -17,8 +17,7 @@ NS_IMPL_ISUPPORTS1(MoonshineLua, IMoonshineLua)
 lua_State *L; // define lua state
 
 // define script to load API modules
-// !!! I should be able to use a relative path !!!
-const char *modules = "C:\\Program Files\\Mozilla Firefox 3 Beta 5\\lua\\modules.lua"; 
+const char *modules = "C:\\Program Files\\Mozilla Firefox 3 Beta 5\\lua\\modules.lua"; // !
 
 //
 // constructor
@@ -57,7 +56,7 @@ NS_IMETHODIMP MoonshineLua::ExecuteCommand(const char *command, nsACString & _re
 
 	int file = luaL_dofile(L, modules); // execute script to load API modules
 
-	int command = luaL_dostring(L, command); // execute (argument) command
+	int str = luaL_dostring(L, command); // execute (argument) command
 	_retval.Assign(lua_tostring(L, 1)); // return result or an error message
 
 	lua_pop(L, 1); // pop result from the stack
