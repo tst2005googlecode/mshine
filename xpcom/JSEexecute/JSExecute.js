@@ -8,29 +8,33 @@
 	to execute JavaScript code
 */
 
+// Reference to the interface defined in IJSExecute.idl
+const nsIHelloWorld = Components.interfaces.IJSExecute;
+
+// Reference to the required base interface that all components must support
 const nsISupports = Components.interfaces.nsISupports;
 
-// You can change these if you like
+// Component information
 const CLASS_ID = Components.ID("97d08069-572c-46aa-9ab7-6ae73aac0b53");
-const CLASS_NAME = "Allows third party componets to execute JavaScript ";
+const CLASS_NAME = "Allows third party componets to execute JavaScript";
 const CONTRACT_ID = "@googlecode.com/jsexecute;1";
 
-// This is your constructor.
-// You can do stuff here.
+// Class constructor
 function JSExecute() {
-  // you can cheat and use this
-  // while testing without
-  // writing your own interface
-  this.wrappedJSObject = this;
-}
+};
 
-// This is the implementation of your component.
+// Class definition
 JSExecute.prototype = {
-  // for nsISupports
+	
+  // Function to execute passed JavaScript code
+  execute: function() {
+  	return "JSExecute";		
+  },
+		
+  // For IJSExecute and nsISupports
   QueryInterface: function(aIID)
   {
-    // add any other interfaces you support here
-    if (!aIID.equals(nsISupports))
+    if(!aIID.equals(IJSExecute) && !aIID.equals(nsISupports))
         throw Components.results.NS_ERROR_NO_INTERFACE;
     return this;
   }
@@ -78,5 +82,5 @@ var JSExecuteModule = {
   canUnload: function(aCompMgr) { return true; }
 };
 
-//module initialization
+// Module initialization
 function NSGetModule(aCompMgr, aFileSpec) { return JSExecuteModule; }
