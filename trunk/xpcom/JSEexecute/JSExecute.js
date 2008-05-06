@@ -1,6 +1,6 @@
 /*
 	JSExecute (JavaScript Execute)
-	Copyright (c) 2007-2008 Samuel Saint-Pettersen
+	Copyright (c) 2008 Samuel Saint-Pettersen
 
 	Released under the MIT License
 	
