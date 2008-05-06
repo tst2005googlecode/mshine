@@ -39,7 +39,7 @@ generate:
 # > BEGIN FOR TESTING ONLY
 
 # copy autoreg file (if required) to allow component registration
-autoconf:
+autoreg:
 	copy /Y .autoreg "$(FIREFOX)"
 
 # register component for Firefox
