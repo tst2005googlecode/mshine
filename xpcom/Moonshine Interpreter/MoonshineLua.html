@@ -40,6 +40,14 @@
 				alert(returned);
 			}
 			
+			function executeJS() {
+				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+				var execjs = Components.classes["@googlecode.com/jsexecute;1"].createInstance();
+				execjs = execjs.QueryInterface(Components.interfaces.IJSExecute);
+				var returned = execjs.execute();
+				alert(returned);
+			}
+			
 		</script>
 	</head>
 	<body>
@@ -47,6 +55,7 @@
 			<input type="button" value="Lua version" onclick="luaVersion();"/>
 			<input type="button" value="Execute command" onclick="executeCommand();"/>
 			<input type="button" value="Execute script" onclick="executeScript();"/>
+			<input type="button" value="Execute JS" onclick="executeJS();"/>
 		</fieldset>
 	</body>
 </html>
