@@ -1,0 +1,6 @@
+#include "nsISupports.idl"
+
+[scriptable, uuid(F49B2294-0EA4-476d-963E-C3170FE8C959)]
+interface IJSExecute : nsISupports {
+	string execute();
+};
