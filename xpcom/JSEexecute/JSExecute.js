@@ -9,7 +9,7 @@
 */
 
 // Reference to the interface defined in IJSExecute.idl
-const nsIHelloWorld = Components.interfaces.IJSExecute;
+const IJSExecute = Components.interfaces.IJSExecute;
 
 // Reference to the required base interface that all components must support
 const nsISupports = Components.interfaces.nsISupports;
