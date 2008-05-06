@@ -18,7 +18,7 @@ FIREFOX = C:\Program Files\Mozilla Firefox 3 Beta 5
 	
 # generate the typelib for the XPCOM component
 make:
-	xpidl -m typelib -I$(GECKOSDK)\idl I$(COMPONENT).idl
+	$(GECKOSDK)\bin\xpidl -m typelib -I$(GECKOSDK)\idl I$(COMPONENT).idl
 	
 # remove generated typelib
 clean:
@@ -35,7 +35,7 @@ register:
 	touch -m "$(FIREFOX)\.autoreg"
 	copy /Y $(COMPONENT).js "$(FIREFOX)\components"
 	copy /Y I$(COMPONENT).xpt "$(FIREFOX)\components"
-	regxpcom -x "$(FIREFOX)\components"
+	$(GECKOSDK)\bin\regxpcom -x "$(FIREFOX)\components"
 
 # remove registered component for Firefox
 remove:
