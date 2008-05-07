@@ -17,13 +17,14 @@
 COMPONENT = MoonshineLua
 GECKOSDK = C:\gecko-sdk
 SOURCES = MoonshineLua.cpp MoonshineLuaModule.cpp
-PPDEFS = WIN32;_DEBUG;_WINDOWS;_USRDLL;LUAINTERPRETER_EXPORTS
+PPDEFS = WIN32 _DEBUG _WINDOWS _USRDLL LUAINTERPRETER_EXPORTS _UNICODE UNICODE
 LIBS = nspr4.lib xpcom.lib xpcomglue_s.lib lua.lib
 FIREFOX = C:\Program Files\Mozilla Firefox 3 Beta 5
 		
 # create the XPCOM component
 make:
-	# TODO!
+	cl /Od /I "$(GECKOSDK)\include" /D "$(PPDEFS)" /Gm /EHsc /RTC1 /MDd /Fo"Debug\\" \
+	/Fd"Debug\vc90.pdb" /W3 /nologo /c /ZI /TP $(SOURCES)
 
 # remove any files created during compilation
 clean:
