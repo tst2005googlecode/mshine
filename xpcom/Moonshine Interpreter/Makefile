@@ -13,7 +13,6 @@
 
 # ASSUMPTIONS: cl.exe, link.exe and touch.exe are in your PATH
 
-
 COMPONENT = MoonshineLua
 GECKOSDK = C:\gecko-sdk
 SOURCES = MoonshineLua.cpp MoonshineLuaModule.cpp
