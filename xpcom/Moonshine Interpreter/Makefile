@@ -35,7 +35,6 @@ generate:
 	$(GECKOSDK)\bin\xpidl -m header -I$(GECKOSDK)\idl I$(COMPONENT).idl
 	$(GECKOSDK)\bin\xpidl -m typelib -I$(GECKOSDK)\idl I$(COMPONENT).idl
 
-
 # > BEGIN FOR TESTING ONLY
 
 # copy autoreg file (if required) to allow component registration
