@@ -10,7 +10,7 @@
 # http://www.codeproject.com/KB/applications/touch_win.aspx
 # http://developer.mozilla.org/en/docs/Gecko_SDK#Get_the_SDK
 
-# ASSUMPTIONS: make.exe and touch.exe are in your PATH
+# ASSUMPTION: touch.exe is in your PATH
 
 COMPONENT = JSExecute
 GECKOSDK = C:\gecko-sdk

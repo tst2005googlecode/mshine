@@ -7,11 +7,11 @@
 # Gecko SDK (and Wintools)
 
 # http://www.mingw.org
-# http://urlcut.com/windowsdk
+# http://www.microsoft.com/express/vc/
 # http://www.codeproject.com/KB/applications/touch_win.aspx
 # http://developer.mozilla.org/en/docs/Gecko_SDK#Get_the_SDK
 
-# ASSUMPTIONS: make.exe, cl.exe, link.exe and touch.exe are in your PATH
+# ASSUMPTIONS: cl.exe, link.exe and touch.exe are in your PATH
 
 
 COMPONENT = MoonshineLua
