@@ -35,25 +35,25 @@ make:
     /DLL /MANIFEST /DEBUG /SUBSYSTEM:WINDOWS /MACHINE:X86 \
 	Debug\$(COMPONENT).obj Debug\$(COMPONENT)Module.obj $(LIBS) 	
 	
-	@echo \nBuilt $(COMPONENT).dll
+	@echo Built $(COMPONENT).dll
 	 
 # remove any files created during component creation
 clean:
 	del /Q Debug\*
-	@echo \nCleaned created files for $(COMPONENT)
+	@echo Cleaned created files for $(COMPONENT)
 
 # generate header and typelib for XPCOM component
 generate:
 	$(GECKOSDK)\bin\xpidl -m header -I$(GECKOSDK)\idl I$(COMPONENT).idl
 	$(GECKOSDK)\bin\xpidl -m typelib -I$(GECKOSDK)\idl I$(COMPONENT).idl
-	@echo \nGenerated header and typelib for $(COMPONENT)
+	@echo Generated header and typelib for $(COMPONENT)
 
 # > BEGIN FOR TESTING ONLY
 
 # copy autoreg file (if required) to allow component registration
 autoreg:
 	copy /Y .autoreg "$(FIREFOX)"
-	@echo \nCopied .autoreg file to allow component registration
+	@echo Copied .autoreg file to allow component registration
 
 # register component for Firefox
 register:

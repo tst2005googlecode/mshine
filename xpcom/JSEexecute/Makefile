@@ -16,19 +16,19 @@ FIREFOX = C:\Program Files\Mozilla Firefox 3 Beta 5
 # generate the typelib for the XPCOM component
 make:
 	$(GECKOSDK)\bin\xpidl -m typelib -I$(GECKOSDK)\idl I$(COMPONENT).idl
-	@echo \nGenerated typelib for $(COMPONENT)
+	@echo Generated typelib for $(COMPONENT)
 	
 # remove generated typelib
 clean:
 	del I$(COMPONENT).xpt
-	@echo \nCleaned typelib for $(COMPONENT)
+	@echo Cleaned typelib for $(COMPONENT)
 
 # > BEGIN FOR TESTING ONLY
 
 # copy autoreg file (if required) to allow component registration
 autoreg:
 	copy /Y .autoreg "$(FIREFOX)"
-	@echo \nCopied .autoreg file to allow component registration
+	@echo Copied .autoreg file to allow component registration
 
 # register component for Firefox
 register:
