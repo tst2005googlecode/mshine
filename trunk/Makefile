@@ -1,3 +1,5 @@
+# TO AMMEND!
+
 # Makefile to build and install Moonshine
 # as an XPI package for Firefox
 
