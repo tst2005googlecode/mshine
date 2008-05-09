@@ -30,7 +30,8 @@ make:
 	/Gm /ZI /EHsc /MDd /Fo"Debug\\" /W3 /nologo /TP $(SOURCES)
 	
 	link /OUT:"Debug\$(COMPONENT).dll" /NOLOGO \
-	/LIBPATH:"$(GECKOSDK)\lib" /LIBPATH:"$(MSVC)\lib" /LIBPATH:"$(WINSDK)\Lib" \ /DLL /MANIFEST /DEBUG /SUBSYSTEM:WINDOWS /MACHINE:X86 \
+	/LIBPATH:"$(GECKOSDK)\lib" /LIBPATH:"$(MSVC)\lib" /LIBPATH:"$(WINSDK)\Lib" \ 
+	/DLL /MANIFEST /DEBUG /SUBSYSTEM:WINDOWS /MACHINE:X86 \
 	Debug\$(COMPONENT).obj Debug\$(COMPONENT)Module.obj $(LIBS) 	
 	
 	@echo Built $(COMPONENT).dll
