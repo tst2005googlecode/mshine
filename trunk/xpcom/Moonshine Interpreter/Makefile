@@ -25,16 +25,17 @@ shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib
 FIREFOX = C:\Program Files\Mozilla Firefox 3 Beta 5
 		
 # build the XPCOM component
-make:
-	cl /Od /I "$(GECKOSDK)\include" /I "$(MSVC)\include" /D "$(PPDEFS)"  \
-	/Gm /ZI /EHsc /RTC1 /MT /Fo"Debug\\" /W3 /nologo /TP $(SOURCES)
-	
-	link /OUT:"Debug\$(COMPONENT).dll" /NOLOGO  \
-	/LIBPATH:"$(GECKOSDK)\lib" /LIBPATH:"$(MSVC)\lib" /LIBPATH:"$(WINSDK)\Lib" \
-	/DLL /MANIFEST /DEBUG /SUBSYSTEM:WINDOWS /DYNAMICBASE /MACHINE:X86 Debug\$(COMPONENT).obj \
-	 Debug\$(COMPONENT)Module.obj $(LIBS) 	
-	
-	@echo Built $(COMPONENT).dll
+#make:
+#	
+#	cl /Od /I "$(GECKOSDK)\include" /I "$(MSVC)\include" /D "$(PPDEFS)"  \
+#	/Gm /ZI /EHsc /RTC1 /MD /Fo"Debug\\" /Fd"Debug\vc90.pdb" /W3 /nologo /c /TP $(SOURCES)
+#	
+#	link /OUT:"Debug\$(COMPONENT).dll" /NOLOGO  \
+#	/LIBPATH:"$(GECKOSDK)\lib" /LIBPATH:"$(MSVC)\lib" /LIBPATH:"$(WINSDK)\Lib" \
+#	/DLL /MANIFEST /DEBUG /SUBSYSTEM:WINDOWS /DYNAMICBASE /MACHINE:X86  \
+#	Debug\$(COMPONENT).obj Debug\$(COMPONENT)Module.obj $(LIBS) 	
+#	
+#	@echo Built $(COMPONENT).dll
 	 
 # remove any files created during building or generating header and typelib
 clean:
