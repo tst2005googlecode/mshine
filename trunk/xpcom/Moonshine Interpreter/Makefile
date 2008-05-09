@@ -1,5 +1,4 @@
 #
-#
 #	Makefile for Moonshine Lua interpreter for 32-bit Windows systems
 #
 
