@@ -17,7 +17,7 @@ GECKOSDK = C:\gecko-sdk
 WINSDK = C:\Program Files\Microsoft SDKs\Windows\v6.1
 MSVC = C:\Program Files\Microsoft Visual Studio 9.0\VC
 SOURCES = MoonshineLua.cpp MoonshineLuaModule.cpp
-PPDEFS = WIN32 _DEBUG _WINDOWS _USRDLL LUAINTERPRETER_EXPORTS _UNICODE UNICODE
+PPDEFS = WIN32 _DEBUG _WINDOWS _USRDLL LUAINTERPRETER_EXPORTS _WINDLL _UNICODE UNICODE
 LIBS = nspr4.lib xpcom.lib xpcomglue_s.lib lua.lib \
 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib \
 shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib
@@ -26,19 +26,20 @@ FIREFOX = C:\Program Files\Mozilla Firefox 3 Beta 5
 		
 # build the XPCOM component
 make:
-	cl /Od /c /I "$(GECKOSDK)\include" /I "$(MSVC)\include" /D "$(PPDEFS)"  \
-	/Gm /ZI /EHsc /MDd /Fo"Debug\\" /W3 /nologo /TP $(SOURCES)
+	cl /Od /I "$(GECKOSDK)\include" /I "$(MSVC)\include" /D "$(PPDEFS)"  \
+	/Gm /ZI /EHsc /RTC1 /MT /Fo"Debug\\" /W3 /nologo /TP $(SOURCES)
 	
-	link /OUT:"Debug\$(COMPONENT).dll" /NOLOGO \
-	/LIBPATH:"$(GECKOSDK)\lib" /LIBPATH:"$(MSVC)\lib" /LIBPATH:"$(WINSDK)\Lib" \ 
-	/DLL /MANIFEST /DEBUG /SUBSYSTEM:WINDOWS /MACHINE:X86 \
-	Debug\$(COMPONENT).obj Debug\$(COMPONENT)Module.obj $(LIBS) 	
+	link /OUT:"Debug\$(COMPONENT).dll" /NOLOGO  \
+	/LIBPATH:"$(GECKOSDK)\lib" /LIBPATH:"$(MSVC)\lib" /LIBPATH:"$(WINSDK)\Lib" \
+	/DLL /MANIFEST /DEBUG /SUBSYSTEM:WINDOWS /DYNAMICBASE /MACHINE:X86 Debug\$(COMPONENT).obj \
+	 Debug\$(COMPONENT)Module.obj $(LIBS) 	
 	
 	@echo Built $(COMPONENT).dll
 	 
-# remove any files created during component creation
+# remove any files created during building or generating header and typelib
 clean:
 	del /Q Debug\*
+	del I$(COMPONENT).xpt
 	@echo Cleaned created files for $(COMPONENT)
 
 # generate header and typelib for XPCOM component
