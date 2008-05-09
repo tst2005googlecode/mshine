@@ -23,7 +23,7 @@ JSExecute.prototype = {
 	
 	// Implement JavaScript execution method
 	execute: function() {
-		return "JSExecute";
+		return 10;
 	}
 }
 // Create component array
