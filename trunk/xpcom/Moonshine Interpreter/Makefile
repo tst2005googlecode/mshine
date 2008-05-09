@@ -25,7 +25,7 @@ shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib
 FIREFOX = C:\Program Files\Mozilla Firefox 3 Beta 5
 		
 # build the XPCOM component
-#make:
+#make: ! TODO
 #	
 #	cl /Od /I "$(GECKOSDK)\include" /I "$(MSVC)\include" /D "$(PPDEFS)"  \
 #	/Gm /ZI /EHsc /RTC1 /MD /Fo"Debug\\" /Fd"Debug\vc90.pdb" /W3 /nologo /c /TP $(SOURCES)
