@@ -9,8 +9,8 @@
 #include "MoonshineLua.h"
 
 NS_GENERIC_FACTORY_CONSTRUCTOR(MoonshineLua)
-static nsModuleComponentInfo components[] = 
-{
+
+static nsModuleComponentInfo components[] = {
 	{
 		MOONSHINE_LUA_CLASSNAME,
 		MOONSHINE_LUA_CID,
@@ -18,4 +18,5 @@ static nsModuleComponentInfo components[] =
 		MoonshineLuaConstructor,
 	}
 };
+
 NS_IMPL_NSGETMODULE("MoonshineLuasModule", components)
