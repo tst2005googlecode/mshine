@@ -42,9 +42,9 @@
 			
 			function executeJS() {
 				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-				var execjs = Components.classes["@googlecode.com/jsexecute;1"].createInstance();
-				execjs = execjs.QueryInterface(Components.interfaces.IJSExecute);
-				var returned = execjs.execute();
+				var jsexec = Components.classes["@googlecode.com/jsexecute;1"].createInstance();
+				jsexec = jsexec.QueryInterface(Components.interfaces.IJSExecute);
+				var returned = jsexec.execute();
 				alert(returned);
 			}
 			
