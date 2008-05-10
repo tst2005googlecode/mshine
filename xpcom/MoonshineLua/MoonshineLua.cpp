@@ -14,10 +14,6 @@
 #include "luaincl.h"	  
 
 NS_IMPL_ISUPPORTS1(MoonshineLua, IMoonshineLua)
-lua_State *L; // define lua state
-
-// define script to load API modules
-const char *modules = "C:\\Program Files\\Mozilla Firefox 3 Beta 5\\lua\\modules.lua"; // !
 
 //
 // constructor
@@ -28,6 +24,18 @@ MoonshineLua::MoonshineLua() { }
 // destructor
 //
 MoonshineLua::~MoonshineLua() { }
+
+lua_State *L; // define lua state
+
+// define script to load API modules
+const char *modules = "C:\\Program Files\\Mozilla Firefox 3 Beta 5\\lua\\modules.lua"; // !
+
+//
+// Declare Lua class
+//
+class Lua {
+	// ! TODO: implement lua state as a class
+};
 
 //
 // return embedded Lua version
