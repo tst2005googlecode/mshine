@@ -68,7 +68,7 @@ NS_IMETHODIMP MoonshineLua::ExecuteCommand(const char *command, nsACString & _re
 }
 
 // 
-// execute a Lua/Moonshine script
+// Execute a Lua/Moonshine script
 //
 NS_IMETHODIMP MoonshineLua::ExecuteScript(const char *script, nsACString & _retval) {
     
