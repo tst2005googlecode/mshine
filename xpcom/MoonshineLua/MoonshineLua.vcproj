@@ -235,7 +235,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="API"
+			Name="Lua"
 			>
 			<File
 				RelativePath=".\lua\modules.lua"
