@@ -175,18 +175,6 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\IMoonshineLua.idl"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCMIDLTool"
-					/>
-				</FileConfiguration>
-			</File>
-			<File
 				RelativePath=".\MoonshineLua.cpp"
 				>
 			</File>
@@ -229,6 +217,26 @@
 					/>
 				</FileConfiguration>
 			</File>
+		</Filter>
+		<Filter
+			Name="IDL"
+			>
+			<File
+				RelativePath=".\IMoonshineLua.idl"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCMIDLTool"
+					/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="API"
+			>
 			<File
 				RelativePath=".\lua\modules.lua"
 				>
