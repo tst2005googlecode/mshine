@@ -1,15 +1,15 @@
 WINDOWS (Rename the Makefile.win -> Makefile)
 
-This software can built using GNU Make for Windows; 
-which is part of the tools offered by MinGW:
+This software can be built using GNU Make for Windows; 
+which is part of the tools offered by MinGW.
 
 http://www.mingw.com
 
 UNIX/LINUX (Rename the Makefile.nix -> Makefile)
 
 This software can be built using GNU Make, which will
-probably be available as a part of development package for your 
-distribution.
+be available as a package by itself (or as part of a development package) 
+for your distribution.
 
 http://www.gnu.org/software/make/
 
