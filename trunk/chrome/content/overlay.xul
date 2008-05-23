@@ -12,7 +12,7 @@
 <overlay id="moonshineOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<!-- Include JavaScript  -->
-    <script type="application/x-javascript" src="interface.js"/>
+    <script type="application/x-javascript" src="ui.js"/>
 	
 	<!-- Add Moonshine options to Tools menu -->
 	<menupopup id="menu_ToolsPopup">
