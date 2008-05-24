@@ -2,15 +2,16 @@
 #	Makefile for Moonshine Lua interpreter for 32-bit Windows systems
 #
 
-# PREQ: MS C/C++ compiler and linker; Windows SDK; 
+# PREQ: MS C/C++ compiler + linker and manifest tool; Windows SDK; 
 # Gecko SDK (and Wintools); Touch for Windows
 
 # http://www.microsoft.com/express/vc/
 # http://urlcut.com/windowsdk
 # http://developer.mozilla.org/en/docs/Gecko_SDK#Get_the_SDK
+# http://ftp.mozilla.org/pub/mozilla.org/mozilla/source/wintools.zip
 # http://www.codeproject.com/KB/applications/touch_win.aspx
 
-# ASSUMPTIONS: cl.exe, link.exe and touch.exe are in your PATH
+# ASSUMPTIONS: cl.exe, link.exe, mt.ext and touch.exe are in your PATH
 
 COMPONENT = MoonshineLua
 GECKOSDK = C:\gecko-sdk
@@ -25,17 +26,18 @@ shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib
 FIREFOX = C:\Program Files\Mozilla Firefox 3 Beta 5
 		
 # build the XPCOM component
-#make: ! TODO
-#	
-#	cl /Od /I "$(GECKOSDK)\include" /I "$(MSVC)\include" /D "$(PPDEFS)"  \
-#	/Gm /ZI /EHsc /RTC1 /MD /Fo"Debug\\" /Fd"Debug\vc90.pdb" /W3 /nologo /c /TP $(SOURCES)
-#	
-#	link /OUT:"Debug\$(COMPONENT).dll" /NOLOGO  \
-#	/LIBPATH:"$(GECKOSDK)\lib" /LIBPATH:"$(MSVC)\lib" /LIBPATH:"$(WINSDK)\Lib" \
-#	/DLL /MANIFEST /DEBUG /SUBSYSTEM:WINDOWS /DYNAMICBASE /MACHINE:X86  \
-#	Debug\$(COMPONENT).obj Debug\$(COMPONENT)Module.obj $(LIBS) 	
-#	
-#	@echo Built $(COMPONENT).dll
+make:
+
+	cl /Od  /I "$(MSVC)/include" /I "$(GECKOSDK)\include" /D "$(PPDEFS)" /Gm /ZI /EHsc \
+	/RTC1 /MDd /c /TP /Fo"Debug\\" /Fd"Debug\vc90.pdb" $(SOURCES)
+
+	link /OUT:"Debug\$(COMPONENT).dll" /INCREMENTAL /LIBPATH:"$(MSVC)\lib" /LIBPATH:"$(WINSDK)\lib" /LIBPATH:"$(GECKOSDK)\lib" /DLL \
+	/MANIFEST /MANIFESTFILE:"Debug\MoPicchu.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" \
+	/SUBSYSTEM:WINDOWS /DYNAMICBASE /MACHINE:X86 "Debug\$(COMPONENT).obj" "Debug\$(COMPONENT)Module.obj" $(LIBS)
+
+	mt -manifest "Debug\$(COMPONENT).dll.intermediate.manifest" /out:"Debug\$(COMPONENT).dll.embed.manifest"
+
+	@echo Built $(COMPONENT).dll
 	 
 # remove any files created during building or generating header and typelib
 clean:
