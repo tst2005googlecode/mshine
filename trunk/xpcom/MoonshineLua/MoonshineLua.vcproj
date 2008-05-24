@@ -48,6 +48,7 @@
 				RuntimeLibrary="3"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
+				SuppressStartupBanner="false"
 				DebugInformationFormat="4"
 			/>
 			<Tool
@@ -64,6 +65,7 @@
 				AdditionalDependencies="nspr4.lib xpcom.lib xpcomglue_s.lib lua.lib"
 				OutputFile="$(OutDir)\MoonshineLua.dll"
 				LinkIncremental="2"
+				SuppressStartupBanner="false"
 				AdditionalLibraryDirectories="C:\gecko-sdk\lib"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -74,6 +76,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				SuppressStartupBanner="false"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
