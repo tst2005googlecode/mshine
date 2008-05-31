@@ -1,5 +1,5 @@
 #
-#	Makefile for Moonshine Lua interpreter for 32-bit Windows systems
+#	Makefile for Moonshine Lua interpreter for Windows systems
 #
 
 # PREQ: MS C/C++ compiler + linker and manifest tool; Windows SDK; 
