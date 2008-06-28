@@ -12,9 +12,9 @@
 
 extern "C" {
 	// change path as necessary
-	#include "luasrc\lua.h"
-	#include "luasrc\lauxlib.h"
-	#include "luasrc\lualib.h"
+	#include "lua.h"
+	#include "lauxlib.h"
+	#include "lualib.h"
 }
 
 #endif

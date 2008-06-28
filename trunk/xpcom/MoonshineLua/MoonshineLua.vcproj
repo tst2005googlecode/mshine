@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="C:\gecko-sdk\include"
+				AdditionalIncludeDirectories="C:\Lua\src;&quot;C:\gecko-sdk\include&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;LUAINTERPRETER_EXPORTS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -66,7 +66,7 @@
 				OutputFile="$(OutDir)\MoonshineLua.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="false"
-				AdditionalLibraryDirectories="C:\gecko-sdk\lib"
+				AdditionalLibraryDirectories="C:\Lua\src;&quot;C:\gecko-sdk\lib&quot;"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				TargetMachine="1"
