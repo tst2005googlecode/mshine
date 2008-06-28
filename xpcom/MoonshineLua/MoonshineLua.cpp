@@ -9,6 +9,8 @@
 	Implementation code for Moonshine Lua interpreter
 */
 
+#define COMPONENT_VERSION 0.1
+
 #include "MoonshineLua.h" 
 #include "nsStringAPI.h"
 #include "luaincl.h"	  
@@ -29,12 +31,21 @@ MoonshineLua::~MoonshineLua() { }
 lua_State *L;
 
 // Define script to load API modules
-const char *modules = "C:\\Program Files\\Mozilla Firefox 3 Beta 5\\lua\\modules.lua"; // !
+const char *modules = "modules.lua"; // !
 
+//
+// Return component version
+//
+NS_IMETHODIMP MoonshineLua::ReturnVersion(double *_retval) {
+
+	*_retval = COMPONENT_VERSION;
+
+    return NS_OK;
+}
 //
 // Return embedded Lua version
 //
-NS_IMETHODIMP MoonshineLua::GetVersion(nsACString &_retval) {
+NS_IMETHODIMP MoonshineLua::ReturnLuaVersion(nsACString & _retval) {
 
 	L = luaL_newstate(); // Create a new Lua state
 	luaL_openlibs(L); // Load standard libraries
@@ -56,9 +67,9 @@ NS_IMETHODIMP MoonshineLua::ExecuteCommand(const char *command, nsACString & _re
 	L = luaL_newstate(); // Create a new Lua state
 	luaL_openlibs(L); // Load standard libraries
 
-	int file = luaL_dofile(L, modules); // Execute script to load API modules
+	luaL_dofile(L, modules); // Execute script to load API modules
 
-	int str = luaL_dostring(L, command); // Execute (argument) command
+	luaL_dostring(L, command); // Execute (argument) command
 	_retval.Assign(lua_tostring(L, 1)); // Return result or an error message
 
 	lua_pop(L, 1); // Pop result from the stack
@@ -75,7 +86,9 @@ NS_IMETHODIMP MoonshineLua::ExecuteScript(const char *script, nsACString & _retv
 	L = luaL_newstate(); // Create a new Lua state
 	luaL_openlibs(L); // Load standard libraries
 
-	int file = luaL_dofile(L, script); // Execute (argument) script
+	luaL_dofile(L, modules); // Execute script to load API modules
+
+	luaL_dofile(L, script); // Execute (argument) script
 	 _retval.Assign(lua_tostring(L, 1)); // Return result or an error message
 
 	lua_pop(L, 1); // Pop result from the stack
