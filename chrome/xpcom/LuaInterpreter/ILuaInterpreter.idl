@@ -1,0 +1,10 @@
+#include "nsISupports.idl"
+
+[scriptable, uuid(85EF5C25-AD75-4aa0-AD92-4A4E27B30A45)]
+interface ILuaInterpreter : nsISupports {
+
+	double ReturnVersion();
+	ACString ReturnLuaVersion();
+	ACString ExecuteCommand(in string command);
+	ACString ExecuteScript(in string script);
+};
