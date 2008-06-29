@@ -11,7 +11,6 @@
 #define _LUA_INC_H_
 
 extern "C" {
-	// change path as necessary
 	#include "lua.h"
 	#include "lauxlib.h"
 	#include "lualib.h"
