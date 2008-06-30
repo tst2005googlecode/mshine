@@ -1,3 +1,10 @@
+/*
+	Moonshine embedded Lua environment for Firefox
+	Copyright (c) 2007-2008 Samuel Saint-Pettersen <samji@bigfoot.com>
+	Released under the MIT License
+	Interface definition for Moonshine
+*/
+
 #include "nsISupports.idl"
 
 [scriptable, uuid(85EF5C25-AD75-4aa0-AD92-4A4E27B30A45)]
