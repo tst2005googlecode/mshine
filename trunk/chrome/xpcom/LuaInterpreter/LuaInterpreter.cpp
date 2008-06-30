@@ -1,6 +1,6 @@
 /*
-	Moonshine
-	Copyright (c) 2007-2008 Samuel Saint-Pettersen
+	Moonshine embedded Lua environment for Firefox
+	Copyright (c) 2007-2008 Samuel Saint-Pettersen <samji@bigfoot.com>
 	
 	Lua
 	Copyright (C) 1994-2008 Lua.org, PUC-Rio

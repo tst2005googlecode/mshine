@@ -1,4 +1,4 @@
-Moonshine
+Moonshine embedded Lua environment for Firefox
 Copyright (c) 2007-2008 Samuel Saint-Pettersen
 
 Lua 5.0 and later versions
