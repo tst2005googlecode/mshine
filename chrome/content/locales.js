@@ -1,5 +1,5 @@
 /*
-	Copyright (c) 2008 Samuel Saint-Pettersen
+	Copyright (c) 2008 Samuel Saint-Pettersen <samji@bigfoot.com>
 	Released under the MIT License
 
 	Covenience functions for working with locales.
