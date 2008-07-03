@@ -11,15 +11,30 @@
 <!DOCTYPE overlay SYSTEM "chrome://moonshine/locale/locale.dtd">
 <overlay id="moonshineOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-	<!-- Include JavaScript  -->
-    <script type="application/x-javascript" src="ui.js"/>
+	<!-- Include JavaScript -->
+	<script type="application/javascript" src="locales.js"/>
+	<script type="application/javascript" src="interpreter.js"/>
+    <script type="application/javascript" src="ui.js"/>
 	
 	<!-- Add Moonshine options to Tools menu -->
 	<menupopup id="menu_ToolsPopup">
 		<menu id="moonshine_menu" label="&moonshine.label;" accesskey="&moonshine.akey;" position="10">
 			<menupopup>
+				
+				<!-- Option to display execute command prompt -->
+				<menuitem id="execmd_option" label="&execmd.label;" accesskey="&execmd.akey;"
+				 oncommand="displayExeCmd();"/>
+				 
+				<!-- Option to display sandbox for experimenting with code -->
+				<menuitem id="sandpit_option" label="&sandpit.label;" accesskey="&sandpit.akey;"
+				 oncommand="displaySandpit();"/>
+				 
+				<menuseparator/>
+				
+				<!-- Option to disable/re-enable Moonshine -->
 				<menuitem id="moonshine_enabled" label="&enabled.label;" accesskey="&enabled.akey;"  
-				type="checkbox" checked="true" oncommand="toggleEnable();"/>
+				 type="checkbox" checked="true" oncommand="toggleEnable();"/>
+				 
 			</menupopup>
 		</menu>
 	</menupopup>
@@ -28,7 +43,7 @@
 		<!-- Include locales -->
 		<stringbundle id="locales" src="chrome://moonshine/locale/locale.properties"/>
 		<statusbarpanel id="moonshine_status" insertafter="livemark_button">
-			<label onclick="toggleEnable();" value="MSH"/><!-- !!! -->
+			<label onclick="displaySandpit();" value="&moonshine.label;"/>
 		</statusbarpanel>
 	</statusbar>
 		
