@@ -8,7 +8,7 @@
 // Initially enable Moonshine
 var enabled = true;
 
-// Initiate locales variable as "null"
+// Initiate locales variable as null
 var locales = null;
 
 //
@@ -16,7 +16,7 @@ var locales = null;
 //
 function toggleEnable() {
 	
-	// Initiate feedback variables as "null"
+	// Initiate feedback variables as null
 	var ans, msgPrompt, msgConfirm = null; 
 	
 	// Get menu "Enabled" option
@@ -32,7 +32,7 @@ function toggleEnable() {
 		msgPrompt = locales.getString("promptDisable");
 		ans = confirm(msgPrompt);
 		
-		// if "Yes"; disable it and uncheck menu option
+		// If Yes; disable it and uncheck menu option
 		if(ans) {
 			enabled = false;
 			option.setAttribute("checked", "false");
@@ -41,7 +41,7 @@ function toggleEnable() {
 			// Provide feedback that Moonshine has been disabled
 			alert(msgConfirm);
 		}
-		// if "No"; keep menu option checked
+		// If No; keep menu option checked
 		else option.setAttribute("checked", "true");
 	}
 	// Otherwise, if Moonshine is disabled...
@@ -51,7 +51,7 @@ function toggleEnable() {
 		msgPrompt = locales.getString("promptEnable");
 		ans = confirm(msgPrompt);
 		
-		// if "Yes"; enable it and check menu option
+		// If "Yes"; enable it and check menu option
 		if(ans) {
 			enabled = true;
 			option.setAttribute("checked", "true");
@@ -60,7 +60,7 @@ function toggleEnable() {
 			// Provide feedback that Moonshine has been enabled
 			alert(msgConfirm);
 		}
-		// if "No"; keep menu option unchecked
+		// If "No"; keep menu option unchecked
 		else option.setAttribute("checked", "false");
 	}
 }
