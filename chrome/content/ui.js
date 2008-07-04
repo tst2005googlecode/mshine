@@ -18,6 +18,16 @@ function displayExeCmd() {
 	if(command != null) alert(executeCommand(command));
 }
 
+// 
+// Display file load prompt to execute a selected Lua script
+//
+function displayExeScript() {
+	
+	const loc = loadLoc();
+	
+}
+
+
 // Display sandpit for code experimentation
 //
 function displaySandpit() {

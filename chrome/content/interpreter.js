@@ -11,12 +11,14 @@ const luaCID = "@mshine.googlecode.com/MoonshineLua;1";
 // Define constact ID for MoPicchu queue component
 const mpCID = "@mopicchu.googlecode.com/MoPicchu;1";
 
+// Create new instance of Lua interpreter component
+var lua = Components.classes[luaCID].createInstance();
+lua = lua.QueryInterface(Components.interfaces.ILuaInterpreter);
+
 //
 // Execute Lua / Moonshine API command
 //
 function executeCommand(command) {
 	
-	var lua = Components.classes[luaCID].createInstance();
-	lua = lua.QueryInterface(Components.interfaces.ILuaInterpreter);
 	return lua.ExecuteCommand(command);
 }

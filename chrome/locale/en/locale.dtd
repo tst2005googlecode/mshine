@@ -9,6 +9,8 @@
 <!ENTITY moonshine.akey "M">
 <!ENTITY execmd.label "Execute command">
 <!ENTITY execmd.akey "x">
+<!ENTITY exescript.label "Execute script">
+<!ENTITY exescript.akey "r">
 <!ENTITY sandpit.label "Sandpit">
 <!ENTITY sandpit.akey "S">
 <!ENTITY enabled.label "Enabled">
