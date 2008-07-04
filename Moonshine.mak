@@ -7,7 +7,7 @@
 # ASSUMPTION: 7z.exe is in your PATH
 
 EXTENSION = moonshine
-FILES = install.rdf chrome.manifest AUTHORS.txt COPYING.txt
+FILES = install.rdf chrome.manifest
 FIREFOX_DIR = C:\Program Files\Mozilla Firefox
 
 make:
@@ -21,7 +21,8 @@ build:
 	7z d $(EXTENSION).jar *.svn -r
 	@echo Built JAR
 	@cd..
-	7z a -tzip -mx=9 $(EXTENSION).xpi $(FILES) chrome/$(EXTENSION).jar 
+	7z a -tzip -mx=9 $(EXTENSION).xpi $(FILES) components chrome/$(EXTENSION).jar 
+	7z d $(EXTENSION).xpi *.svn -r
 	@echo Built XPI
 
 install:

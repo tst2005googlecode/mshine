@@ -9,13 +9,13 @@
 var enabled = true;
 
 // 
-// Display execute command prompt
+// Display execute command prompt and alert return from an executed command 
 //
 function displayExeCmd() {
 	
 	const loc = loadLoc();
 	var command = prompt(locStr(loc, "promptExeCmd"));
-	alert(executeCommand(command));
+	if(command != null) alert(executeCommand(command));
 }
 
 // Display sandpit for code experimentation
@@ -30,8 +30,8 @@ function displaySandpit() {
 //
 function toggleEnable() {
 	
-	const loc = loadLoc(); 	// Load locale
-	var ans = null; // Initiate feedback variable as null
+	const loc = loadLoc(); 
+	var ans = null; // Initialize feedback variable as null
 	
 	// Get menu "Enabled" option
 	const option = document.getElementById("moonshine_enabled");

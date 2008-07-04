@@ -8,18 +8,15 @@
 // Define contract ID for Lua interpreter component
 const luaCID = "@mshine.googlecode.com/MoonshineLua;1";
 
-// Define interface for Lua interpreter component
-const luaIf = "ILuaInterpreter";
+// Define constact ID for MoPicchu queue component
+const mpCID = "@mopicchu.googlecode.com/MoPicchu;1";
 
 //
 // Execute Lua / Moonshine API command
 //
 function executeCommand(command) {
 	
-	/*var lua = compInstance(luaCID);
-	lua = queryInterface(lua, luaIf);*/
-	
-	Components.classes[luaCID].createInstance();
-	lua = lua.QueryInterface(Components.interfaces.ILuaInterpreter);*/
+	var lua = Components.classes[luaCID].createInstance();
+	lua = lua.QueryInterface(Components.interfaces.ILuaInterpreter);
 	return lua.ExecuteCommand(command);
 }
