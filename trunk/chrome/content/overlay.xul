@@ -13,7 +13,6 @@
 
 	<!-- Include JavaScript -->
 	<script type="application/javascript" src="locales.js"/>
-	<script type="application/javascript" src="components.js"/>
 	<script type="application/javascript" src="interpreter.js"/>
     <script type="application/javascript" src="ui.js"/>
 	
@@ -44,7 +43,7 @@
 		<!-- Include locales -->
 		<stringbundle id="locales" src="chrome://moonshine/locale/locale.properties"/>
 		<statusbarpanel id="moonshine_status" insertafter="livemark_button">
-			<label onclick="displaySandpit();" value="&moonshine.label;"/>
+			<label onclick="displayExeCmd();" value="&moonshine.label;"/><!-- Change to displaySandpit(); -->
 		</statusbarpanel>
 	</statusbar>
 		
