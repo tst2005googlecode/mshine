@@ -27,13 +27,17 @@
 				 
 				<!-- Option to load a script to execute -->
 				<menuitem id="exescript_option" label="&exescript.label;" accesskey="&exescript.label;"
-				oncommand="displayExeScript();"/>
+				 oncommand="displayExeScript();"/>
 				 
 				<!-- Option to display sandbox for experimenting with code -->
 				<menuitem id="sandpit_option" label="&sandpit.label;" accesskey="&sandpit.akey;"
-				 oncommand="displaySandpit();"/>
+				 type="checkbox" checked="false" oncommand="displaySandpit();"/>
 				 
 				<menuseparator/>
+				
+				<!-- Option to enable/disable alerts -->
+				<menuitem id="alerts_enabled" label="&alerts.label;" accesskey="&alerts.akey;"
+				 type="checkbox" checked="false" oncommand="toggleAlerts();"/>
 				
 				<!-- Option to disable/re-enable Moonshine -->
 				<menuitem id="moonshine_enabled" label="&enabled.label;" accesskey="&enabled.akey;"  
@@ -47,7 +51,7 @@
 		<!-- Include locales -->
 		<stringbundle id="locales" src="chrome://moonshine/locale/locale.properties"/>
 		<statusbarpanel id="moonshine_status" insertafter="livemark_button">
-			<label onclick="displayExeCmd();" value="&moonshine.label;"/><!-- Change to displaySandpit(); -->
+			<label onclick="toggleEnable();" value="&moonshine.label;"/>
 		</statusbarpanel>
 	</statusbar>
 		
