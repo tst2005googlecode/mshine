@@ -13,6 +13,7 @@
 
 	<!-- Include JavaScript -->
 	<script type="application/javascript" src="locales.js"/>
+	<script type="application/javascript" src="components.js"/>
 	<script type="application/javascript" src="interpreter.js"/>
     <script type="application/javascript" src="ui.js"/>
 	

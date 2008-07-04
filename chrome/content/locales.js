@@ -1,10 +1,11 @@
 /*
+ 	LOCALES FUNCTIONS
 	Copyright (c) 2008 Samuel Saint-Pettersen <samji@bigfoot.com>
 	Released under the MIT License
 
 	Covenience functions for working with locales.
 	Include this script in your interfaces to allow 
-	a syntax like below to load a locale:
+	a syntax like below to load a locale and use a locale string:
 	
 	const loc = loadLoc();
 	prompt(locStr(loc, "myLocaleString"));
