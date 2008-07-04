@@ -31,7 +31,7 @@ LuaInterpreter::~LuaInterpreter() { }
 lua_State *L;
 
 // Define path to Moonshine API modules
-char *modules = "modules.lua";
+//char *modules = "modules.lua";
 
 //
 // Return component version
@@ -59,7 +59,7 @@ NS_IMETHODIMP LuaInterpreter::ExecuteCommand(const char *command, nsACString & _
 	L = luaL_newstate(); // Create a new Lua state
 	luaL_openlibs(L); // Load standard libraries
 
-	luaL_dofile(L, modules); // Execute script to load API modules
+	//luaL_dofile(L, modules); // Execute script to load API modules
 
 	luaL_dostring(L, command); // Execute (argument) command
 	_retval.Assign(lua_tostring(L, 1)); // Return result or an error message
@@ -78,7 +78,7 @@ NS_IMETHODIMP LuaInterpreter::ExecuteScript(const char *script, nsACString & _re
 	L = luaL_newstate(); // Create a new Lua state
 	luaL_openlibs(L); // Load standard libraries
 
-	luaL_dofile(L, modules); // Execute script to load API modules
+	//luaL_dofile(L, modules); // Execute script to load API modules
 
 	luaL_dofile(L, script); // Execute (argument) script
 	 _retval.Assign(lua_tostring(L, 1)); // Return result or an error message
