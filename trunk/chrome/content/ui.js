@@ -13,8 +13,9 @@ var enabled = true;
 //
 function displayExeCmd() {
 	
-	const loc = loadLoc(); // Load locale
+	const loc = loadLoc();
 	var command = prompt(locStr(loc, "promptExeCmd"));
+	alert(executeCommand(command));
 }
 
 // Display sandpit for code experimentation
