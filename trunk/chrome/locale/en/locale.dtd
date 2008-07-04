@@ -13,5 +13,7 @@
 <!ENTITY exescript.akey "r">
 <!ENTITY sandpit.label "Sandpit">
 <!ENTITY sandpit.akey "S">
+<!ENTITY alerts.label "Show alerts">
+<!ENTITY alerts.akey "a">
 <!ENTITY enabled.label "Enabled">
 <!ENTITY enabled.akey "E">

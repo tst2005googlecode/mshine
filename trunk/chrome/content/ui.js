@@ -8,14 +8,19 @@
 // Initially enable Moonshine
 var enabled = true;
 
+// Initially do not enable alerts for returns
+var alerts = false;
+
 // 
-// Display execute command prompt and alert return from an executed command 
+// Display execute command prompt and pass command 
+// 
 //
 function displayExeCmd() {
 	
 	const loc = loadLoc();
+	
 	var command = prompt(locStr(loc, "promptExeCmd"));
-	if(command != null) alert(executeCommand(command));
+	if(command != null) executeCommand(command, alerts);
 }
 
 // 
@@ -25,15 +30,43 @@ function displayExeScript() {
 	
 	const loc = loadLoc();
 	
+	var nsIFilePicker = Components.interfaces.nsIFilePicker;
+	var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+	fp.init(window, locStr(loc, "promptExeScript"), nsIFilePicker.modeOpen);
+	fp.appendFilter(locStr(loc, "filterExeScript"), "*.lua");
+	fp.show();
+
+	var script = fp.file.path;
+	if(script != null) executeScript(script, alerts);
 }
 
-
+//
 // Display sandpit for code experimentation
 //
 function displaySandpit() {
 	
 	alert("Sandpit"); // !
 } 
+
+//
+// Enable or disable alerts for returns
+//
+function toggleAlerts() {
+	
+	// Get menu "Enabled" option
+	const option = document.getElementById("alerts_enabled");
+	
+	if(alerts == false) {
+	
+		alerts = true;
+		option.setAttribute("checked", "true");
+	}
+	else {
+		
+		alerts = false;	
+		option.setAttribute("checked", "false");
+	}		 
+}
 
 //
 // Disable or re-enable Moonshine
