@@ -8,25 +8,21 @@
 // Initially enable Moonshine
 var enabled = true;
 
-// Initially do not enable alerts for returns
-var alerts = true; // !
-
 // 
 // Display execute command prompt and pass command 
 // 
-//
-function displayExeCmd() {
+function promptCommand() {
 	
 	const loc = loadLoc();
 	
-	var command = prompt(locStr(loc, "promptExeCmd"), "return math.pi");
-	if(command != null) executeCommand(command, alerts);
+	var command = prompt(locStr(loc, "promptExeCmd"));
+	if(command != null) executeCommand(command);
 }
 
 // 
 // Display file load prompt to execute a selected Lua script
 //
-function displayExeScript() {
+function loadScript() {
 	
 	const loc = loadLoc();
 	
@@ -37,7 +33,7 @@ function displayExeScript() {
 	fp.show();
 
 	var script = fp.file.path;
-	if(script != null) executeScript(script, alerts);
+	if(script != null) executeScript(script);
 }
 
 //

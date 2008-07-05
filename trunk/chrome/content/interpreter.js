@@ -15,26 +15,33 @@ lua = lua.QueryInterface(Components.interfaces.ILuaInterpreter);
 //
 // Execute Lua / Moonshine command
 //
-function executeCommand(command, alerts) {
+function executeCommand(command) {
 	
-	if(alerts == true) return alert(lua.ExecuteCommand(command));
-	else return lua.ExecuteCommand(command);
+	var result = lua.ExecuteCommand(command);
+	return alert(result);
 }
 
 // 
 // Execute Lua / Moonshine script
 //
-function executeScript(script, alerts) {
+function executeScript(script) {
 	
 	var result = lua.ExecuteScript(script);
 	
-	// Match and execute JavaScript where applicable
+	// ! Implement stack usage ! //
+	
+	return alert(result);
+}
+
+//
+// Execute JavaScript where applicable
+//
+function executeJS(jsRegex) {
+	
 	var jsRegex = /JS/; 
 	if(result.match(jsRegex)) {
-		
+	
 		var jsCode = result.replace(jsRegex, "javascript:");
 		eval(jsCode);
 	}
-	else if(alerts) return alert(result);
-	else return result;
 }

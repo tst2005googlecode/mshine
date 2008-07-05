@@ -10,4 +10,3 @@
 -- Moonshine's Lua interpreter
 
 require("ui")
-require("fuse")
