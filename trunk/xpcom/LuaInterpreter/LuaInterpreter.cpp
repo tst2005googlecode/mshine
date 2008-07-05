@@ -31,7 +31,7 @@ LuaInterpreter::~LuaInterpreter() { }
 lua_State *L;
 
 // Define path to Moonshine API modules
-//char *modules = "modules.lua";
+char *modules = "C:\\Program Files\\Mozilla Firefox\\lua\\modules.lua"; // Absolute path currently necessary :(
 
 //
 // Return component version
