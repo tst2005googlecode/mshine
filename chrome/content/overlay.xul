@@ -23,11 +23,11 @@
 				
 				<!-- Option to display execute command prompt -->
 				<menuitem id="execmd_option" label="&execmd.label;" accesskey="&execmd.akey;"
-				 oncommand="displayExeCmd();"/>
+				 oncommand="promptCommand();"/>
 				 
 				<!-- Option to load a script to execute -->
 				<menuitem id="exescript_option" label="&exescript.label;" accesskey="&exescript.label;"
-				 oncommand="displayExeScript();"/>
+				 oncommand="loadScript();"/>
 				 
 				<!-- Option to display sandbox for experimenting with code -->
 				<menuitem id="sandpit_option" label="&sandpit.label;" accesskey="&sandpit.akey;"
