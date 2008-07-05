@@ -9,7 +9,7 @@
 var enabled = true;
 
 // Initially do not enable alerts for returns
-var alerts = false;
+var alerts = true; // !
 
 // 
 // Display execute command prompt and pass command 
@@ -19,7 +19,7 @@ function displayExeCmd() {
 	
 	const loc = loadLoc();
 	
-	var command = prompt(locStr(loc, "promptExeCmd"));
+	var command = prompt(locStr(loc, "promptExeCmd"), "return math.pi");
 	if(command != null) executeCommand(command, alerts);
 }
 
@@ -56,15 +56,15 @@ function toggleAlerts() {
 	// Get menu "Enabled" option
 	const option = document.getElementById("alerts_enabled");
 	
-	if(alerts == false) {
+	if(alerts) {
 	
-		alerts = true;
-		option.setAttribute("checked", "true");
+		alerts = false;
+		option.setAttribute("checked", "false");
 	}
 	else {
 		
-		alerts = false;	
-		option.setAttribute("checked", "false");
+		alerts = true;	
+		option.setAttribute("checked", "true");
 	}		 
 }
 

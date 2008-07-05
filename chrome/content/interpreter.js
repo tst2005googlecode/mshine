@@ -8,31 +8,33 @@
 // Define contract ID for Lua interpreter component
 const luaCID = "@mshine.googlecode.com/MoonshineLua;1";
 
-// Define constact ID for MoPicchu queue component
-const mpCID = "@mopicchu.googlecode.com/MoPicchu;1";
-
 // Create new instance of Lua interpreter component
 var lua = Components.classes[luaCID].createInstance();
 lua = lua.QueryInterface(Components.interfaces.ILuaInterpreter);
 
-// Create new instance of MoPicchu queue component
-var mp = Components.classes[mpCID].createInstance();
-mp = mp.QueryInterface(Components.interfaces.IMoPicchu);
-
 //
 // Execute Lua / Moonshine command
 //
-function executeCommand(command, result) {
+function executeCommand(command, alerts) {
 	
-	if(result == true) return alert(lua.ExecuteCommand(command));
-	else lua.ExecuteCommand(command);
+	if(alerts == true) return alert(lua.ExecuteCommand(command));
+	else return lua.ExecuteCommand(command);
 }
 
 // 
 // Execute Lua / Moonshine script
 //
-function executeScript(script, result) {
+function executeScript(script, alerts) {
 	
-	if(result == true) return alert(lua.ExecuteScript(script));
-	else lua.ExecuteScript(script);
+	var result = lua.ExecuteScript(script);
+	
+	// Match and execute JavaScript where applicable
+	var jsRegex = /JS/; 
+	if(result.match(jsRegex)) {
+		
+		var jsCode = result.replace(jsRegex, "javascript:");
+		eval(jsCode);
+	}
+	else if(alerts) return alert(result);
+	else return result;
 }

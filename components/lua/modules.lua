@@ -6,7 +6,8 @@
 --
 -- Released under the MIT License
 --
--- Script to load API modules for Moonshine's Lua interpreter
+-- Script to load and reference API modules for 
+-- Moonshine's Lua interpreter
 
 require("ui")
---require("fuse")
+require("fuse")
