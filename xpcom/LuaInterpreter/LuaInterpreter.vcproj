@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="C:\gecko-sdk\include;C:\Lua\src"
+				AdditionalIncludeDirectories="C:\dev\gecko-sdk\include;C:\Lua\src"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;LUAINTERPRETER_EXPORTS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -65,7 +65,7 @@
 				AdditionalDependencies="nspr4.lib xpcom.lib xpcomglue_s.lib lua.lib"
 				LinkIncremental="2"
 				SuppressStartupBanner="false"
-				AdditionalLibraryDirectories="C:\gecko-sdk\lib;C:\Lua\src"
+				AdditionalLibraryDirectories="C:\dev\gecko-sdk\lib;C:\Lua\src"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				TargetMachine="1"
@@ -117,13 +117,15 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="2"
+				Optimization="3"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="C:\dev\gecko-sdk\include;C:\Lua\src"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;LUAINTERPRETER_EXPORTS"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
+				SuppressStartupBanner="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -137,7 +139,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="nspr4.lib xpcom.lib xpcomglue_s.lib lua.lib"
 				LinkIncremental="1"
+				SuppressStartupBanner="false"
+				AdditionalLibraryDirectories="C:\dev\gecko-sdk\lib;C:\Lua\src"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
@@ -185,6 +190,30 @@
 			</File>
 		</Filter>
 		<Filter
+			Name="IDL"
+			>
+			<File
+				RelativePath=".\ILuaInterpreter.idl"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCMIDLTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCMIDLTool"
+					/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
@@ -200,22 +229,6 @@
 			<File
 				RelativePath=".\LuaInterpreter.h"
 				>
-			</File>
-		</Filter>
-		<Filter
-			Name="IDL"
-			>
-			<File
-				RelativePath=".\ILuaInterpreter.idl"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCMIDLTool"
-					/>
-				</FileConfiguration>
 			</File>
 		</Filter>
 	</Files>

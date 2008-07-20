@@ -8,7 +8,7 @@
 
 COMPONENT = LuaInterpreter
 FIREFOX_DIR = C:\Program Files\Mozilla Firefox
-GECKOSDK_DIR = C:\gecko-sdk
+GECKOSDK_DIR = C:\dev\gecko-sdk
 
 make:
 	@echo nmake build /f $(COMPONENT).mak - build XPCOM component
@@ -19,7 +19,7 @@ make:
 	@echo nmake remove /f $(COMPONENT).mak - remove component from Firefox
 	
 build:
-	devenv $(COMPONENT).sln /build Debug /project $(COMPONENT).vcproj /projectconfig Debug 
+	devenv $(COMPONENT).sln /build Debug /project $(COMPONENT).vcproj /projectconfig Debug
 	
 generate:
 	$(GECKOSDK_DIR)\bin\xpidl -m header -I$(GECKOSDK_DIR)\idl I$(COMPONENT).idl
@@ -38,7 +38,7 @@ register:
 	@echo Registered $(COMPONENT)
 
 clean:
-	devenv $(COMPONENT).sln /clean Debug /project $(COMPONENT).vcproj /projectconfig Debug 
+	devenv $(COMPONENT).sln /clean Debug /project $(COMPONENT).vcproj /projectconfig Debug
 	
 remove:
 	del "$(FIREFOX_DIR)\components\$(COMPONENT).dll"
