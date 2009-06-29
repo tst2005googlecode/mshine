@@ -22,45 +22,47 @@
   {0x85ef5c25, 0xad75, 0x4aa0, \
     { 0xad, 0x92, 0x4a, 0x4e, 0x27, 0xb3, 0x0a, 0x45 }}
 
-class NS_NO_VTABLE ILuaInterpreter : public nsISupports {
+class NS_NO_VTABLE NS_SCRIPTABLE ILuaInterpreter : public nsISupports {
  public: 
 
-  NS_DEFINE_STATIC_IID_ACCESSOR(ILUAINTERPRETER_IID)
+  NS_DECLARE_STATIC_IID_ACCESSOR(ILUAINTERPRETER_IID)
 
   /* double ReturnVersion (); */
-  NS_IMETHOD ReturnVersion(double *_retval) = 0;
+  NS_SCRIPTABLE NS_IMETHOD ReturnVersion(double *_retval) = 0;
 
   /* ACString ReturnLuaVersion (); */
-  NS_IMETHOD ReturnLuaVersion(nsACString & _retval) = 0;
+  NS_SCRIPTABLE NS_IMETHOD ReturnLuaVersion(nsACString & _retval) = 0;
 
   /* ACString ExecuteCommand (in string command); */
-  NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval) = 0;
+  NS_SCRIPTABLE NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval) = 0;
 
   /* ACString ExecuteScript (in string script); */
-  NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval) = 0;
+  NS_SCRIPTABLE NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval) = 0;
 
 };
 
+  NS_DEFINE_STATIC_IID_ACCESSOR(ILuaInterpreter, ILUAINTERPRETER_IID)
+
 /* Use this macro when declaring classes that implement this interface. */
 #define NS_DECL_ILUAINTERPRETER \
-  NS_IMETHOD ReturnVersion(double *_retval); \
-  NS_IMETHOD ReturnLuaVersion(nsACString & _retval); \
-  NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval); \
-  NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval); 
+  NS_SCRIPTABLE NS_IMETHOD ReturnVersion(double *_retval); \
+  NS_SCRIPTABLE NS_IMETHOD ReturnLuaVersion(nsACString & _retval); \
+  NS_SCRIPTABLE NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval); \
+  NS_SCRIPTABLE NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval); 
 
 /* Use this macro to declare functions that forward the behavior of this interface to another object. */
 #define NS_FORWARD_ILUAINTERPRETER(_to) \
-  NS_IMETHOD ReturnVersion(double *_retval) { return _to ReturnVersion(_retval); } \
-  NS_IMETHOD ReturnLuaVersion(nsACString & _retval) { return _to ReturnLuaVersion(_retval); } \
-  NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval) { return _to ExecuteCommand(command, _retval); } \
-  NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval) { return _to ExecuteScript(script, _retval); } 
+  NS_SCRIPTABLE NS_IMETHOD ReturnVersion(double *_retval) { return _to ReturnVersion(_retval); } \
+  NS_SCRIPTABLE NS_IMETHOD ReturnLuaVersion(nsACString & _retval) { return _to ReturnLuaVersion(_retval); } \
+  NS_SCRIPTABLE NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval) { return _to ExecuteCommand(command, _retval); } \
+  NS_SCRIPTABLE NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval) { return _to ExecuteScript(script, _retval); } 
 
 /* Use this macro to declare functions that forward the behavior of this interface to another object in a safe way. */
 #define NS_FORWARD_SAFE_ILUAINTERPRETER(_to) \
-  NS_IMETHOD ReturnVersion(double *_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ReturnVersion(_retval); } \
-  NS_IMETHOD ReturnLuaVersion(nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ReturnLuaVersion(_retval); } \
-  NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ExecuteCommand(command, _retval); } \
-  NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ExecuteScript(script, _retval); } 
+  NS_SCRIPTABLE NS_IMETHOD ReturnVersion(double *_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ReturnVersion(_retval); } \
+  NS_SCRIPTABLE NS_IMETHOD ReturnLuaVersion(nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ReturnLuaVersion(_retval); } \
+  NS_SCRIPTABLE NS_IMETHOD ExecuteCommand(const char *command, nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ExecuteCommand(command, _retval); } \
+  NS_SCRIPTABLE NS_IMETHOD ExecuteScript(const char *script, nsACString & _retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->ExecuteScript(script, _retval); } 
 
 #if 0
 /* Use the code below as a template for the implementation class for this interface. */
