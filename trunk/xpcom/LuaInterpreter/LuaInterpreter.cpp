@@ -1,6 +1,6 @@
 /*
 	Moonshine embedded Lua environment for Firefox
-	Copyright (c) 2007-2008 Samuel Saint-Pettersen <samji@bigfoot.com>
+	Copyright (c) 2007-2008 Samuel Saint-Pettersen
 	
 	Lua
 	Copyright (C) 1994-2008 Lua.org, PUC-Rio
@@ -37,7 +37,6 @@ char *modules = "/path/to/modules.lua";
 // Return component version
 //
 NS_IMETHODIMP LuaInterpreter::ReturnVersion(double *_retval) {
-
 	*_retval = COMPONENT_VERSION;
     return NS_OK;
 }
@@ -46,7 +45,6 @@ NS_IMETHODIMP LuaInterpreter::ReturnVersion(double *_retval) {
 // Return Lua version ("release")
 //
 NS_IMETHODIMP LuaInterpreter::ReturnLuaVersion(nsACString & _retval) {
-
 	_retval.Assign(LUA_RELEASE);
     return NS_OK;
 }
@@ -55,7 +53,6 @@ NS_IMETHODIMP LuaInterpreter::ReturnLuaVersion(nsACString & _retval) {
 // Execute a Lua/Moonshine API command
 //
 NS_IMETHODIMP LuaInterpreter::ExecuteCommand(const char *command, nsACString & _retval) {
-
 	L = luaL_newstate(); // Create a new Lua state
 	luaL_openlibs(L); // Load standard libraries
 

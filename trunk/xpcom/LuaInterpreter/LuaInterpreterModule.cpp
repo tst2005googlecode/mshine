@@ -1,6 +1,6 @@
 /*
 	Moonshine embedded Lua environment for Firefox
-	Copyright (c) 2007-2008 Samuel Saint-Pettersen <samji@bigfoot.com>
+	Copyright (c) 2007-2008 Samuel Saint-Pettersen
 	Released under the MIT License
 	Module definitions for Moonshine Lua interpreter
 */
@@ -11,7 +11,6 @@
 NS_GENERIC_FACTORY_CONSTRUCTOR(LuaInterpreter)
 
 static nsModuleComponentInfo components[] = {
-
 	{
 		LUA_INTERPRETER_CLASSNAME,
 		LUA_INTERPRETER_CID,
@@ -19,5 +18,4 @@ static nsModuleComponentInfo components[] = {
 		LuaInterpreterConstructor,
 	}
 };
-
 NS_IMPL_NSGETMODULE("LuaIntepreterModule", components)
