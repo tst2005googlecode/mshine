@@ -19,7 +19,6 @@ _REQUIRED = "true"
 
 -- open a new browser window
 function window(url, width, height)
-
 	if url ~= nil and width == nil and height == nil then 
 		return "JSwindow.open('" .. url .. "');"
 	elseif url ~= nil and width ~= nil and height ~= nil then
@@ -29,6 +28,5 @@ end
 
 -- display message box
 function message(message) 
-
 	return "JSalert('" .. message .. "');"
 end
